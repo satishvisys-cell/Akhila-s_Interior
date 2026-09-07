@@ -5,6 +5,8 @@ import { FadeUp } from "@/components/motion/fade-up";
 import { LiveCameraViewer } from "@/components/sections/live-camera-viewer";
 import { getLiveSiteBySlug } from "@/lib/cms/public";
 import { STITCH_V2 } from "@/lib/stitch/assets-v2";
+import { InnerPageShell } from "@/components/layout/inner-page-shell";
+import { EditorialCard } from "@/components/sections/editorial-card";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -58,16 +60,14 @@ export default async function LiveSiteDetailPage({ params }: PageProps) {
         }));
 
   return (
-    <div className="bg-ivory px-4 pb-24 pt-[calc(var(--header-h)+1rem)] md:px-8 lg:px-12">
-      <div className="mx-auto max-w-[1920px]">
-        <div className="mb-4">
-          <NextLink
-            href="/live-sites"
-            className="font-sans text-xs uppercase tracking-widest text-accent hover:opacity-80"
-          >
-            ← All live sites
-          </NextLink>
-        </div>
+    <InnerPageShell>
+      <EditorialCard>
+        <NextLink
+          href="/live-sites"
+          className="mb-6 inline-block text-sm font-semibold text-text-muted hover:text-ink-button"
+        >
+          ← All live sites
+        </NextLink>
         <FadeUp>
           <LiveCameraViewer
             siteName="Meridian Residence"
@@ -77,7 +77,7 @@ export default async function LiveSiteDetailPage({ params }: PageProps) {
             cameras={cameras}
           />
         </FadeUp>
-      </div>
-    </div>
+      </EditorialCard>
+    </InnerPageShell>
   );
 }

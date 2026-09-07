@@ -483,7 +483,7 @@ async function buildSeedData(): Promise<{
 
   const mediaHomeHero = makeMedia({
     id: "home-hero-001",
-    alt: "Akhila Interiors — cinematic architectural entrance",
+    alt: "Akhila Interiors — cinematic entrance",
     storageKey: "site/home-hero.jpg",
     folder: "site",
     tags: ["home", "hero"],
@@ -707,14 +707,14 @@ async function buildSeedData(): Promise<{
     areaSqm: 680,
     status: "completed",
     description:
-      "A cinematic residential narrative balancing warm materiality with precise architectural geometry. Meridian Residence unfolds through a canonical room sequence — entrance to bathroom — with exploded diagrams and material exploration.",
+      "A cinematic residential narrative balancing warm materiality with precise spatial geometry. Meridian Residence unfolds through a canonical room sequence — entrance to bathroom — with exploded diagrams and material exploration.",
     coverMediaId: mediaMeridianHero.id,
     seoTitle: "Meridian Residence — Akhila Interiors",
     seoDescription:
       "Explore the completed Meridian Residence: master tour, room explorer, materials, and construction story.",
     seo: {
       title: "Meridian Residence",
-      description: "Premium residential interior architecture by Akhila.",
+      description: "Premium residential interiors by Akhila.",
       ogImageMediaId: mediaMeridianHero.id,
     },
     publishStatus: "published",
@@ -790,7 +790,7 @@ async function buildSeedData(): Promise<{
     pageId: "page-home-001",
     mediaId: mediaHomeHero.id,
     mobileMediaId: mediaHomeHero.id,
-    eyebrow: "Interior Architecture",
+    eyebrow: "Interior Design",
     heading: "Spaces shaped with intention",
     subtitle: "Akhila Interiors",
     description:
@@ -813,7 +813,7 @@ async function buildSeedData(): Promise<{
     publishStatus: "published",
     seo: {
       title: "Akhila Interiors",
-      description: "Premium interior architecture and live construction experiences.",
+      description: "Premium interior design and live fit-out experiences.",
       ogImageMediaId: mediaHomeHero.id,
     },
     blocks: [
@@ -856,7 +856,7 @@ async function buildSeedData(): Promise<{
   const settings: SiteSettings = {
     id: "settings-001",
     siteName: "Akhila Interiors",
-    tagline: "Interior architecture with cinematic precision",
+    tagline: "Interior design with cinematic precision",
     primaryNav: [
       { id: "nav-1", label: "Projects", href: "/projects", sortOrder: 0, visible: true },
       { id: "nav-2", label: "Live Sites", href: "/live-sites", sortOrder: 1, visible: true },
@@ -875,7 +875,7 @@ async function buildSeedData(): Promise<{
     },
     defaultSeo: {
       title: "Akhila Interiors",
-      description: "Premium interior architecture studio.",
+      description: "Premium interior design studio.",
     },
     createdAt: ts,
     updatedAt: ts,

@@ -53,7 +53,7 @@ export const ROOM_MATRIX_DATA: RoomData[] = [
       exploded: {
         label: "Exploded Technical",
         image: STITCH_V2.detail.exploded,
-        description: "Architectural isometric showing structural shear walls, MEP runs, and acoustic ceiling baffles.",
+        description: "Interior isometric showing joinery layers, MEP runs, and acoustic ceiling baffles.",
       },
       construction: {
         label: "Live Site Telemetry",

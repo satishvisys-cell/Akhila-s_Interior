@@ -129,7 +129,7 @@ export function MasterArchitecturalFilm() {
         <div className="mb-16 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-accent">
-              CINEMATIC ARCHITECTURAL JOURNEY
+              CINEMATIC INTERIOR JOURNEY
             </span>
             <h2 className="mt-2 font-display text-4xl font-light leading-tight text-text-inverse md:text-6xl">
               Continuous 8-Stage <em className="text-accent">Walkthrough</em>

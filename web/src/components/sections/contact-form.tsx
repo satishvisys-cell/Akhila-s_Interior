@@ -40,7 +40,7 @@ export function ContactForm() {
   }
 
   const field =
-    "w-full border-0 border-b border-border bg-transparent px-0 py-3 font-sans text-base text-charcoal placeholder:text-text-secondary transition-colors duration-300 focus:border-accent focus:outline-none focus:ring-0";
+    "w-full border-0 border-b border-black/15 bg-transparent px-0 py-3 font-editorial text-base text-ink-button placeholder:text-text-muted transition-colors duration-300 focus:border-ink-button focus:outline-none focus:ring-0";
 
   return (
     <form onSubmit={onSubmit} className="space-y-8" noValidate>
@@ -117,10 +117,13 @@ export function ContactForm() {
             <option disabled value="">
               Select Project Type *
             </option>
-            <option value="residential">Residential Architecture</option>
-            <option value="commercial">Commercial Development</option>
-            <option value="interior">Interior Design</option>
-            <option value="restoration">Heritage Restoration</option>
+            <option value="false-ceiling">False Ceiling</option>
+            <option value="electrical">Electrical Works</option>
+            <option value="painting">Painting</option>
+            <option value="wallpapers">Wallpapers</option>
+            <option value="windows">Windows</option>
+            <option value="blinds">Blinds</option>
+            <option value="full">Full Interior Package</option>
           </select>
         </div>
         <div>
@@ -157,7 +160,7 @@ export function ContactForm() {
       </div>
       <div className="pt-4">
         <button
-          className="group inline-flex items-center justify-center rounded bg-accent px-8 py-4 font-sans text-sm uppercase tracking-widest text-text-inverse transition-colors duration-300 hover:bg-accent-hover disabled:opacity-60"
+          className="group inline-flex items-center justify-center rounded-md bg-ink-button px-8 py-4 font-editorial text-sm font-semibold text-white transition-colors duration-300 hover:bg-black disabled:opacity-60 btn-press"
           type="submit"
           disabled={loading}
         >

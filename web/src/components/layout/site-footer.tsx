@@ -1,99 +1,130 @@
 import NextLink from "next/link";
 
-const MENU = [
+const QUICK = [
+  ["Home", "/"],
   ["Projects", "/projects"],
   ["Services", "/services"],
-  ["Process", "/process"],
-] as const;
-
-const EXPLORE = [
-  ["Live Sites", "/live-sites"],
   ["Gallery", "/gallery"],
-  ["About", "/about"],
+  ["Journal", "/journal"],
+  ["Contact", "/contact"],
 ] as const;
 
-const LEGAL = [
-  ["Contact", "/contact"],
-  ["Privacy Policy", "/privacy"],
-  ["Terms", "/terms"],
+const SUPPORT = [
+  ["Process", "/process"],
+  ["Live Sites", "/live-sites"],
+  ["About", "/about"],
+  ["Start a Project", "/contact"],
 ] as const;
+
+const COMPANY = [
+  ["Studio", "/about"],
+  ["Selected Works", "/projects"],
+  ["Design System", "/design-system"],
+] as const;
+
+function FooterCol({
+  title,
+  items,
+}: {
+  title: string;
+  items: readonly (readonly [string, string])[];
+}) {
+  return (
+    <div>
+      <p className="mb-3 text-xs uppercase tracking-widest text-white/45">
+        {title}
+      </p>
+      <ul className="space-y-1">
+        {items.map(([label, href]) => (
+          <li key={label}>
+            <NextLink
+              href={href}
+              className="focus-ring-light group inline-flex min-h-10 items-center text-sm text-white/75 transition-colors hover:text-white"
+            >
+              <span className="relative">
+                {label}
+                <span
+                  aria-hidden
+                  className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-white/70 transition-transform duration-300 group-hover:scale-x-100 group-focus-visible:scale-x-100"
+                />
+              </span>
+            </NextLink>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export function SiteFooter() {
   return (
-    <footer className="w-full border-t border-white/5 bg-charcoal py-20 text-text-inverse">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-8 md:grid-cols-4 md:px-12">
-        <div className="flex flex-col justify-between md:col-span-1">
+    <footer className="bg-ink-button font-editorial text-white">
+      <div className="mx-auto grid max-w-[1400px] gap-12 px-5 py-14 sm:px-6 md:grid-cols-2 md:px-10 md:py-16 lg:px-12">
+        <div>
+          <NextLink
+            href="/"
+            className="focus-ring-light text-2xl font-extrabold tracking-tight transition-opacity hover:opacity-80"
+          >
+            AKHILA
+          </NextLink>
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
+            Supporting modern living through thoughtfully designed interiors,
+            décor, and timeless fit-out for every home.
+          </p>
+          <NextLink
+            href="/projects"
+            className="btn-press focus-ring-light group mt-6 inline-flex min-h-11 items-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-ink-button"
+          >
+            Explore Collection
+            <span aria-hidden className="arrow-nudge ml-2">
+              →
+            </span>
+          </NextLink>
+          <div className="mt-10 grid grid-cols-1 gap-8 text-sm text-white/75 sm:grid-cols-3 sm:gap-6">
+            <FooterCol title="Quick Links" items={QUICK} />
+            <FooterCol title="Support" items={SUPPORT} />
+            <FooterCol title="Company" items={COMPANY} />
+          </div>
+        </div>
+
+        <div className="flex flex-col justify-between">
           <div>
-            <NextLink
-              href="/"
-              className="mb-6 block font-display text-4xl uppercase tracking-tighter text-text-inverse"
-            >
-              AKHILA
-            </NextLink>
-            <p className="max-w-xs font-sans text-sm font-light leading-relaxed text-text-inverse/70">
-              Premium architecture, design, and construction. Building cinematic
-              experiences through uncompromising precision.
+            <h2 className="max-w-md text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-5xl">
+              Designing Homes For Inspired Living.
+            </h2>
+            <p className="mt-6 text-sm text-white/70">
+              <a
+                href="tel:+13105550148"
+                className="focus-ring-light transition-colors hover:text-white"
+              >
+                +1 (310) 555-0148
+              </a>
             </p>
+            <p className="text-sm text-white/70">
+              <a
+                href="mailto:studio@akhila.design"
+                className="focus-ring-light transition-colors hover:text-white"
+              >
+                studio@akhila.design
+              </a>
+            </p>
+            <div className="mt-6 grid grid-cols-1 gap-6 text-sm text-white/65 sm:grid-cols-2">
+              <div>
+                <p className="text-xs uppercase tracking-widest text-white/45">
+                  California
+                </p>
+                <p className="mt-1">Malibu · Los Angeles</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-widest text-white/45">
+                  New York
+                </p>
+                <p className="mt-1">By appointment</p>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div className="grid grid-cols-2 gap-8 md:col-span-3 md:grid-cols-3">
-          <div>
-            <h4 className="mb-6 font-sans text-xs uppercase tracking-widest text-text-inverse/50">
-              Menu
-            </h4>
-            <ul className="space-y-4">
-              {MENU.map(([label, href]) => (
-                <li key={label}>
-                  <NextLink
-                    href={href}
-                    className="inline-block font-sans text-sm font-light text-text-inverse/70 transition-all duration-300 hover:translate-x-1 hover:text-accent"
-                  >
-                    {label}
-                  </NextLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className="mb-6 font-sans text-xs uppercase tracking-widest text-text-inverse/50">
-              Explore
-            </h4>
-            <ul className="space-y-4">
-              {EXPLORE.map(([label, href]) => (
-                <li key={label}>
-                  <NextLink
-                    href={href}
-                    className="inline-block font-sans text-sm font-light text-text-inverse/70 transition-all duration-300 hover:translate-x-1 hover:text-accent"
-                  >
-                    {label}
-                  </NextLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className="mb-6 font-sans text-xs uppercase tracking-widest text-text-inverse/50">
-              Legal
-            </h4>
-            <ul className="space-y-4">
-              {LEGAL.map(([label, href]) => (
-                <li key={label}>
-                  <NextLink
-                    href={href}
-                    className="inline-block font-sans text-sm font-light text-text-inverse/70 transition-all duration-300 hover:translate-x-1 hover:text-accent"
-                  >
-                    {label}
-                  </NextLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-ivory/10 pt-8 md:col-span-4 md:mt-12 md:flex-row">
-          <p className="font-sans text-xs font-light text-text-inverse/50">
-            © {new Date().getFullYear()} Akhila. Precision in Architecture.
+          <p className="mt-12 text-xs text-white/40">
+            © {new Date().getFullYear()} Akhila. Precision in Interiors.
           </p>
         </div>
       </div>

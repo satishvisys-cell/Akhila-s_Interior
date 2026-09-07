@@ -3,11 +3,14 @@ import NextLink from "next/link";
 import { FadeUp } from "@/components/motion/fade-up";
 import { STITCH_V2 } from "@/lib/stitch/assets-v2";
 import { cn } from "@/lib/cn";
+import { EditorialCard } from "@/components/sections/editorial-card";
+import { TestimonialsCarousel } from "@/components/sections/testimonials-carousel";
+import { InnerPageShell } from "@/components/layout/inner-page-shell";
 
 export const metadata: Metadata = {
   title: "Visual Archive · Akhila",
   description:
-    "A curated selection of defining architectural moments — form, light, and material precision.",
+    "A curated selection of defining interior moments — form, light, and material precision.",
 };
 
 const FILTERS = ["All", "Residential", "Commercial", "Interior"] as const;
@@ -17,49 +20,42 @@ const FRAMES = [
     src: STITCH_V2.gallery.meridianExterior,
     title: "Meridian Residence",
     meta: "Exterior",
-    height: "h-[600px]",
     filter: "Residential",
   },
   {
     src: STITCH_V2.tour.bathroom,
     title: "Meridian Ensuite",
     meta: "Interior",
-    height: "h-[400px]",
     filter: "Interior",
   },
   {
     src: STITCH_V2.gallery.casaHorizon,
     title: "Casa Horizon",
     meta: "Coastal",
-    height: "h-[500px]",
     filter: "Residential",
   },
   {
     src: STITCH_V2.tour.stairs,
     title: "Floating Staircase",
     meta: "Detail",
-    height: "h-[450px]",
     filter: "Interior",
   },
   {
     src: STITCH_V2.gallery.northline,
     title: "Northline Tower",
     meta: "Commercial",
-    height: "h-[650px]",
     filter: "Commercial",
   },
   {
     src: STITCH_V2.tour.living,
     title: "Coastal Living",
     meta: "Interior",
-    height: "h-[400px]",
     filter: "Interior",
   },
   {
     src: STITCH_V2.gallery.workshop,
     title: "Studio Workshop",
     meta: "Creative",
-    height: "h-[550px]",
     filter: "Interior",
   },
 ] as const;
@@ -70,34 +66,34 @@ export default async function GalleryPage({ searchParams }: PageProps) {
   const { filter } = await searchParams;
   const active = filter ?? "All";
   const frames =
-    active === "All"
-      ? FRAMES
-      : FRAMES.filter((f) => f.filter === active);
+    active === "All" ? FRAMES : FRAMES.filter((f) => f.filter === active);
 
   return (
-    <div className="bg-ivory text-charcoal">
-      <header className="mx-auto max-w-7xl px-8 pb-16 pt-40">
-        <FadeUp>
-          <h1 className="mb-8 font-display text-5xl font-light tracking-tight md:text-7xl">
-            Visual Archive
-          </h1>
-          <div className="flex flex-wrap items-center gap-4">
-            <span className="mr-4 font-sans text-sm uppercase tracking-widest text-text-secondary">
-              Filter by:
-            </span>
+    <InnerPageShell>
+      <EditorialCard>
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="mb-2 text-sm text-text-muted">Archive</p>
+            <h1 className="text-4xl font-extrabold tracking-tight text-ink-button md:text-6xl">
+              Visual Archive
+            </h1>
+          </div>
+          <nav className="flex flex-wrap gap-2" aria-label="Filters">
             {FILTERS.map((f) => {
               const isActive = active === f;
               const href =
-                f === "All" ? "/gallery" : `/gallery?filter=${encodeURIComponent(f)}`;
+                f === "All"
+                  ? "/gallery"
+                  : `/gallery?filter=${encodeURIComponent(f)}`;
               return (
                 <NextLink
                   key={f}
                   href={href}
                   className={cn(
-                    "rounded px-6 py-2 font-sans text-sm transition-all duration-300",
+                    "rounded-md px-4 py-2 text-sm font-medium transition-colors",
                     isActive
-                      ? "bg-accent text-text-inverse hover:opacity-90"
-                      : "border border-text-muted/30 text-charcoal hover:border-accent hover:text-accent",
+                      ? "bg-ink-button text-white"
+                      : "border border-black/10 text-text-muted hover:text-ink-button",
                   )}
                   aria-current={isActive ? "page" : undefined}
                 >
@@ -105,52 +101,43 @@ export default async function GalleryPage({ searchParams }: PageProps) {
                 </NextLink>
               );
             })}
-          </div>
-        </FadeUp>
-      </header>
+          </nav>
+        </div>
+      </EditorialCard>
 
-      <main className="mx-auto max-w-7xl px-8 pb-32">
+      <EditorialCard>
         {frames.length === 0 ? (
-          <p className="py-20 text-center text-text-secondary">
+          <p className="py-16 text-center text-text-secondary">
             No frames in this filter.
           </p>
         ) : (
-          <div className="columns-1 gap-8 md:columns-2 lg:columns-3">
+          <div className="columns-1 gap-6 md:columns-2 lg:columns-3">
             {frames.map((frame, i) => (
               <FadeUp
                 key={frame.title + i}
                 delay={(i % 3) * 50}
-                className="mb-8 break-inside-avoid overflow-hidden rounded bg-surface-2"
+                className="mb-6 break-inside-avoid"
               >
-                <div
-                  className={cn(
-                    "group relative w-full cursor-pointer overflow-hidden",
-                    frame.height,
-                  )}
-                >
+                <figure className="group overflow-hidden rounded-2xl">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={frame.src}
                     alt={frame.title}
-                    className="h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
+                    className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 flex items-end bg-black/20 p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                    <div>
-                      <p className="font-display text-2xl text-text-inverse">
-                        {frame.title}
-                      </p>
-                      <p className="font-sans text-sm uppercase tracking-wider text-border">
-                        {frame.meta}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                  <figcaption className="pt-3">
+                    <p className="font-semibold text-ink-button">{frame.title}</p>
+                    <p className="text-sm text-text-muted">{frame.meta}</p>
+                  </figcaption>
+                </figure>
               </FadeUp>
             ))}
           </div>
         )}
-      </main>
-    </div>
+      </EditorialCard>
+
+      <TestimonialsCarousel />
+    </InnerPageShell>
   );
 }

@@ -11,6 +11,8 @@ import {
 import { STITCH_V2 } from "@/lib/stitch/assets-v2";
 import { BeforeAfterVideo } from "@/components/media/before-after-video";
 import { InteractiveFloorPlan } from "@/components/architecture/interactive-floor-plan";
+import { EditorialCard } from "@/components/sections/editorial-card";
+import { EDITORIAL } from "@/lib/editorial";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -37,7 +39,7 @@ const STITCH_DETAIL = {
     "A masterclass in coastal minimalism, blending precision engineering with elemental beauty.",
   overviewTitle: "Redefining Coastal Minimalism",
   overview: [
-    "Casa Horizon stands as a testament to restrained elegance. Situated on a dramatic coastal bluff, the architecture yields to the landscape, utilizing vast expanses of structural glass and monolithic stone to blur the boundary between interior sanctuary and the infinite horizon.",
+    "Casa Horizon stands as a testament to restrained elegance. Situated on a dramatic coastal bluff, the interiors yield to light and landscape, using stone, timber, and glass to blur the boundary between sanctuary and horizon.",
     "Every detail, from the cantilevered terraces to the flush-mount hardware, was rigorously detailed to maintain absolute visual silence, allowing the changing light of the coast to become the primary ornamental feature.",
   ],
   stats: [
@@ -63,7 +65,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
   const overviewTitle = useStitchCopy
     ? STITCH_DETAIL.overviewTitle
-    : "Architecture with intent";
+    : "Interiors with intent";
   const overviewParas = useStitchCopy
     ? STITCH_DETAIL.overview
     : [
@@ -91,28 +93,30 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-        <div className="absolute bottom-16 left-8 max-w-3xl text-text-inverse md:left-16">
+        <div className="absolute bottom-16 left-8 max-w-3xl text-white md:left-16">
           <FadeUp>
-            <span className="mb-3 block font-sans text-xs font-semibold uppercase tracking-[0.25em] text-accent">
-              ARCHITECTURAL CASE STUDY
+            <span className="mb-3 block font-editorial text-sm text-white/70">
+              Interior Case Study
             </span>
-            <h1 className="mb-4 font-display text-5xl font-light tracking-tight md:text-7xl">
+            <h1 className="mb-4 font-editorial text-5xl font-extrabold tracking-tight md:text-7xl">
               {project.name}
             </h1>
-            <p className="font-sans text-lg font-light opacity-90 md:text-xl">
+            <p className="font-editorial text-lg text-white/85 md:text-xl">
               {heroSub}
             </p>
           </FadeUp>
         </div>
       </section>
 
-      {/* Project Overview */}
-      <section className="mx-auto grid max-w-7xl grid-cols-1 gap-16 px-8 py-24 md:grid-cols-12 md:px-16">
+      <div className="canvas-sky px-3 py-3 font-editorial md:px-5 md:py-5">
+        <div className="mx-auto flex max-w-[1400px] flex-col gap-4 md:gap-5">
+      <EditorialCard>
+      <section className="grid grid-cols-1 gap-12 md:grid-cols-12">
         <FadeUp className="md:col-span-7">
-          <h2 className="mb-6 font-display text-3xl text-charcoal md:text-4xl">
+          <h2 className="mb-6 text-3xl font-extrabold tracking-tight text-ink-button md:text-4xl">
             {overviewTitle}
           </h2>
-          <div className="space-y-6 font-sans text-lg font-light leading-relaxed text-text-secondary">
+          <div className="space-y-6 text-lg leading-relaxed text-text-secondary">
             {overviewParas.map((p) => (
               <p key={p.slice(0, 40)}>{p}</p>
             ))}
@@ -120,62 +124,61 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </FadeUp>
         <FadeUp
           delay={80}
-          className="grid grid-cols-2 gap-8 border-t border-border pt-12 md:col-span-5 md:border-l md:border-t-0 md:pl-12 md:pt-0"
+          className="grid grid-cols-2 gap-8 border-t border-black/10 pt-8 md:col-span-5 md:border-l md:border-t-0 md:pl-12 md:pt-0"
         >
           {stats.map(([label, value]) => (
             <div key={label}>
-              <span className="mb-2 block font-sans text-xs uppercase tracking-widest text-text-muted">
+              <span className="mb-2 block text-xs uppercase tracking-widest text-text-muted">
                 {label}
               </span>
-              <span className="font-sans font-medium capitalize text-charcoal">
+              <span className="font-semibold capitalize text-ink-button">
                 {value}
               </span>
             </div>
           ))}
         </FadeUp>
       </section>
+      </EditorialCard>
 
-      {/* AI Transformation Reveal */}
-      <section className="bg-ivory py-24 border-y border-border">
-        <div className="mx-auto max-w-7xl px-8">
+      <EditorialCard>
           <BeforeAfterVideo
-            title={`Architectural Transformation — ${project.name}`}
-            subtitle="Interactive before/after dual video reveal comparing structural shell with completed pavilion"
+            title={`Interior Transformation — ${project.name}`}
+            subtitle="Drag to compare the original room with its reimagined finish"
             before={{
               type: "image",
-              src: STITCH_V2.home.atelier,
-              label: "Existing Frame",
+              src: EDITORIAL.compare.reimagine,
+              label: "Reimagine",
             }}
             after={{
-              type: "video",
-              src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-              poster: STITCH_V2.tour.living,
-              label: "Luxury Finished",
+              type: "image",
+              src: EDITORIAL.compare.original,
+              label: "Original",
             }}
           />
-        </div>
-      </section>
+      </EditorialCard>
 
-      {/* Interactive Floor Plan */}
+      <EditorialCard>
       <InteractiveFloorPlan projectSlug={project.slug} />
+      </EditorialCard>
 
-      {/* Call to Action */}
-      <section className="bg-accent px-8 py-24 text-center text-text-inverse">
-        <FadeUp className="mx-auto max-w-2xl">
-          <h2 className="mb-6 font-display text-4xl md:text-5xl">
+      <EditorialCard>
+        <FadeUp className="mx-auto max-w-2xl text-center">
+          <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-ink-button md:text-5xl">
             Ready to realize your vision?
           </h2>
-          <p className="mb-10 font-sans text-lg font-light opacity-90">
-            Schedule a private consultation to discuss your next architectural endeavor.
+          <p className="mb-8 text-lg text-text-secondary">
+            Schedule a private consultation to discuss your next interior project.
           </p>
           <NextLink
             href="/contact"
-            className="inline-flex rounded bg-ivory px-10 py-4 font-sans text-xs font-bold uppercase tracking-widest text-accent transition-colors hover:bg-white"
+            className="inline-flex rounded-md bg-ink-button px-8 py-4 text-sm font-semibold text-white hover:bg-black"
           >
             Contact Our Studio
           </NextLink>
         </FadeUp>
-      </section>
+      </EditorialCard>
+        </div>
+      </div>
     </>
   );
 }

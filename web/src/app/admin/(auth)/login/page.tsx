@@ -30,7 +30,7 @@ export default async function AdminLoginPage() {
         <div className="relative flex h-full flex-col justify-end p-12 text-text-inverse">
           <p className="font-display text-4xl tracking-tight">Akhila</p>
           <p className="mt-3 max-w-sm text-small text-text-inverse/70">
-            Interior architecture CMS — projects, media, and live construction
+            Interior design CMS — projects, media, and live construction
             monitoring in one secure workspace.
           </p>
         </div>

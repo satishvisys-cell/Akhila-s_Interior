@@ -6,6 +6,8 @@ import { STITCH_V2 } from "@/lib/stitch/assets-v2";
 import { cn } from "@/lib/cn";
 
 import { ConstructionTelemetry } from "@/components/construction/construction-telemetry";
+import { EditorialCard } from "@/components/sections/editorial-card";
+import { InnerPageShell, PageIntro } from "@/components/layout/inner-page-shell";
 
 export const metadata: Metadata = {
   title: "Live Sites",
@@ -55,52 +57,31 @@ export default async function LiveSitesPage() {
   const useStitchLayout = cmsSites.length < 2;
 
   return (
-    <div className="min-h-screen bg-ivory">
-      <section className="mx-auto max-w-7xl px-8 pb-16 pt-32">
-        <FadeUp>
-          <h1 className="mb-6 font-display text-5xl font-medium tracking-tight text-charcoal md:text-7xl">
-            Live Site Monitoring
-          </h1>
-          <p className="max-w-2xl font-sans text-lg leading-relaxed text-text-secondary md:text-xl">
-            Real-time transparency across our active construction portfolio.
-          </p>
-          <div className="mt-8 flex items-center gap-2 font-sans text-sm font-medium text-text-muted">
-            <span aria-hidden>🔒</span>
-            <span>
-              Access restricted to verified clients and project stakeholders. No
-              sensitive credentials are displayed in this view.
-            </span>
-          </div>
-        </FadeUp>
-      </section>
+    <InnerPageShell>
+      <PageIntro
+        eyebrow="Construction"
+        title="Live Site Monitoring"
+        description="Real-time transparency across our active construction portfolio. Access is restricted to verified clients and project stakeholders."
+      />
 
-      <section className="mx-auto mb-24 max-w-7xl px-8">
-        <FadeUp delay={70}>
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded border border-border/30 bg-border/30 md:grid-cols-3">
-            {[
-              ["Active Sites", "12"],
-              ["Regional Distribution", "4", "Zones"],
-              ["Safety Hours", "48,200+"],
-            ].map(([label, value, suffix]) => (
-              <div key={label} className="bg-ivory p-8">
-                <p className="mb-2 font-sans text-sm font-semibold uppercase tracking-widest text-accent">
-                  {label}
-                </p>
-                <p className="font-display text-4xl text-charcoal">
-                  {value}
-                  {suffix ? (
-                    <span className="ml-2 font-sans text-lg text-text-secondary">
-                      {suffix}
-                    </span>
-                  ) : null}
-                </p>
-              </div>
-            ))}
-          </div>
-        </FadeUp>
-      </section>
+      <EditorialCard>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {[
+            ["Active Sites", "12"],
+            ["Regional Distribution", "4 Zones"],
+            ["Safety Hours", "48,200+"],
+          ].map(([label, value]) => (
+            <div key={label}>
+              <p className="mb-1 text-sm text-text-muted">{label}</p>
+              <p className="text-3xl font-extrabold tracking-tight text-ink-button">
+                {value}
+              </p>
+            </div>
+          ))}
+        </div>
+      </EditorialCard>
 
-      <section className="mx-auto max-w-7xl px-8 pb-32">
+      <EditorialCard>
         {useStitchLayout ? (
           <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
             {STITCH_SITES.map((site) =>
@@ -108,7 +89,7 @@ export default async function LiveSitesPage() {
                 <FadeUp
                   key={site.name}
                   delay={140}
-                  className="group col-span-1 overflow-hidden rounded border border-border/30 bg-ivory md:col-span-12 md:flex md:flex-row"
+                  className="group col-span-1 overflow-hidden rounded-2xl border border-black/10 bg-white md:col-span-12 md:flex md:flex-row"
                 >
                   <div className="relative h-64 overflow-hidden md:h-[500px] md:w-2/3">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -126,10 +107,10 @@ export default async function LiveSitesPage() {
                   </div>
                   <div className="flex flex-col justify-between p-8 md:w-1/3 md:p-12">
                     <div>
-                      <p className="mb-4 font-sans text-xs font-bold uppercase tracking-widest text-accent">
+                      <p className="mb-4 font-sans text-xs font-bold uppercase tracking-widest text-text-muted">
                         {site.location}
                       </p>
-                      <h2 className="mb-2 font-display text-3xl">{site.name}</h2>
+                      <h2 className="mb-2 text-3xl font-extrabold tracking-tight text-ink-button">{site.name}</h2>
                       <p className="mb-8 border-b border-border/30 pb-8 font-sans text-sm text-text-secondary">
                         {site.stage}
                       </p>
@@ -154,7 +135,7 @@ export default async function LiveSitesPage() {
                     </div>
                     <NextLink
                       href={site.href}
-                      className="mt-12 flex w-full items-center justify-center gap-2 rounded border border-accent py-4 font-sans text-sm font-semibold tracking-wide text-accent transition-colors duration-300 hover:bg-accent hover:text-text-inverse"
+                      className="mt-12 flex w-full items-center justify-center gap-2 rounded-md bg-ink-button py-4 text-sm font-semibold text-white hover:bg-black"
                     >
                       <span>{site.cta}</span>
                       <span aria-hidden>→</span>
@@ -166,7 +147,7 @@ export default async function LiveSitesPage() {
                   key={site.name}
                   delay={210}
                   className={cn(
-                    "group overflow-hidden rounded border border-border/30 bg-ivory",
+                    "group overflow-hidden rounded-2xl border border-black/10 bg-white",
                     "span" in site ? site.span : "md:col-span-6",
                     site.name === "Meridian Residence"
                       ? "flex flex-col sm:flex-row"
@@ -201,17 +182,17 @@ export default async function LiveSitesPage() {
                     )}
                   >
                     <div>
-                      <p className="mb-3 font-sans text-xs font-bold uppercase tracking-widest text-accent">
+                      <p className="mb-3 font-sans text-xs font-bold uppercase tracking-widest text-text-muted">
                         {site.location}
                       </p>
-                      <h3 className="mb-1 font-display text-2xl">{site.name}</h3>
+                      <h3 className="mb-1 text-2xl font-extrabold text-ink-button">{site.name}</h3>
                       <p className="mb-6 font-sans text-sm text-text-secondary">
                         {site.stage}
                       </p>
                     </div>
                     <NextLink
                       href={site.href}
-                      className="mt-4 w-full rounded border border-accent py-3 text-center font-sans text-sm font-semibold tracking-wide text-accent transition-colors hover:bg-accent hover:text-text-inverse"
+                      className="mt-4 w-full rounded-md bg-ink-button py-3 text-center text-sm font-semibold text-white hover:bg-black"
                     >
                       {site.cta}
                     </NextLink>
@@ -233,7 +214,7 @@ export default async function LiveSitesPage() {
                   key={site.id}
                   delay={i * 50}
                   className={cn(
-                    "group overflow-hidden rounded border border-border/30 bg-ivory",
+                    "group overflow-hidden rounded-2xl border border-black/10 bg-white",
                     isFeatured
                       ? "md:col-span-12 md:flex md:flex-row"
                       : i % 2 === 1
@@ -276,17 +257,17 @@ export default async function LiveSitesPage() {
                       )}
                     >
                       <div>
-                        <p className="mb-4 font-sans text-xs font-bold uppercase tracking-widest text-accent">
+                        <p className="mb-4 font-sans text-xs font-bold uppercase tracking-widest text-text-muted">
                           {site.location}
                         </p>
-                        <h2 className="mb-2 font-display text-3xl capitalize text-charcoal">
+                        <h2 className="mb-2 text-3xl font-extrabold capitalize tracking-tight text-ink-button">
                           {name}
                         </h2>
                         <p className="mb-8 border-b border-border/30 pb-8 font-sans text-sm text-text-secondary">
                           {site.stageLabel}
                         </p>
                       </div>
-                      <span className="mt-10 inline-flex w-full items-center justify-center gap-2 rounded border border-accent py-4 font-sans text-sm font-semibold tracking-wide text-accent transition-colors group-hover:bg-accent group-hover:text-text-inverse">
+                      <span className="mt-10 inline-flex w-full items-center justify-center gap-2 rounded-md bg-ink-button py-4 text-sm font-semibold text-white group-hover:bg-black">
                         View Stream →
                       </span>
                     </div>
@@ -296,9 +277,9 @@ export default async function LiveSitesPage() {
             })}
           </div>
         )}
-      </section>
+      </EditorialCard>
 
       <ConstructionTelemetry />
-    </div>
+    </InnerPageShell>
   );
 }

@@ -43,7 +43,7 @@ export class VideoGenerationService {
       `LIGHTING: ${spec.lighting}`,
       `TRANSFORMATION: ${spec.transformation}`,
       `END_FRAME_TARGET: ${spec.endFrame}`,
-      `STYLE: Cinematic 4K Architectural Videography, photorealistic natural lighting, slow smooth camera move`,
+      `STYLE: Cinematic 4K Interior Videography, photorealistic natural lighting, slow smooth camera move`,
       spec.negativeConstraints
         ? `NEGATIVE_CONSTRAINTS: ${spec.negativeConstraints}`
         : "",

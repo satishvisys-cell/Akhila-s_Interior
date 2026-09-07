@@ -11,9 +11,12 @@ import { FadeUp } from "@/components/motion/fade-up";
  * since a two-property hover transition doesn't need a timeline/ScrollTrigger.
  */
 const DISCIPLINES = [
-  { title: "Architecture", href: "/services#architecture" },
-  { title: "Interior Design", href: "/services#interior-design" },
-  { title: "Construction", href: "/services#construction" },
+  { title: "False Ceiling", href: "/services#false-ceiling" },
+  { title: "Electrical Works", href: "/services#electrical-works" },
+  { title: "Painting", href: "/services#painting" },
+  { title: "Wallpapers", href: "/services#wallpapers" },
+  { title: "Windows", href: "/services#windows" },
+  { title: "Blinds", href: "/services#blinds" },
 ] as const;
 
 export function ExpertiseList() {

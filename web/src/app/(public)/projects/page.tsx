@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import NextLink from "next/link";
 import { STITCH_V2 } from "@/lib/stitch/assets-v2";
 import { FadeUp } from "@/components/motion/fade-up";
+import { EditorialCard } from "@/components/sections/editorial-card";
+import { InnerPageShell } from "@/components/layout/inner-page-shell";
 import { cn } from "@/lib/cn";
 
 export const metadata: Metadata = {
   title: "Selected Works",
   description:
-    "A curated collection of cinematic architectural spaces by Akhila.",
+    "A curated collection of cinematic interior spaces by Akhila.",
 };
 
 const FILTERS = [
@@ -23,11 +25,8 @@ type Work = {
   href: string;
   image: string;
   live?: boolean;
-  span: string;
-  aspect: string;
 };
 
-/** Stitch Selected Works grid — overlay-on-image editorial layout */
 const WORKS: Work[] = [
   {
     name: "Casa Horizon",
@@ -35,8 +34,6 @@ const WORKS: Work[] = [
     category: "residential",
     href: "/projects/meridian-residence",
     image: STITCH_V2.home.casaHorizon,
-    span: "md:col-span-12 lg:col-span-8",
-    aspect: "aspect-video",
   },
   {
     name: "Meridian Residence",
@@ -44,8 +41,6 @@ const WORKS: Work[] = [
     category: "residential",
     href: "/projects/meridian-residence",
     image: STITCH_V2.home.meridian,
-    span: "md:col-span-6 lg:col-span-4",
-    aspect: "aspect-[3/4] md:aspect-auto md:min-h-[420px] lg:min-h-full",
   },
   {
     name: "Atelier House",
@@ -53,8 +48,6 @@ const WORKS: Work[] = [
     category: "residential",
     href: "/projects/skyline-villa",
     image: STITCH_V2.home.atelier,
-    span: "md:col-span-6 lg:col-span-5",
-    aspect: "aspect-square md:aspect-auto md:h-[600px]",
   },
   {
     name: "Northline Tower",
@@ -63,8 +56,6 @@ const WORKS: Work[] = [
     href: "/live-sites/skyline-villa",
     image: STITCH_V2.live.construction,
     live: true,
-    span: "md:col-span-12 lg:col-span-7",
-    aspect: "aspect-[4/3] md:aspect-[16/9] lg:aspect-auto lg:h-[600px]",
   },
 ];
 
@@ -74,20 +65,19 @@ export default async function ProjectsPage({ searchParams }: PageProps) {
   const { category } = await searchParams;
   const active = (category ?? "all").toLowerCase();
   const filtered =
-    active === "all"
-      ? WORKS
-      : WORKS.filter((w) => w.category === active);
+    active === "all" ? WORKS : WORKS.filter((w) => w.category === active);
 
   return (
-    <div className="flex min-h-screen flex-col bg-ivory pt-32 pb-24">
-      <div className="mx-auto w-full max-w-screen-2xl px-4 md:px-8">
-        <FadeUp className="mb-16 flex flex-col items-end justify-between gap-8 md:mb-24 md:flex-row">
-          <h1 className="font-display text-5xl tracking-tight text-charcoal md:text-7xl lg:text-8xl">
-            Selected
-            <br />
-            <span className="font-light italic text-accent">Works</span>
-          </h1>
-          <nav className="flex flex-wrap gap-3 pb-2" aria-label="Filters">
+    <InnerPageShell>
+      <EditorialCard>
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <FadeUp>
+            <p className="mb-2 text-sm text-text-muted">Portfolio</p>
+            <h1 className="text-4xl font-extrabold tracking-tight text-ink-button md:text-6xl">
+              Selected Works
+            </h1>
+          </FadeUp>
+          <nav className="flex flex-wrap gap-2" aria-label="Filters">
             {FILTERS.map((f) => {
               const href =
                 f.key === "all" ? "/projects" : `/projects?category=${f.key}`;
@@ -97,10 +87,10 @@ export default async function ProjectsPage({ searchParams }: PageProps) {
                   key={f.key}
                   href={href}
                   className={cn(
-                    "rounded-full border px-5 py-2 font-sans text-sm tracking-wide transition-colors",
+                    "rounded-md px-4 py-2 text-sm font-medium transition-colors",
                     isActive
-                      ? "border-accent bg-accent text-text-inverse"
-                      : "border-border bg-transparent text-charcoal hover:border-accent hover:text-accent",
+                      ? "bg-ink-button text-white"
+                      : "border border-black/10 text-text-muted hover:text-ink-button",
                   )}
                   aria-current={isActive ? "page" : undefined}
                 >
@@ -109,72 +99,51 @@ export default async function ProjectsPage({ searchParams }: PageProps) {
               );
             })}
           </nav>
-        </FadeUp>
+        </div>
+      </EditorialCard>
 
+      <EditorialCard>
         {filtered.length === 0 ? (
-          <p className="py-20 text-center text-text-secondary">
+          <p className="py-16 text-center text-text-secondary">
             No projects in this category.
           </p>
         ) : (
-          <section className="grid auto-rows-min grid-cols-1 gap-6 md:grid-cols-12 md:gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {filtered.map((work, i) => (
-              <FadeUp
-                key={work.name}
-                delay={i * 60}
-                className={cn(
-                  "group relative cursor-pointer overflow-hidden rounded bg-surface",
-                  work.span,
-                  work.aspect,
-                )}
-              >
-                <NextLink href={work.href} className="absolute inset-0 block">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={work.image}
-                    alt={work.name}
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
-                  {work.live ? (
-                    <div className="absolute right-4 top-4 z-10 flex items-center gap-2 rounded bg-live/90 px-3 py-1 shadow-sm backdrop-blur-sm">
-                      <span className="size-2 animate-pulse rounded-full bg-ivory" />
-                      <span className="font-sans text-xs font-bold uppercase tracking-widest text-text-inverse">
+              <FadeUp key={work.name} delay={i * 60}>
+                <NextLink href={work.href} className="group block">
+                  <div className="relative mb-4 overflow-hidden rounded-2xl">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={work.image}
+                      alt={work.name}
+                      className="aspect-[16/11] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    {work.live ? (
+                      <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-ink-button/85 px-3 py-1 text-xs font-semibold text-white">
+                        <span className="size-1.5 animate-pulse rounded-full bg-white" />
                         Live
                       </span>
-                    </div>
-                  ) : null}
-                  <div className="absolute bottom-0 left-0 flex w-full translate-y-5 items-end justify-between p-6 opacity-0 transition-all duration-600 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0 group-hover:opacity-100 motion-reduce:translate-y-0 motion-reduce:opacity-100 md:p-8 lg:p-10">
-                    <div>
-                      <p className="mb-2 font-sans text-xs uppercase tracking-widest text-text-inverse/80">
-                        {work.meta}
-                      </p>
-                      <h2 className="font-display text-2xl text-text-inverse md:text-3xl lg:text-4xl">
-                        {work.name}
-                      </h2>
-                    </div>
-                    <span
-                      className="font-sans text-3xl text-text-inverse"
-                      aria-hidden
-                    >
-                      →
-                    </span>
+                    ) : null}
                   </div>
+                  <p className="text-sm text-text-muted">{work.meta}</p>
+                  <h2 className="mt-1 text-2xl font-extrabold tracking-tight text-ink-button">
+                    {work.name}
+                  </h2>
                 </NextLink>
               </FadeUp>
             ))}
-          </section>
+          </div>
         )}
-
-        <div className="mt-20 text-center">
+        <div className="mt-10 text-center">
           <NextLink
             href="/gallery"
-            className="inline-flex items-center gap-2 border-b border-accent pb-1 font-sans text-sm uppercase tracking-widest text-accent transition-colors hover:border-accent-hover hover:text-accent-hover"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-ink-button hover:opacity-70"
           >
-            View Archive
-            <span aria-hidden>↓</span>
+            View Archive →
           </NextLink>
         </div>
-      </div>
-    </div>
+      </EditorialCard>
+    </InnerPageShell>
   );
 }

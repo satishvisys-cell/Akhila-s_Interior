@@ -55,7 +55,7 @@ export function GalleryViewer() {
             VISUAL ARCHIVE & DOCUMENTATION
           </span>
           <h1 className="mt-2 font-display text-4xl md:text-5xl font-light text-neutral-100">
-            Architectural Gallery
+            Interior Gallery
           </h1>
         </div>
 

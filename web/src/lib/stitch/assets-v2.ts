@@ -67,7 +67,7 @@ export const STITCH_V2 = {
 export const FEATURED_WORK_V2 = [
   {
     name: "Casa Horizon",
-    tag: "Residential Architecture",
+    tag: "Residential Interiors",
     year: "2023",
     area: "8,400 SQ FT",
     href: "/projects/meridian-residence",
@@ -85,7 +85,7 @@ export const FEATURED_WORK_V2 = [
   },
   {
     name: "Atelier House",
-    tag: "Interior Architecture",
+    tag: "Interior Design",
     year: "2024",
     area: "4,100 SQ FT",
     href: "/projects/skyline-villa",

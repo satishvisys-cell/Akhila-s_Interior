@@ -100,7 +100,7 @@ export function getAdaptiveVideoStream(
 export const ARCHITECTURAL_VIDEOS: Record<string, VideoAsset> = {
   heroSequence: {
     id: "v-hero-01",
-    title: "Atelier Casa Horizon — Architectural Ouverture",
+    title: "Atelier Casa Horizon — Interior Ouverture",
     category: "hero",
     sources: {
       master4k: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
@@ -137,6 +137,6 @@ export const ARCHITECTURAL_VIDEOS: Record<string, VideoAsset> = {
     durationSec: 6,
     width: 1920,
     height: 1080,
-    alt: "Architectural video highlighting titanium counter assembly and millwork joinery",
+    alt: "Interior video highlighting titanium counter assembly and millwork joinery",
   },
 };

@@ -19,25 +19,23 @@ export function PageHero({
   children,
 }: PageHeroProps) {
   return (
-    <section
-      className={cn(
-        "border-b border-border bg-bg pt-[calc(var(--header-h)+3rem)] pb-12 md:pb-16",
-        className,
-      )}
-    >
+    <section className={cn("editorial-card p-6 md:p-10 lg:p-12", className)}>
       <Container
         className={cn(
-          align === "center" && "text-center mx-auto flex flex-col items-center",
+          "px-0",
+          align === "center" && "mx-auto flex flex-col items-center text-center",
         )}
       >
         {eyebrow ? (
-          <p className="label-caps text-text-muted mb-4">{eyebrow}</p>
+          <p className="mb-3 font-editorial text-sm text-text-muted">{eyebrow}</p>
         ) : null}
-        <h1 className="text-h1 max-w-4xl">{title}</h1>
+        <h1 className="max-w-4xl font-editorial text-4xl font-extrabold tracking-tight text-ink-button md:text-6xl">
+          {title}
+        </h1>
         {description ? (
           <p
             className={cn(
-              "mt-5 max-w-2xl text-text-muted text-base md:text-lg leading-relaxed",
+              "mt-4 max-w-2xl font-editorial text-base leading-relaxed text-text-secondary md:text-lg",
               align === "center" && "mx-auto",
             )}
           >

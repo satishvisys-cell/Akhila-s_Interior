@@ -3,6 +3,7 @@
 import React from "react";
 import { FadeUp } from "@/components/motion/fade-up";
 import { STITCH_V2 } from "@/lib/stitch/assets-v2";
+import { EditorialCard } from "@/components/sections/editorial-card";
 
 export interface ProgressMilestone {
   stage: string;
@@ -22,58 +23,51 @@ export const MILESTONES: ProgressMilestone[] = [
 
 export function ConstructionTelemetry() {
   return (
-    <section className="bg-ivory py-32 border-b border-border">
-      <div className="mx-auto max-w-7xl px-8">
-        <FadeUp className="mb-16">
-          <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-accent">
-            CONSTRUCTION TELEMETRY
-          </span>
-          <h2 className="mt-2 font-display text-4xl font-light leading-tight text-charcoal md:text-6xl">
-            Live Project <em className="text-accent">Milestones</em>
-          </h2>
-        </FadeUp>
+    <EditorialCard className="font-editorial">
+      <FadeUp className="mb-10">
+        <p className="text-sm text-text-muted">Construction Telemetry</p>
+        <h2 className="mt-1 text-3xl font-extrabold tracking-tight text-ink-button md:text-5xl">
+          Live Project Milestones
+        </h2>
+      </FadeUp>
 
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 items-start">
-          {/* Milestone Progress List */}
-          <div className="space-y-6 lg:col-span-7">
-            {MILESTONES.map((m) => (
-              <div key={m.stage} className="rounded border border-border bg-surface-2 p-6">
-                <div className="flex items-center justify-between mb-2 font-sans text-xs font-bold uppercase tracking-wider text-charcoal">
-                  <span>{m.stage}</span>
-                  <span className="text-accent">{m.percent}%</span>
-                </div>
-                <div className="h-2 w-full overflow-hidden rounded bg-surface-2">
-                  <div
-                    className="h-full bg-accent transition-all duration-1000"
-                    style={{ width: `${m.percent}%` }}
-                  />
-                </div>
+      <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12">
+        <div className="space-y-5 lg:col-span-7">
+          {MILESTONES.map((m) => (
+            <div key={m.stage}>
+              <div className="mb-2 flex items-center justify-between text-sm font-semibold text-ink-button">
+                <span>{m.stage}</span>
+                <span className="text-text-muted">{m.percent}%</span>
               </div>
-            ))}
-          </div>
-
-          {/* Daily Site Feed Preview */}
-          <div className="rounded border border-border bg-surface-2 p-8 lg:col-span-5">
-            <span className="font-sans text-xs font-semibold uppercase tracking-widest text-accent">
-              DAILY SITE TELEMETRY LOG
-            </span>
-            <h3 className="mt-2 mb-4 font-display text-2xl font-light text-charcoal">
-              Site Log #142 — Glazing Installation
-            </h3>
-            <div className="aspect-video w-full overflow-hidden rounded border border-border mb-4">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={STITCH_V2.live.construction}
-                alt="Construction Telemetry"
-                className="h-full w-full object-cover"
-              />
+              <div className="h-2 w-full overflow-hidden rounded-full bg-black/5">
+                <div
+                  className="h-full rounded-full bg-ink-button"
+                  style={{ width: `${m.percent}%` }}
+                />
+              </div>
             </div>
-            <p className="font-sans text-xs font-light leading-relaxed text-text-muted">
-              Structural steel anchors verified for perimeter slider tracks. Low-iron double-glazed panels positioned under crane supervisor telemetry.
-            </p>
+          ))}
+        </div>
+
+        <div className="lg:col-span-5">
+          <p className="text-sm text-text-muted">Daily Site Log</p>
+          <h3 className="mt-1 mb-4 text-xl font-extrabold text-ink-button">
+            Site Log #142 — Glazing Installation
+          </h3>
+          <div className="mb-4 overflow-hidden rounded-2xl">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={STITCH_V2.live.construction}
+              alt="Construction Telemetry"
+              className="aspect-video w-full object-cover"
+            />
           </div>
+          <p className="text-sm leading-relaxed text-text-muted">
+            Structural steel anchors verified for perimeter slider tracks. Low-iron
+            double-glazed panels positioned under crane supervisor telemetry.
+          </p>
         </div>
       </div>
-    </section>
+    </EditorialCard>
   );
 }

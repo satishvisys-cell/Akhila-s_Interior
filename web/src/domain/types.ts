@@ -479,7 +479,7 @@ export interface Page extends Timestamps {
 // ---------------------------------------------------------------------------
 
 export type PostCategory =
-  | "architecture"
+  | "interiors"
   | "design"
   | "construction"
   | "materials"

@@ -28,6 +28,13 @@
 
   --font-display: var(--font-newsreader);
   --font-sans: var(--font-manrope);
+  --font-editorial: var(--font-inter);
+  --color-sky: var(--color-sky-100);
+  --color-sky-deep: var(--color-sky-200);
+  --color-ink-button: var(--color-ink-pure);
+  --color-terracotta: var(--color-terracotta-500);
+  --radius-card: var(--radius-card);
+  --radius-pill: var(--radius-pill);
 
   --radius-sm: var(--radius-sm);
   --radius-md: var(--radius-md);
@@ -80,6 +87,10 @@
 @layer utilities {
   .font-display {
     font-family: var(--font-newsreader), Georgia, serif;
+  }
+
+  .font-editorial {
+    font-family: var(--font-inter), var(--font-manrope), system-ui, sans-serif;
   }
 
   .text-display {
@@ -172,6 +183,55 @@
     animation: akhila-fade-up 1100ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
+  .canvas-sky {
+    background:
+      radial-gradient(1200px 600px at 12% -10%, rgba(255, 255, 255, 0.75), transparent 60%),
+      linear-gradient(180deg, var(--color-sky-200) 0%, var(--color-sky-100) 42%, #f4f7fc 100%);
+  }
+
+  .editorial-card {
+    overflow: hidden;
+    border-radius: var(--radius-card);
+    background: var(--color-white);
+    box-shadow: 0 18px 50px rgba(17, 17, 17, 0.06);
+  }
+
+  .editorial-card.allow-pin {
+    overflow: visible;
+  }
+
+  .clip-service-card {
+    clip-path: polygon(2.25rem 0, 100% 0, 100% 100%, 0 100%, 0 2.25rem);
+  }
+
+  /* Service accordion: never show pill + circular arrow together */
+  @media (min-width: 1024px) {
+    [data-service-card][data-active="true"] [data-service-arrow] {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+    }
+
+    [data-service-card][data-active="false"] [data-service-detail] {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    [data-service-card] [data-service-arrow] {
+      display: none !important;
+    }
+
+    [data-service-card] [data-service-detail] {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+      pointer-events: auto !important;
+    }
+  }
+
   .motion-image-zoom {
     transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
   }
@@ -181,13 +241,86 @@
     transform: scale(1.03);
   }
 
+  /* Press feedback for primary actions */
+  .btn-press {
+    transition:
+      transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 200ms ease,
+      color 200ms ease,
+      box-shadow 200ms ease;
+  }
+
+  .btn-press:hover {
+    transform: translateY(-1px);
+  }
+
+  .btn-press:active {
+    transform: translateY(1px) scale(0.985);
+  }
+
+  /* Soft lift for editorial surfaces — readable, not floaty */
+  .hover-lift {
+    transition:
+      transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 48px rgba(17, 17, 17, 0.1);
+  }
+
+  .hover-lift:focus-within {
+    transform: translateY(-2px);
+  }
+
+  /* Link / CTA arrow nudge */
+  .arrow-nudge {
+    display: inline-block;
+    transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .group:hover .arrow-nudge,
+  .group:focus-visible .arrow-nudge {
+    transform: translateX(4px);
+  }
+
+  /* Dark surfaces — clearer keyboard focus */
+  .focus-ring-light:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.85);
+    outline-offset: 3px;
+  }
+
+  /* Horizontal scroller edge fade hint */
+  .scroll-fade-x {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 1.25rem,
+      #000 calc(100% - 1.25rem),
+      transparent 100%
+    );
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .motion-fade-up,
     .motion-fade-in,
     .motion-reveal,
-    .motion-image-zoom {
+    .motion-image-zoom,
+    .btn-press,
+    .hover-lift,
+    .arrow-nudge {
       animation: none !important;
       transition: none !important;
+      transform: none !important;
+    }
+
+    .btn-press:hover,
+    .btn-press:active,
+    .hover-lift:hover,
+    .hover-lift:focus-within,
+    .group:hover .arrow-nudge,
+    .group:focus-visible .arrow-nudge {
       transform: none !important;
     }
   }

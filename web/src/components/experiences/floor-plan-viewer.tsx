@@ -40,7 +40,7 @@ export function FloorPlanViewer({ projectSlug = "casa-horizon" }: { projectSlug?
       <div className="flex flex-wrap items-center justify-between gap-4 border-b border-neutral-800 pb-6">
         <div>
           <span className="font-mono text-xs tracking-widest text-amber-400 uppercase">
-            ARCHITECTURAL SCHEMATIC
+            INTERIOR SCHEMATIC
           </span>
           <h2 className="mt-1 font-display text-3xl font-light text-neutral-100">
             Interactive Floor Plan

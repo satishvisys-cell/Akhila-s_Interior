@@ -37,9 +37,9 @@ export default async function CmsPage({ params }: PageProps) {
 
   if (blocks.length === 0) {
     return (
-      <div className="flex min-h-[60vh] flex-col items-center justify-center px-8 text-center">
-        <h1 className="font-display text-3xl font-light text-charcoal">{page.title}</h1>
-        <p className="mt-4 font-sans text-sm text-text-muted">
+      <div className="canvas-sky flex min-h-[60vh] flex-col items-center justify-center px-8 pt-[var(--header-h)] text-center font-editorial">
+        <h1 className="text-3xl font-extrabold text-ink-button">{page.title}</h1>
+        <p className="mt-4 text-sm text-text-muted">
           This page has been published but has no visible sections yet.
         </p>
       </div>

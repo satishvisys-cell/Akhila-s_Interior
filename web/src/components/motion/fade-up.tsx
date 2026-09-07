@@ -16,17 +16,8 @@ type FadeUpProps = {
 };
 
 /**
- * Scroll-triggered fade-up — Stitch v2 motion language, GSAP-powered.
- *
- * Same public API as before (children/className/delay) so every existing
- * call site across the site (~40+) benefits from GSAP's ScrollTrigger
- * without any changes elsewhere — this is the "basic reveal" primitive.
- * For multi-step/scroll-scrubbed choreography see `PinnedStatement` and
- * `MagneticButton`, which use full GSAP timelines.
- *
- * Respects prefers-reduced-motion (skips the tween entirely) and the
- * default className hides the element via Tailwind so there is no flash
- * of unstyled content before GSAP's effect runs.
+ * Scroll-triggered reveal — Dribbble blur + rise language.
+ * Kept as FadeUp for call-site compatibility across the site.
  */
 export function FadeUp({ children, className, delay = 0 }: FadeUpProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -37,22 +28,27 @@ export function FadeUp({ children, className, delay = 0 }: FadeUpProps) {
       if (!el) return;
 
       if (prefersReducedMotion()) {
-        gsap.set(el, { opacity: 1, y: 0 });
+        gsap.set(el, { opacity: 1, y: 0, filter: "blur(0px)" });
         return;
       }
 
-      gsap.to(el, {
-        opacity: 1,
-        y: 0,
-        duration: gsapMotion.duration.slow,
-        delay: delay / 1000,
-        ease: gsapMotion.ease.standard,
-        scrollTrigger: {
-          trigger: el,
-          start: "top 88%",
-          once: true, // mirrors the previous IntersectionObserver's unobserve-after-reveal behavior
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 26, filter: "blur(6px)" },
+        {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: gsapMotion.duration.base,
+          delay: delay / 1000,
+          ease: gsapMotion.ease.enter,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 90%",
+            once: true,
+          },
         },
-      });
+      );
     },
     { scope: ref, dependencies: [delay] },
   );
@@ -61,7 +57,7 @@ export function FadeUp({ children, className, delay = 0 }: FadeUpProps) {
     <div
       ref={ref}
       className={cn(
-        "translate-y-8 opacity-0 motion-reduce:translate-y-0 motion-reduce:opacity-100",
+        "translate-y-10 opacity-0 motion-reduce:translate-y-0 motion-reduce:opacity-100",
         className,
       )}
     >

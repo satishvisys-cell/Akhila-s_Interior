@@ -22,7 +22,7 @@ export function BeforeAfterVideo({
   before,
   after,
   className,
-  title = "Architectural Transformation",
+  title = "Interior Transformation",
   subtitle = "Drag slider to compare raw structural state with completed luxury interior",
 }: BeforeAfterVideoProps) {
   const [sliderPosition, setSliderPosition] = useState(50);
@@ -87,7 +87,7 @@ export function BeforeAfterVideo({
       {/* Main Slider Container */}
       <div
         ref={containerRef}
-        className="relative aspect-[16/9] w-full select-none overflow-hidden rounded bg-graphite"
+        className="relative aspect-[16/9] w-full select-none overflow-hidden rounded-2xl bg-graphite"
         onMouseDown={() => setIsDragging(true)}
         onMouseUp={() => setIsDragging(false)}
         onMouseLeave={() => setIsDragging(false)}
@@ -116,7 +116,7 @@ export function BeforeAfterVideo({
               className="h-full w-full object-cover"
             />
           )}
-          <span className="absolute bottom-6 right-6 z-10 rounded bg-charcoal/80 px-3 py-1 font-sans text-xs font-bold uppercase tracking-widest text-text-inverse backdrop-blur-sm">
+          <span className="absolute right-6 top-6 z-10 rounded bg-white px-3 py-1 font-sans text-xs font-semibold text-ink-button shadow-sm">
             {after.label}
           </span>
         </div>
@@ -149,7 +149,7 @@ export function BeforeAfterVideo({
               />
             )}
           </div>
-          <span className="absolute bottom-6 left-6 z-10 rounded bg-accent/90 px-3 py-1 font-sans text-xs font-bold uppercase tracking-widest text-text-inverse backdrop-blur-sm">
+          <span className="absolute left-6 top-6 z-10 rounded bg-terracotta px-3 py-1 font-sans text-xs font-semibold text-white shadow-sm">
             {before.label}
           </span>
         </div>
@@ -159,8 +159,8 @@ export function BeforeAfterVideo({
           className="absolute inset-y-0 z-20 flex -translate-x-1/2 items-center justify-center cursor-ew-resize"
           style={{ left: `${sliderPosition}%` }}
         >
-          <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/40 bg-charcoal/90 text-text-inverse shadow-xl backdrop-blur-md transition-transform hover:scale-110">
-            <span className="font-mono text-xs tracking-tighter">◀▶</span>
+          <div className="flex h-12 w-12 items-center justify-center rounded-full border border-black/5 bg-white text-ink-button shadow-xl transition-transform hover:scale-110">
+            <span className="font-editorial text-sm tracking-tighter">‹ ›</span>
           </div>
         </div>
       </div>

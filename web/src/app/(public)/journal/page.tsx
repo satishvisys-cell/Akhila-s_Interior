@@ -3,6 +3,8 @@ import NextLink from "next/link";
 import { FadeUp } from "@/components/motion/fade-up";
 import { getMediaMap, getPublishedPosts, mediaUrl } from "@/lib/cms/public";
 import { STITCH_V2 } from "@/lib/stitch/assets-v2";
+import { EditorialCard } from "@/components/sections/editorial-card";
+import { InnerPageShell } from "@/components/layout/inner-page-shell";
 
 export const metadata: Metadata = {
   title: "Journal",
@@ -16,15 +18,13 @@ const FALLBACK_ENTRIES = [
     excerpt:
       "An uncompromising exploration of raw stone, cast concrete, and aged bronze in our latest studio space.",
     image: STITCH_V2.home.hero,
-    interactive: false,
   },
   {
-    category: "Architecture",
+    category: "Interiors",
     title: "Hillside Integration",
     excerpt:
       "A comprehensive case study on the Meridian Residence and the complexities of anchoring monolithic concrete to a living landscape.",
     image: STITCH_V2.home.meridian,
-    interactive: false,
   },
   {
     category: "Technology",
@@ -32,7 +32,6 @@ const FALLBACK_ENTRIES = [
     excerpt:
       "Integrating concealed sound dampening and tactile wood cladding for complete acoustic serenity.",
     image: STITCH_V2.home.atelier,
-    interactive: false,
   },
 ] as const;
 
@@ -52,7 +51,6 @@ export default async function JournalPage() {
             mediaUrl(media, post.coverMediaId) ??
             FALLBACK_ENTRIES[i % FALLBACK_ENTRIES.length].image,
           href: `/journal/${post.slug}`,
-          interactive: false,
         }))
       : FALLBACK_ENTRIES.map((e) => ({
           ...e,
@@ -70,116 +68,77 @@ export default async function JournalPage() {
     "An exploration of spatial poetry and how natural illumination shapes our perception of form, volume, and material truth within the built environment.";
 
   return (
-    <div className="bg-ivory px-8 pb-24 pt-32 md:px-12">
-      <div className="mx-auto max-w-screen-2xl">
-        <FadeUp className="mb-24">
-          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
-            <div className="order-2 flex flex-col justify-center pr-0 lg:order-1 lg:col-span-5 lg:pr-8">
-              <span className="mb-4 font-sans text-xs uppercase tracking-widest text-accent">
-                Editorial
-              </span>
-              <h1 className="mb-6 font-display text-5xl leading-tight text-charcoal md:text-6xl lg:text-7xl">
-                The Language of Light
-              </h1>
-              <p className="mb-10 max-w-md font-sans text-lg leading-relaxed text-text-secondary">
-                {featuredExcerpt}
-              </p>
-              <NextLink
-                href={featuredHref}
-                className="group inline-flex items-center gap-2 font-sans text-sm font-semibold uppercase tracking-widest text-charcoal"
-              >
-                <span className="border-b border-charcoal pb-1 transition-colors group-hover:border-accent group-hover:text-accent">
-                  Read Article
-                </span>
-                <span
-                  className="transition-colors group-hover:text-accent"
-                  aria-hidden
-                >
-                  →
-                </span>
-              </NextLink>
-            </div>
-            <div className="order-1 lg:order-2 lg:col-span-7">
-              <div className="relative h-[500px] w-full overflow-hidden rounded lg:h-[700px]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={featuredImage}
-                  alt="The Language of Light"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] motion-reduce:hover:scale-100"
-                />
-              </div>
-            </div>
+    <InnerPageShell>
+      <EditorialCard>
+        <FadeUp className="grid items-center gap-8 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <p className="mb-3 text-sm text-text-muted">Latest News</p>
+            <h1 className="mb-4 text-4xl font-extrabold leading-tight tracking-tight text-ink-button md:text-6xl">
+              The Language of Light
+            </h1>
+            <p className="mb-8 max-w-md leading-relaxed text-text-secondary">
+              {featuredExcerpt}
+            </p>
+            <NextLink
+              href={featuredHref}
+              className="inline-flex items-center rounded-md bg-ink-button px-5 py-3 text-sm font-semibold text-white hover:bg-black"
+            >
+              Read Article →
+            </NextLink>
+          </div>
+          <div className="overflow-hidden rounded-2xl lg:col-span-7">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={featuredImage}
+              alt="The Language of Light"
+              className="aspect-[16/11] w-full object-cover"
+            />
           </div>
         </FadeUp>
+      </EditorialCard>
 
-        <section>
-          <FadeUp className="mb-12 flex items-end justify-between border-b border-border/20 pb-4">
-            <h2 className="font-display text-3xl text-charcoal">
-              Latest Entries
-            </h2>
-            <NextLink
-              href="/gallery"
-              className="font-sans text-sm uppercase tracking-widest text-text-secondary transition-colors hover:text-accent"
-            >
-              View Archives
-            </NextLink>
-          </FadeUp>
-
-          <div className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
-            {entries.map((entry, i) => (
-              <FadeUp key={entry.title} delay={i * 70}>
-                <article className="group flex h-full flex-col">
-                  <NextLink href={entry.href} className="relative mb-6 block">
-                    {entry.interactive ? (
-                      <div className="aspect-[4/5] w-full overflow-hidden rounded bg-surface p-8">
-                        <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded border border-border/20">
-                          <div className="absolute inset-0 bg-gradient-to-br from-ivory to-surface-2 opacity-50" />
-                          <span
-                            className="relative z-10 text-6xl text-accent/50 transition-transform duration-700 group-hover:scale-110"
-                            aria-hidden
-                          >
-                            ⧉
-                          </span>
-                          <div className="absolute bottom-4 left-4 z-10 font-sans text-xs uppercase tracking-widest text-text-secondary/70">
-                            Interactive
-                          </div>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="aspect-[4/5] w-full overflow-hidden rounded">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={entry.image}
-                          alt={entry.title}
-                          className="h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03] motion-reduce:group-hover:scale-100"
-                          loading="lazy"
-                        />
-                      </div>
-                    )}
-                  </NextLink>
-                  <div className="flex flex-grow flex-col">
-                    <span className="mb-3 font-sans text-xs uppercase tracking-widest text-text-secondary">
-                      {entry.category}
-                    </span>
-                    <h3 className="mb-3 font-display text-2xl text-charcoal">
-                      {entry.title}
-                    </h3>
-                    <p className="mb-6 flex-grow font-sans leading-relaxed text-text-secondary">
-                      {entry.excerpt}
-                    </p>
-                    <NextLink
-                      href={entry.href}
-                      className="mt-auto font-sans text-sm font-medium uppercase tracking-widest text-accent transition-colors hover:text-charcoal"
-                    >
-                      Read More
-                    </NextLink>
+      <EditorialCard>
+        <div className="mb-8 flex items-end justify-between">
+          <h2 className="text-3xl font-extrabold tracking-tight text-ink-button">
+            Latest Entries
+          </h2>
+          <NextLink
+            href="/gallery"
+            className="text-sm font-semibold text-text-muted hover:text-ink-button"
+          >
+            View Archives
+          </NextLink>
+        </div>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          {entries.map((entry, i) => (
+            <FadeUp key={entry.title} delay={i * 70}>
+              <article>
+                <NextLink href={entry.href} className="group block">
+                  <div className="mb-4 overflow-hidden rounded-2xl">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={entry.image}
+                      alt={entry.title}
+                      className="aspect-square w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                    />
                   </div>
-                </article>
-              </FadeUp>
-            ))}
-          </div>
-        </section>
-      </div>
-    </div>
+                  <p className="text-sm text-text-muted">{entry.category}</p>
+                  <h3 className="mt-1 text-xl font-extrabold text-ink-button">
+                    {entry.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+                    {entry.excerpt}
+                  </p>
+                  <span className="mt-3 inline-block text-sm font-semibold text-ink-button">
+                    Read More
+                  </span>
+                </NextLink>
+              </article>
+            </FadeUp>
+          ))}
+        </div>
+      </EditorialCard>
+    </InnerPageShell>
   );
 }

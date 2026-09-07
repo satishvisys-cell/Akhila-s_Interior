@@ -10,7 +10,7 @@ import {
 
 const LINES = [
   "We shape raw materials into cinematic",
-  "architectural realities that endure.",
+  "interiors that endure.",
   "Uncompromising precision. Transparent processes.",
 ] as const;
 
@@ -75,7 +75,7 @@ export function PinnedStatement() {
     >
       <div className="mx-auto max-w-5xl text-center">
         <p className="mb-10 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-accent">
-          Architectural Statement
+          Interior Statement
         </p>
         <p className="font-display text-3xl font-light leading-[1.3] md:text-5xl lg:text-6xl">
           {LINES.map((line, lineIdx) => (

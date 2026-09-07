@@ -18,7 +18,7 @@ export const metadata = {
 /** Internal foundation checklist — not a marketing page. */
 export default function DesignSystemPage() {
   return (
-    <div className="pt-[var(--header-h)]">
+    <div className="canvas-sky pt-[var(--header-h)] font-editorial">
       <Section>
         <Container className="space-y-16">
           <Stack gap="md">

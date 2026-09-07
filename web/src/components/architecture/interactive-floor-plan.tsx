@@ -79,15 +79,15 @@ export function InteractiveFloorPlan({ projectSlug = "casa-horizon" }: { project
     HOUSE_HOTSPOTS.find((h) => h.id === activeHotspotId) || HOUSE_HOTSPOTS[0];
 
   return (
-    <section className="bg-ink py-32 text-text-inverse border-b border-white/10">
+    <section className="rounded-2xl bg-ink p-6 text-white md:p-10">
       <div className="mx-auto max-w-7xl px-8">
         <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-accent">
               TECHNICAL SCHEMATIC
             </span>
-            <h2 className="mt-2 font-display text-4xl font-light leading-tight text-text-inverse md:text-6xl">
-              Interactive Floor Plan <em className="text-accent">Schematic</em>
+            <h2 className="mt-2 font-editorial text-3xl font-extrabold leading-tight md:text-5xl">
+              Interactive Floor Plan
             </h2>
           </div>
           <div className="font-mono text-xs uppercase tracking-widest text-text-inverse/70">

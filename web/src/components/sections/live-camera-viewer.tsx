@@ -101,7 +101,7 @@ export function LiveCameraViewer({
     <div className="flex flex-col gap-8">
       <header className="flex flex-col items-start justify-between gap-4 border-b border-border/30 pb-6 md:flex-row md:items-end">
         <div>
-          <h1 className="mb-2 font-display text-4xl font-light tracking-tight text-charcoal md:text-5xl lg:text-6xl">
+          <h1 className="mb-2 font-editorial text-4xl font-extrabold tracking-tight text-ink-button md:text-5xl">
             {siteName}
           </h1>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-sans text-sm text-text-secondary md:text-base">
@@ -116,13 +116,13 @@ export function LiveCameraViewer({
         <div className="flex gap-3">
           <button
             type="button"
-            className="flex items-center gap-2 rounded border border-border/50 bg-ivory px-4 py-2 font-sans text-sm font-medium text-charcoal transition-colors hover:border-accent"
+            className="flex items-center gap-2 rounded-md border border-black/10 px-4 py-2 font-editorial text-sm font-medium text-ink-button"
           >
             Export Log
           </button>
           <button
             type="button"
-            className="flex items-center gap-2 rounded bg-accent px-4 py-2 font-sans text-sm font-medium text-text-inverse transition-colors hover:bg-accent-hover"
+            className="flex items-center gap-2 rounded-md bg-ink-button px-4 py-2 font-editorial text-sm font-medium text-white hover:bg-black"
           >
             New Entry
           </button>
@@ -244,7 +244,7 @@ export function LiveCameraViewer({
 
         <aside className="flex flex-col gap-6 lg:col-span-4">
           <div className="grid grid-cols-2 gap-4">
-            <div className="flex flex-col justify-between rounded border border-border/30 bg-ivory p-5">
+            <div className="flex flex-col justify-between rounded-2xl border border-black/10 bg-white p-5">
               <div className="mb-4 flex items-start justify-between">
                 <span className="font-sans text-xs uppercase tracking-wider text-text-secondary">
                   Headcount
@@ -254,7 +254,7 @@ export function LiveCameraViewer({
                 </span>
               </div>
               <div>
-                <span className="block font-display text-3xl text-charcoal">
+                <span className="block font-editorial text-3xl font-extrabold text-ink-button">
                   42
                 </span>
                 <span className="mt-1 block font-sans text-xs text-text-secondary">
@@ -262,7 +262,7 @@ export function LiveCameraViewer({
                 </span>
               </div>
             </div>
-            <div className="flex flex-col justify-between rounded border border-border/30 bg-ivory p-5">
+            <div className="flex flex-col justify-between rounded-2xl border border-black/10 bg-white p-5">
               <div className="mb-4 flex items-start justify-between">
                 <span className="font-sans text-xs uppercase tracking-wider text-text-secondary">
                   Safety
@@ -272,7 +272,7 @@ export function LiveCameraViewer({
                 </span>
               </div>
               <div>
-                <span className="block font-display text-3xl text-charcoal">
+                <span className="block font-editorial text-3xl font-extrabold text-ink-button">
                   184
                 </span>
                 <span className="mt-1 block font-sans text-xs text-text-secondary">
@@ -282,8 +282,8 @@ export function LiveCameraViewer({
             </div>
           </div>
 
-          <div className="flex flex-grow flex-col rounded border border-border/30 bg-ivory p-6">
-            <h3 className="mb-6 border-b border-border/20 pb-4 font-display text-xl text-charcoal">
+          <div className="flex flex-grow flex-col rounded-2xl border border-black/10 bg-white p-6">
+            <h3 className="mb-6 border-b border-black/10 pb-4 font-editorial text-xl font-extrabold text-ink-button">
               Activity Log
             </h3>
             <div className="max-h-[400px] flex-grow space-y-6 overflow-y-auto pr-2">

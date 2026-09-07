@@ -1,18 +1,25 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { DribbbleScrollBoot } from "@/components/motion/scroll-reveal";
+import {
+  BackToTop,
+  PageEnter,
+  ScrollProgress,
+} from "@/components/motion/friendly-chrome";
 
 export function PublicShell({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const transparentOverHero = pathname === "/";
-
   return (
     <>
-      <SiteHeader transparentOverHero={transparentOverHero} />
-      <main className="flex-1">{children}</main>
+      <DribbbleScrollBoot />
+      <ScrollProgress />
+      <SiteHeader />
+      <main className="flex-1">
+        <PageEnter>{children}</PageEnter>
+      </main>
       <SiteFooter />
+      <BackToTop />
     </>
   );
 }

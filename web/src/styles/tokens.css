@@ -19,6 +19,10 @@
   --color-text-muted: #6b6560;
   --color-text-secondary: #5d605b;
   --color-surface-2: #eeeeea;
+  --color-sky-100: #e8eef8;
+  --color-sky-200: #d5e3f4;
+  --color-ink-pure: #111111;
+  --color-terracotta-500: #c45c32;
 
   /* Semantic — background/surface/text/border/accent per the
      $100K rebuild directive's semantic color system (§19). Every value
@@ -84,6 +88,9 @@
 
   --radius-sm: 2px;
   --radius-md: 4px;
+  --radius-lg: 12px;
+  --radius-card: 28px;
+  --radius-pill: 999px;
 
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);

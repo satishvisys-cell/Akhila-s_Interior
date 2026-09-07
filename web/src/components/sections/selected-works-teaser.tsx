@@ -29,7 +29,7 @@ type Work = {
 const WORKS: Work[] = [
   {
     name: "Casa Horizon",
-    category: "Residential Architecture",
+    category: "Residential Interiors",
     year: "2023",
     size: "8,400 SQ FT",
     href: "/projects/meridian-residence",
@@ -53,7 +53,7 @@ const WORKS: Work[] = [
   },
   {
     name: "Atelier House",
-    category: "Interior Architecture",
+    category: "Interior Design",
     year: "2024",
     size: "4,100 SQ FT",
     href: "/projects/skyline-villa",

@@ -76,7 +76,7 @@ function SidebarBrand() {
           Akhila
         </p>
         <p className="mt-1 font-sans text-[10px] uppercase tracking-[0.2em] text-text-inverse/45 group-hover:text-accent transition-colors">
-          Architectural CMS
+          Interior CMS
         </p>
       </Link>
     </div>
