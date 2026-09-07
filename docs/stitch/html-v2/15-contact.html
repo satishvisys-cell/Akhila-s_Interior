@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact - AKHILA</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#0e0e0d",
+                        "on-background": "#30332f",
+                        "on-surface-variant": "#5d605b",
+                        "secondary-container": "#f1e0cb",
+                        "primary": "#75593b",
+                        "on-error-container": "#742410",
+                        "surface": "#fbf9f6",
+                        "tertiary": "#625f5a",
+                        "on-surface": "#30332f",
+                        "surface-container-low": "#f5f3f0",
+                        "tertiary-fixed-dim": "#eae4de",
+                        "surface-container-highest": "#e2e3dd",
+                        "error-container": "#fe8b70",
+                        "secondary-fixed-dim": "#e2d2be",
+                        "surface-container-high": "#e8e9e3",
+                        "primary-container": "#ffddba",
+                        "on-primary-fixed-variant": "#725638",
+                        "tertiary-fixed": "#f8f3ec",
+                        "surface-container": "#eeeeea",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#fef8f1",
+                        "on-secondary-fixed": "#483e2f",
+                        "surface-variant": "#e2e3dd",
+                        "background": "#fbf9f6",
+                        "secondary-fixed": "#f1e0cb",
+                        "tertiary-container": "#f8f3ec",
+                        "on-error": "#fff7f6",
+                        "surface-tint": "#75593b",
+                        "on-primary-container": "#674d2f",
+                        "tertiary-dim": "#55534e",
+                        "secondary": "#695d4d",
+                        "primary-fixed": "#ffddba",
+                        "outline": "#797b77",
+                        "primary-fixed-dim": "#f3cea8",
+                        "on-secondary-container": "#5b5040",
+                        "inverse-on-surface": "#9e9d9a",
+                        "surface-bright": "#fbf9f6",
+                        "on-primary": "#fff6f0",
+                        "error-dim": "#5c1202",
+                        "surface-dim": "#d8dbd4",
+                        "on-tertiary-container": "#5e5b56",
+                        "primary-dim": "#684d30",
+                        "error": "#9e422c",
+                        "on-secondary": "#fff8f2",
+                        "on-secondary-fixed-variant": "#665a4a",
+                        "secondary-dim": "#5d5142",
+                        "outline-variant": "#b1b3ad",
+                        "inverse-primary": "#f6d1aa",
+                        "on-tertiary-fixed-variant": "#696661",
+                        "on-tertiary-fixed": "#4c4945",
+                        "on-primary-fixed": "#533b1f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "display": ["Newsreader", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .input-premium {
+            @apply w-full bg-transparent border-0 border-b border-surface-container-highest focus:border-primary focus:ring-0 px-0 py-3 text-on-surface font-body text-base transition-colors duration-300 placeholder:text-on-surface-variant;
+        }
+        .btn-primary {
+            @apply inline-flex items-center justify-center bg-primary text-on-primary font-label text-sm uppercase tracking-widest px-8 py-4 rounded-DEFAULT hover:bg-primary-dim transition-colors duration-300;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-md shadow-sm border-b border-surface-container-highest">
+<nav class="flex justify-between items-center px-8 py-4 max-w-full mx-auto ease-in-out duration-700">
+<a class="font-display text-2xl font-bold tracking-tighter text-on-surface" href="#">AKHILA</a>
+<div class="hidden md:flex gap-8 items-center font-display text-base uppercase tracking-widest">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 duration-300" href="#">PROJECTS</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 duration-300" href="#">SERVICES</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 duration-300" href="#">PROCESS</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 duration-300" href="#">LIVE SITES</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 duration-300" href="#">GALLERY</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 duration-300" href="#">ABOUT</a>
+</div>
+<a class="text-primary border-b border-primary pb-1 font-display text-base uppercase tracking-widest hover:opacity-80 transition-opacity duration-300" href="#">CONTACT</a>
+</nav>
+</header>
+<main class="flex-grow pt-32 pb-24 px-6 md:px-12 lg:px-24 w-full max-w-screen-2xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 relative z-10">
+<!-- Left: Form Section -->
+<section class="flex-1 max-w-2xl">
+<h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-normal text-on-surface mb-4 leading-tight tracking-tight">Start a<br/>Conversation</h1>
+<p class="font-body text-on-surface-variant text-lg mb-12 max-w-md leading-relaxed">Discuss your vision with our architectural team. We are currently accepting select commissions for 2025.</p>
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<label class="sr-only" for="name">Full Name</label>
+<input class="input-premium" id="name" name="name" placeholder="Full Name *" required="" type="text"/>
+</div>
+<div>
+<label class="sr-only" for="email">Email Address</label>
+<input class="input-premium" id="email" name="email" placeholder="Email Address *" required="" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<label class="sr-only" for="phone">Phone Number</label>
+<input class="input-premium" id="phone" name="phone" placeholder="Phone Number" type="tel"/>
+</div>
+<div>
+<label class="sr-only" for="location">Project Location</label>
+<input class="input-premium" id="location" name="location" placeholder="Project Location *" required="" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<label class="sr-only" for="type">Project Type</label>
+<select class="input-premium text-on-surface-variant bg-transparent" id="type" name="type">
+<option disabled="" selected="" value="">Select Project Type *</option>
+<option value="residential">Residential Architecture</option>
+<option value="commercial">Commercial Development</option>
+<option value="interior">Interior Design</option>
+<option value="restoration">Heritage Restoration</option>
+</select>
+</div>
+<div>
+<label class="sr-only" for="budget">Estimated Budget</label>
+<select class="input-premium text-on-surface-variant bg-transparent" id="budget" name="budget">
+<option disabled="" selected="" value="">Estimated Budget</option>
+<option value="t1">Under $1M</option>
+<option value="t2">$1M - $3M</option>
+<option value="t3">$3M - $5M</option>
+<option value="t4">$5M+</option>
+</select>
+</div>
+</div>
+<div>
+<label class="sr-only" for="message">Project Details</label>
+<textarea class="input-premium resize-none" id="message" name="message" placeholder="Tell us about your vision..." rows="4"></textarea>
+</div>
+<div class="pt-4">
+<button class="btn-primary group" type="submit">
+<span>Send Inquiry</span>
+<span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</form>
+</section>
+<!-- Right: Contact Info Panel -->
+<aside class="w-full lg:w-80 flex-shrink-0 flex flex-col gap-12 pt-4">
+<div class="space-y-2">
+<h3 class="font-display text-xl text-on-surface border-b border-surface-container-highest pb-2 mb-4">Direct Lines</h3>
+<a class="flex items-center gap-4 text-on-surface hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors font-light">call</span>
+<span class="font-body text-base">+1 (555) 019-8273</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors font-light">mail</span>
+<span class="font-body text-base">studio@akhila.design</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors font-light">chat</span>
+<span class="font-body text-base">WhatsApp Connect</span>
+</a>
+</div>
+<div class="space-y-2">
+<h3 class="font-display text-xl text-on-surface border-b border-surface-container-highest pb-2 mb-4">Studio</h3>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-on-surface-variant font-light mt-1">location_on</span>
+<address class="font-body text-base text-on-surface not-italic leading-relaxed">
+                        The Architectural Arts Bldg.<br/>
+                        Floor 14, Suite 1400<br/>
+                        New York, NY 10001
+                    </address>
+</div>
+</div>
+<!-- Optional Editorial Image Slice -->
+<div class="mt-auto hidden lg:block overflow-hidden rounded-DEFAULT shadow-sm relative group cursor-pointer h-64">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] filter grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 mix-blend-multiply" data-alt="A detailed, hyper-realistic close up shot of architectural materials laid out on a table: a piece of rough stone, smooth dark wood, and a brass accent piece under warm, directional studio lighting, embodying a high-end luxury aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYuyllOeImP4mcr7xsrmpn25rA9fMUWo_PZa9zUTekQSxJ4gEUhfktC4IV0Z_gEtbQOxiRn7HGQkG3EsInXWKZaEpmHCeTL2xa91V-LPvGLqox40MxuopUA-P-730G6Ia4TCukM25BSRV1Y2QzHFDD6TAW2FxvXDPg5GyVJwN78D4x0A5NB5dxqT1EPqqw_4y87PVZN1SMA1QszYuJRy4aE4ao6z1FvPDAyOmO39dvX4sUOLzk6WzhC5g2-edJGMW1L6Fc9tSkWfhv')"></div>
+</div>
+</aside>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full relative bg-inverse-surface mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full mx-auto ease-out duration-300">
+<span class="font-display text-xl font-semibold text-surface mb-6 md:mb-0">AKHILA</span>
+<div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0 font-body text-label-sm tracking-normal">
+<a class="text-on-surface-variant hover:text-surface transition-colors hover:text-primary-fixed-dim transition-all" href="#">PRIVACY POLICY</a>
+<a class="text-on-surface-variant hover:text-surface transition-colors hover:text-primary-fixed-dim transition-all" href="#">TERMS OF SERVICE</a>
+<a class="text-on-surface-variant hover:text-surface transition-colors hover:text-primary-fixed-dim transition-all" href="#">CAREERS</a>
+<a class="text-on-surface-variant hover:text-surface transition-colors hover:text-primary-fixed-dim transition-all" href="#">PRESS</a>
+</div>
+<span class="text-primary-fixed-dim font-body text-label-sm tracking-normal">© 2024 AKHILA. ALL RIGHTS RESERVED.</span>
+</div>
+</footer>
+</body></html>

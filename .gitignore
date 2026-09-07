@@ -1,0 +1,25 @@
+# OS / editor
+.DS_Store
+*.pem
+.idea/
+.vscode/
+
+# Env & secrets (never commit)
+.env
+.env.*
+!.env.example
+**/.env.local
+
+# Dependencies & build
+node_modules/
+.next/
+out/
+build/
+coverage/
+*.tsbuildinfo
+
+# Local CMS data (password hashes, camera secrets)
+web/data/
+
+# Vercel
+.vercel/

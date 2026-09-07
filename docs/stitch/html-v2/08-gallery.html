@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Akhila - Visual Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "on-secondary-fixed": "#483e2f",
+              "on-tertiary-fixed-variant": "#696661",
+              "inverse-surface": "#0e0e0d",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed": "#f8f3ec",
+              "on-secondary-fixed-variant": "#665a4a",
+              "inverse-on-surface": "#9e9d9a",
+              "tertiary-fixed-dim": "#eae4de",
+              "tertiary": "#625f5a",
+              "on-primary-container": "#674d2f",
+              "outline": "#797b77",
+              "inverse-primary": "#f6d1aa",
+              "surface-tint": "#75593b",
+              "primary": "#75593b",
+              "on-secondary": "#fff8f2",
+              "on-primary-fixed-variant": "#725638",
+              "background": "#fbf9f6",
+              "primary-fixed-dim": "#f3cea8",
+              "on-secondary-container": "#5b5040",
+              "on-surface": "#30332f",
+              "on-tertiary-fixed": "#4c4945",
+              "surface-container": "#eeeeea",
+              "primary-dim": "#684d30",
+              "surface-container-high": "#e8e9e3",
+              "on-tertiary": "#fef8f1",
+              "primary-fixed": "#ffddba",
+              "surface-bright": "#fbf9f6",
+              "outline-variant": "#b1b3ad",
+              "error-dim": "#5c1202",
+              "secondary": "#695d4d",
+              "error": "#9e422c",
+              "surface-container-highest": "#e2e3dd",
+              "on-error": "#fff7f6",
+              "on-surface-variant": "#5d605b",
+              "secondary-fixed": "#f1e0cb",
+              "primary-container": "#ffddba",
+              "secondary-fixed-dim": "#e2d2be",
+              "secondary-container": "#f1e0cb",
+              "on-primary": "#fff6f0",
+              "error-container": "#fe8b70",
+              "tertiary-container": "#f8f3ec",
+              "on-background": "#30332f",
+              "tertiary-dim": "#55534e",
+              "secondary-dim": "#5d5142",
+              "on-tertiary-container": "#5e5b56",
+              "on-error-container": "#742410",
+              "surface-variant": "#e2e3dd",
+              "surface-container-low": "#f5f3f0",
+              "on-primary-fixed": "#533b1f",
+              "surface": "#fbf9f6",
+              "surface-dim": "#d8dbd4"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.125rem",
+              "lg": "0.25rem",
+              "xl": "0.5rem",
+              "full": "0.75rem"
+            },
+            "fontFamily": {
+              "headline": ["Newsreader", "serif"],
+              "display": ["Newsreader", "serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Manrope", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { background-color: #FBF9F6; color: #2C2A26; }
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 2rem;
+        }
+        @media (min-width: 768px) { .masonry-grid { column-count: 2; } }
+        @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
+        .masonry-item { break-inside: avoid; margin-bottom: 2rem; }
+        .img-hover-zoom:hover img { transform: scale(1.03); }
+        .img-hover-zoom img { transition: transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+    </style>
+</head>
+<body class="antialiased font-body">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-md dark:bg-inverse-surface/85 border-b border-surface-variant/30 dark:border-outline/20 shadow-sm ease-in-out duration-500">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="font-display text-2xl font-bold tracking-widest text-on-surface dark:text-surface-bright">AKHILA</div>
+<div class="hidden md:flex space-x-8">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300 font-display text-headline-sm tracking-tight" href="#">PROJECTS</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300 font-display text-headline-sm tracking-tight" href="#">SERVICES</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300 font-display text-headline-sm tracking-tight" href="#">PROCESS</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300 font-display text-headline-sm tracking-tight" href="#">LIVE SITES</a>
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 font-display text-headline-sm tracking-tight hover:opacity-80 transition-opacity duration-300" href="#">GALLERY</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300 font-display text-headline-sm tracking-tight" href="#">ABOUT</a>
+</div>
+</div>
+</nav>
+<!-- Header & Filters -->
+<header class="pt-40 pb-16 px-8 max-w-7xl mx-auto">
+<h1 class="font-headline text-5xl md:text-7xl font-light tracking-tight mb-8">Visual Archive</h1>
+<div class="flex flex-wrap gap-4 items-center">
+<span class="font-label text-sm uppercase tracking-widest text-on-surface-variant mr-4">Filter by:</span>
+<button class="px-6 py-2 rounded font-label text-sm bg-primary text-on-primary transition-all duration-300 hover:opacity-90">All</button>
+<button class="px-6 py-2 rounded font-label text-sm border border-outline/30 text-on-surface hover:border-primary hover:text-primary transition-all duration-300">Residential</button>
+<button class="px-6 py-2 rounded font-label text-sm border border-outline/30 text-on-surface hover:border-primary hover:text-primary transition-all duration-300">Commercial</button>
+<button class="px-6 py-2 rounded font-label text-sm border border-outline/30 text-on-surface hover:border-primary hover:text-primary transition-all duration-300">Interior</button>
+</div>
+</header>
+<!-- Gallery Grid -->
+<main class="px-8 pb-32 max-w-7xl mx-auto">
+<div class="masonry-grid">
+<div class="masonry-item rounded-lg overflow-hidden img-hover-zoom cursor-pointer group bg-surface-container">
+<div class="relative w-full h-[600px] overflow-hidden">
+<img alt="Meridian Residence Exterior" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB2-7bKtFFVbmqNJfgqtfLoxGvhllXYrzrih4S3mZJ3yN60eJaOlyW-E_O--sJYwpa4NUF33sTH0WbGQrglLNHJf8zTaR22L6ms-WZtU9QZTQ5U555UVJ_IkBfQn_jXO9rsqrJ3qi8AIITBexPsah-cdbzhQYTyFftwW2oK3FhhOu8VSrOWQkpRFXZ82bNpk5pS_iJkeKtqW7kRlS_v3XJtu3ofVeTs8OqNU69PFCSN_INBruVhUOfd-kCJdqOv1r5NBlYlwB4Fb1v"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+<div>
+<p class="font-headline text-surface-bright text-2xl">Meridian Residence</p>
+<p class="font-label text-surface-variant text-sm uppercase tracking-wider">Exterior</p>
+</div>
+</div>
+</div>
+</div>
+<div class="masonry-item rounded-lg overflow-hidden img-hover-zoom cursor-pointer group bg-surface-container">
+<div class="relative w-full h-[400px] overflow-hidden">
+<img alt="Meridian Residence Ensuite Bathroom" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VrAUExsU-9I70MruEILHQnsoix4UtsusVWFliOqrHEi_pUrrffuU9ZK9K6czMgdSi1tTnVlYy-GO0gfvxEdKvNJXf6DFV4mmOr0rtq3kKE8kdGNKtq7b5c4xonVe6NME9wktKTrj9nAZRMK-XFuinYo7-fU_icQAzE4F_MyroXe1aOIamtPWHyMrPe_aFUT_wztf1sWT-8u2J-tYCcJ5hithQhj7yknGQXWKFKb8o_Y46Z3VcfG1Cv5UWk"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+<div>
+<p class="font-headline text-surface-bright text-2xl">Meridian Ensuite</p>
+<p class="font-label text-surface-variant text-sm uppercase tracking-wider">Interior</p>
+</div>
+</div>
+</div>
+</div>
+<div class="masonry-item rounded-lg overflow-hidden img-hover-zoom cursor-pointer group bg-surface-container">
+<div class="relative w-full h-[500px] overflow-hidden">
+<img alt="Casa Horizon Exterior" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0vdKq8fjsPOhyuFyznJQ2b1DSU_7f7gvt8o6JrLYhmYiRVyHbnDd3IP-jLyEJtzVN_kOAssLICKW0Yx_b-b01Frg1IfQXEkeAX_PC7uGcsgca7I1Vmh-0smILwuyrXCbcTF2THEr_kmBrRuwVPRSrG5H9tPBtfo1war--H4azSayhYOLOvvNLxU7-LAXMC4tMlTSku6wL1Dellt-nKnz7gGsmNfO4rq0MBZz6JFW7IKqzjopMqbHMFTrCRi2_hhfNRN11YOieIYZh"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+<div>
+<p class="font-headline text-surface-bright text-2xl">Casa Horizon</p>
+<p class="font-label text-surface-variant text-sm uppercase tracking-wider">Coastal</p>
+</div>
+</div>
+</div>
+</div>
+<div class="masonry-item rounded-lg overflow-hidden img-hover-zoom cursor-pointer group bg-surface-container">
+<div class="relative w-full h-[450px] overflow-hidden">
+<img alt="Meridian Residence Staircase" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Xez72JBGbAQ1XN5PkIfAS4cwWQNT7Zvpjhlnt2kv1vG0-Biyq4NYl9heKTxDYcMGoNxXrWqVJYd0RqvJNbOfQrPnFqRxI6QAvM1_sdth_C4gQhNnFvdMPF5FRpv6fwl8H44AUmZ1j2wYEoqsHcibv1aoiynNeS6kUpH3UenElYNJx_pVFYn8WFv5GPPiDx2VIM8GE2FfQISZ0YwWqbDZDI5aYVvYQUx9W9-ZGqDuvMrYH9PMSjC0WHZVZG"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+<div>
+<p class="font-headline text-surface-bright text-2xl">Floating Staircase</p>
+<p class="font-label text-surface-variant text-sm uppercase tracking-wider">Detail</p>
+</div>
+</div>
+</div>
+</div>
+<div class="masonry-item rounded-lg overflow-hidden img-hover-zoom cursor-pointer group bg-surface-container">
+<div class="relative w-full h-[650px] overflow-hidden">
+<img alt="Northline Tower" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkBA7Itfnfp57dA9KZfoEEks7maOdO6oDRvfoQW_v9x-m_PYRNQdFcTyd6thSeiF1mSAo-lBbl2iJlghB59KLo1Ipdf9FsRgPN_oCrmh6SArvRE_uvlBCx0GTnsoh0hXZ5NJ73AXInXrmxBsNCP4fK3GV-He6ncYB1UhA5VbCrOVq0U2XSfu-elrF-EK4OrA_M-v0POotoAF3p6n0LgG-mkHaQcNGV3zOGAnMzUovj5QRabeckbqNXXyGYe0sfbaK4_tWYDUfi6CgS"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+<div>
+<p class="font-headline text-surface-bright text-2xl">Northline Tower</p>
+<p class="font-label text-surface-variant text-sm uppercase tracking-wider">Commercial</p>
+</div>
+</div>
+</div>
+</div>
+<div class="masonry-item rounded-lg overflow-hidden img-hover-zoom cursor-pointer group bg-surface-container">
+<div class="relative w-full h-[400px] overflow-hidden">
+<img alt="Meridian Residence Living Room" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XiBDOgkH3kNLdFL6npu8GhWsgb6mbnDp8_YAgQyjuJ3vTi_jpmsMXhWHq5wiO3R43zb5Ix__xMhbi5lNis1XmxQndYEVW9dfFo1kl8-XY0KfmxqTF8L-gGeoHSmYhVKA4gylR3ZACBZtru_ZazMELjL5pBca3OaHQM_DIYbhU-SsZ4bh1iMOUA6MSp6Jbx0MmrPs-BrnBkc1ZSyIsm1IRq7orEKwgkmQa7BFeSDuq8nzvp28sxznP8Zk-A"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+<div>
+<p class="font-headline text-surface-bright text-2xl">Coastal Living</p>
+<p class="font-label text-surface-variant text-sm uppercase tracking-wider">Interior</p>
+</div>
+</div>
+</div>
+</div>
+<div class="masonry-item rounded-lg overflow-hidden img-hover-zoom cursor-pointer group bg-surface-container">
+<div class="relative w-full h-[550px] overflow-hidden">
+<img alt="Studio Workshop" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBVwlIht2Nj7KkYm7Gy4l1wc_VFuB4fGvPYdX-HsWV_o6LfFKfILx4VNMc2UV63Hm8faCmNSTH9b8ue_CuTbE-Np-e11Ej9EuPNhazzmwe71bBmg7ZCp9e9ZznDiSTCdIDk2kpF6bVeCH6BGJLvOgPEaRUtycfDKUPLlZE2NhDv1J4XgjkrD1Bx33v8OjlxiAednZ3Y1LAAnOHEeSmKmh6GesoxekcCnHnzXVJwX4fVSe66WzjfpLS6mBt8-FfiC_ugISEwZKnqFXF"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+<div>
+<p class="font-headline text-surface-bright text-2xl">Studio Workshop</p>
+<p class="font-label text-surface-variant text-sm uppercase tracking-wider">Creative</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 bg-inverse-surface dark:bg-black border-t border-outline/10 text-surface-bright dark:text-surface-container-low font-body text-label-md uppercase tracking-widest cubic-bezier(0.22,1,0.36,1) transition-all">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 px-8 max-w-7xl mx-auto">
+<div>
+<span class="font-display text-6xl md:text-8xl font-bold tracking-tighter text-surface-container-highest dark:text-surface-variant opacity-10">AKHILA</span>
+</div>
+<div class="flex flex-col space-y-4 md:items-end justify-center">
+<div class="flex space-x-6">
+<a class="text-on-surface-variant hover:text-surface-bright transition-colors hover:text-primary-fixed transition-colors duration-300" href="#">PROJECTS</a>
+<a class="text-on-surface-variant hover:text-surface-bright transition-colors hover:text-primary-fixed transition-colors duration-300" href="#">SERVICES</a>
+<a class="text-on-surface-variant hover:text-surface-bright transition-colors hover:text-primary-fixed transition-colors duration-300" href="#">PROCESS</a>
+<a class="text-on-surface-variant hover:text-surface-bright transition-colors hover:text-primary-fixed transition-colors duration-300" href="#">LIVE SITES</a>
+<a class="text-primary-fixed-dim hover:text-primary-fixed transition-colors duration-300" href="#">GALLERY</a>
+<a class="text-on-surface-variant hover:text-surface-bright transition-colors hover:text-primary-fixed transition-colors duration-300" href="#">ABOUT</a>
+</div>
+<p class="text-on-surface-variant mt-8 text-xs">© 2024 AKHILA. ALL RIGHTS RESERVED.</p>
+</div>
+</div>
+</footer>
+</body></html>

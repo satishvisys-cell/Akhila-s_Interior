@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Akhila Master Tour - Meridian Residence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-dim": "#5d5142",
+                        "on-tertiary-fixed-variant": "#696661",
+                        "tertiary": "#625f5a",
+                        "inverse-primary": "#f6d1aa",
+                        "tertiary-container": "#f8f3ec",
+                        "surface-container-highest": "#e2e3dd",
+                        "on-tertiary-fixed": "#4c4945",
+                        "primary-fixed": "#ffddba",
+                        "on-secondary-fixed-variant": "#665a4a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#483e2f",
+                        "surface-bright": "#fbf9f6",
+                        "on-surface": "#30332f",
+                        "primary-fixed-dim": "#f3cea8",
+                        "surface": "#fbf9f6",
+                        "on-surface-variant": "#5d605b",
+                        "on-error": "#fff7f6",
+                        "secondary": "#695d4d",
+                        "on-tertiary": "#fef8f1",
+                        "primary-dim": "#684d30",
+                        "surface-container-high": "#e8e9e3",
+                        "surface-container": "#eeeeea",
+                        "on-background": "#30332f",
+                        "on-tertiary-container": "#5e5b56",
+                        "on-primary-fixed": "#533b1f",
+                        "on-error-container": "#742410",
+                        "surface-variant": "#e2e3dd",
+                        "secondary-fixed": "#f1e0cb",
+                        "error-container": "#fe8b70",
+                        "error": "#9e422c",
+                        "on-secondary": "#fff8f2",
+                        "surface-tint": "#75593b",
+                        "outline-variant": "#b1b3ad",
+                        "inverse-surface": "#0e0e0d",
+                        "on-primary-fixed-variant": "#725638",
+                        "tertiary-dim": "#55534e",
+                        "tertiary-fixed": "#f8f3ec",
+                        "error-dim": "#5c1202",
+                        "on-secondary-container": "#5b5040",
+                        "surface-container-low": "#f5f3f0",
+                        "outline": "#797b77",
+                        "tertiary-fixed-dim": "#eae4de",
+                        "background": "#fbf9f6",
+                        "surface-dim": "#d8dbd4",
+                        "primary-container": "#ffddba",
+                        "inverse-on-surface": "#9e9d9a",
+                        "on-primary-container": "#674d2f",
+                        "primary": "#75593b",
+                        "on-primary": "#fff6f0",
+                        "secondary-fixed-dim": "#e2d2be",
+                        "secondary-container": "#f1e0cb",
+                        "charcoal": "#2C2A26",
+                        "ivory": "#FBF9F6",
+                        "bronze": "#9A7B5A"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "display": ["Newsreader", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #FBF9F6; color: #2C2A26; }
+        h1, h2, h3, h4, h5, h6, .font-display, .font-headline { font-family: 'Newsreader', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(251, 249, 246, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(232, 226, 217, 0.5); }
+        .cinematic-shadow { box-shadow: 0 25px 50px -12px rgba(44, 42, 38, 0.25); }
+    </style>
+</head>
+<body class="h-screen w-screen overflow-hidden flex flex-col antialiased selection:bg-bronze selection:text-ivory">
+<!-- TopAppBar JSON Component -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-4 bg-inverse-surface/80 backdrop-blur-md border-b border-white/5 shadow-2xl transition-all duration-300">
+<div class="flex items-center gap-8">
+<span class="font-display font-bold text-on-primary-fixed tracking-tighter text-xl">Akhila Master Tour</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-label text-label-sm uppercase tracking-widest text-primary-fixed border-b-2 border-primary-fixed pb-1" href="#">Project Overview</a>
+<a class="font-label text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all duration-300 px-2 py-1 rounded" href="#">Specifications</a>
+<a class="font-label text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all duration-300 px-2 py-1 rounded" href="#">Documentation</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-primary-fixed-dim hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">settings</span>
+</button>
+<button class="text-primary-fixed-dim hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">fullscreen</span>
+</button>
+<button class="bg-bronze text-ivory font-label text-sm uppercase tracking-wider px-6 py-2.5 rounded hover:bg-primary-dim transition-all cinematic-shadow active:scale-95 duration-200 ease-out">
+                Exit Tour
+            </button>
+</div>
+</nav>
+<!-- Main Viewport -->
+<main class="flex-grow relative w-full h-full bg-charcoal flex items-center justify-center overflow-hidden pt-20 pb-32">
+<!-- Cinematic Image Background -->
+<div class="absolute inset-0 w-full h-full">
+<img alt="Entrance View" class="w-full h-full object-cover transform scale-105 animate-[slowZoom_20s_ease-in-out_infinite_alternate]" data-alt="A highly detailed cinematic shot of a modern architectural home entrance at twilight. The facade features smooth concrete and large floor-to-ceiling glass panels reflecting the sunset. Warm interior lighting glows invitingly. The setting is serene, emphasizing premium craftsmanship and minimalist design, with a sophisticated palette of deep charcoal, ivory, and bronze accents." src="https://lh3.googleusercontent.com/aida/AEtjO1UpegW0wPSfHTK0NP6zDKS-OmAvGEkIKcTke3M-7Gm9TAzKEFbHwrA29g8eiguSEzxRJqvIxWQvNDkji2Udgl9Je05DtMFQEMh2yMDhamvaJb81MAGnSBhW7T2_Ibmbkt_FKrEvxZ7n80zlWgSy1idhFO5Dc8EmdflFziMmMPiSxxgrjUHjR8CB_6tv0UKsrlARCHAQ5Mdp7PJ8hPQQn7mmU6AAFiG_XPeJRDeQptZB_kr6kxJp0VPVb_k"/>
+<!-- Subtle Vignette/Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-transparent to-charcoal/40"></div>
+</div>
+<!-- Scene Info Overlay -->
+<div class="absolute bottom-40 left-12 md:left-24 max-w-2xl z-20">
+<div class="flex items-center gap-4 mb-4">
+<span class="text-bronze font-label text-sm uppercase tracking-widest">01</span>
+<div class="h-px w-12 bg-bronze/50"></div>
+<span class="text-ivory/80 font-label text-sm uppercase tracking-widest">Meridian Residence</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-display text-ivory mb-6 leading-tight drop-shadow-lg">The Entrance</h1>
+<p class="text-lg md:text-xl font-display text-ivory/90 italic leading-relaxed">
+                A seamless transition from the rugged coastal landscape into a sanctuary of refined concrete and warm timber, defining the threshold of modern living.
+            </p>
+</div>
+<!-- Central Controls -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-6 opacity-0 hover:opacity-100 transition-opacity duration-500">
+<button class="w-20 h-20 rounded-full glass-panel flex items-center justify-center text-ivory hover:bg-white/10 transition-all hover:scale-105 active:scale-95 cursor-pointer backdrop-blur-xl border border-white/20">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar JSON Component / Timeline -->
+<div class="fixed bottom-0 left-0 w-full z-50 flex flex-col px-6 pb-6 pt-4 bg-inverse-surface/90 backdrop-blur-xl border-t border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<!-- Timeline Progress -->
+<div class="w-full px-4 mb-4 flex items-center gap-4">
+<span class="text-on-surface-variant font-label text-xs">00:00</span>
+<div class="flex-grow h-1 bg-white/10 rounded-full relative cursor-pointer group">
+<div class="absolute top-0 left-0 h-full w-1/6 bg-bronze rounded-full"></div>
+<div class="absolute top-1/2 left-1/6 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-ivory rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-md"></div>
+</div>
+<span class="text-on-surface-variant font-label text-xs">05:30</span>
+<button class="ml-4 text-on-surface-variant hover:text-ivory transition-colors">
+<span class="material-symbols-outlined text-sm">volume_up</span>
+</button>
+</div>
+<!-- Scene Thumbnails -->
+<div class="flex justify-around items-end w-full gap-4 overflow-x-auto pb-2 scrollbar-hide">
+<!-- Active Tab -->
+<button class="flex flex-col items-center justify-center bg-primary/20 text-primary-fixed rounded-xl p-2 border border-primary/30 min-w-[100px] flex-shrink-0 group scale-105 transition-all duration-700 ease-in-out">
+<div class="w-full h-16 mb-2 rounded overflow-hidden relative">
+<img alt="Entrance" class="w-full h-full object-cover" data-alt="Thumbnail of modern home entrance with concrete walls and glass doors at dusk." src="https://lh3.googleusercontent.com/aida/AEtjO1UpegW0wPSfHTK0NP6zDKS-OmAvGEkIKcTke3M-7Gm9TAzKEFbHwrA29g8eiguSEzxRJqvIxWQvNDkji2Udgl9Je05DtMFQEMh2yMDhamvaJb81MAGnSBhW7T2_Ibmbkt_FKrEvxZ7n80zlWgSy1idhFO5Dc8EmdflFziMmMPiSxxgrjUHjR8CB_6tv0UKsrlARCHAQ5Mdp7PJ8hPQQn7mmU6AAFiG_XPeJRDeQptZB_kr6kxJp0VPVb_k"/>
+<div class="absolute inset-0 border-2 border-bronze rounded"></div>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">door_front</span>
+<span class="font-label text-[10px] uppercase tracking-widest">Entrance</span>
+</div>
+</button>
+<!-- Inactive Tabs -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant/60 p-2 grayscale hover:grayscale-0 hover:text-primary-fixed-dim hover:bg-white/5 transition-all duration-300 rounded-xl min-w-[100px] flex-shrink-0 group">
+<div class="w-full h-12 mb-2 rounded overflow-hidden opacity-70 group-hover:opacity-100 transition-opacity">
+<img alt="Living Room" class="w-full h-full object-cover" data-alt="Thumbnail of luxurious modern living room with large windows facing a sunset ocean view." src="https://lh3.googleusercontent.com/aida/AEtjO1XiBDOgkH3kNLdFL6npu8GhWsgb6mbnDp8_YAgQyjuJ3vTi_jpmsMXhWHq5wiO3R43zb5Ix__xMhbi5lNis1XmxQndYEVW9dfFo1kl8-XY0KfmxqTF8L-gGeoHSmYhVKA4gylR3ZACBZtru_ZazMELjL5pBca3OaHQM_DIYbhU-SsZ4bh1iMOUA6MSp6Jbx0MmrPs-BrnBkc1ZSyIsm1IRq7orEKwgkmQa7BFeSDuq8nzvp28sxznP8Zk-A"/>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">weekend</span>
+<span class="font-label text-[10px] uppercase tracking-widest">Living Room</span>
+</div>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/60 p-2 grayscale hover:grayscale-0 hover:text-primary-fixed-dim hover:bg-white/5 transition-all duration-300 rounded-xl min-w-[100px] flex-shrink-0 group">
+<div class="w-full h-12 mb-2 rounded overflow-hidden opacity-70 group-hover:opacity-100 transition-opacity">
+<img alt="Kitchen" class="w-full h-full object-cover" data-alt="Thumbnail of premium kitchen featuring dark wood cabinetry and a large marble island." src="https://lh3.googleusercontent.com/aida/AEtjO1X-gkC-v7SJ36Ciss2pp3o4qOGCAy8MYl9FmX7yaeSG29vwkFF9BmV6E0Nuh6U8T0bhtPjkfSC53ZxlmMhtR6Csc3t0OipklYfv_P2fDGVeEoeknmmOHYpTZEm3X57_BAAX4BhEpIikO1Z6EkOKdZ3PTJ9YvWRK2ABdbDlhbNVBQ38rDt2gaXcZxc0tNNvMcXJamZ2eaSBP_GLRxvAGhz6AfOueWZHSUs7l6nGaZGoA53L1N1JuomhSzXI2"/>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">cooking</span>
+<span class="font-label text-[10px] uppercase tracking-widest">Kitchen</span>
+</div>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/60 p-2 grayscale hover:grayscale-0 hover:text-primary-fixed-dim hover:bg-white/5 transition-all duration-300 rounded-xl min-w-[100px] flex-shrink-0 group">
+<div class="w-full h-12 mb-2 rounded overflow-hidden opacity-70 group-hover:opacity-100 transition-opacity">
+<img alt="Stairs" class="w-full h-full object-cover" data-alt="Thumbnail of a modern staircase with floating wooden treads and glass railing." src="https://lh3.googleusercontent.com/aida/AEtjO1Xez72JBGbAQ1XN5PkIfAS4cwWQNT7Zvpjhlnt2kv1vG0-Biyq4NYl9heKTxDYcMGoNxXrWqVJYd0RqvJNbOfQrPnFqRxI6QAvM1_sdth_C4gQhNnFvdMPF5FRpv6fwl8H44AUmZ1j2wYEoqsHcibv1aoiynNeS6kUpH3UenElYNJx_pVFYn8WFv5GPPiDx2VIM8GE2FfQISZ0YwWqbDZDI5aYVvYQUx9W9-ZGqDuvMrYH9PMSjC0WHZVZG"/>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">stairs</span>
+<span class="font-label text-[10px] uppercase tracking-widest">Stairs</span>
+</div>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/60 p-2 grayscale hover:grayscale-0 hover:text-primary-fixed-dim hover:bg-white/5 transition-all duration-300 rounded-xl min-w-[100px] flex-shrink-0 group">
+<div class="w-full h-12 mb-2 rounded overflow-hidden opacity-70 group-hover:opacity-100 transition-opacity">
+<img alt="Hall" class="w-full h-full object-cover" data-alt="Thumbnail of a long, minimalist art gallery hallway with concrete floors." src="https://lh3.googleusercontent.com/aida/AEtjO1Xywe7c_pEaqeqhYBPB2C4Nw2sMQIybJ2obdxvhBoD4Et89btDaSGmu2n4lFiq69LKcQ-pSxW17atjZ2X3xIha2M7HDVCswDvBDnDRgKMat5s-FymvSfVz50I0_5JV0LTyfk9y933Qv5LZTeYiIMTNSkeWEVV9RjpT06lyh_ZCt9pdsqxTqEdPfa0yNI6A1UD5erbOIo4pPW7vZ2bGL4jCNCuSh7RS1j_-rxkwlaSBj5PWAE-3b-4-DVNo"/>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">width_normal</span>
+<span class="font-label text-[10px] uppercase tracking-widest">Hall</span>
+</div>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/60 p-2 grayscale hover:grayscale-0 hover:text-primary-fixed-dim hover:bg-white/5 transition-all duration-300 rounded-xl min-w-[100px] flex-shrink-0 group">
+<div class="w-full h-12 mb-2 rounded overflow-hidden opacity-70 group-hover:opacity-100 transition-opacity">
+<img alt="Master Bedroom" class="w-full h-full object-cover" data-alt="Thumbnail of a serene master bedroom with a large bed looking out to an ocean view." src="https://lh3.googleusercontent.com/aida/AEtjO1UojxHhqtW7jmBYDb4WSMHDWlisAe6Hsz6PoqDXBQU8UPsgoU_7tDdjl1sbBluqLn2amkPsMgs5ebaG68rrJwjvHNddTtwugxh3RNm4LBxypo4rKg9IepfWO6yf1n822p_eHaQp6dSXLQ7q3xYDErG1u2vC-e_FTSW9UjztQsr05HHXt68cN-UaJOAiX466N7NXckuwqd9tp04qPAX6Xj3uhQCHt0HSIMKUld65eMeI3qwSEfS0HzaOyzA"/>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">king_bed</span>
+<span class="font-label text-[10px] uppercase tracking-widest">Master Bedroom</span>
+</div>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/60 p-2 grayscale hover:grayscale-0 hover:text-primary-fixed-dim hover:bg-white/5 transition-all duration-300 rounded-xl min-w-[100px] flex-shrink-0 group">
+<div class="w-full h-12 mb-2 rounded overflow-hidden opacity-70 group-hover:opacity-100 transition-opacity">
+<img alt="Bathroom" class="w-full h-full object-cover" data-alt="Thumbnail of a luxury bathroom featuring a freestanding stone tub overlooking mountains." src="https://lh3.googleusercontent.com/aida/AEtjO1VrAUExsU-9I70MruEILHQnsoix4UtsusVWFliOqrHEi_pUrrffuU9ZK9K6czMgdSi1tTnVlYy-GO0gfvxEdKvNJXf6DFV4mmOr0rtq3kKE8kdGNKtq7b5c4xonVe6NME9wktKTrj9nAZRMK-XFuinYo7-fU_icQAzE4F_MyroXe1aOIamtPWHyMrPe_aFUT_wztf1sWT-8u2J-tYCcJ5hithQhj7yknGQXWKFKb8o_Y46Z3VcfG1Cv5UWk"/>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">bathtub</span>
+<span class="font-label text-[10px] uppercase tracking-widest">Bathroom</span>
+</div>
+</button>
+</div>
+</div>
+<style>
+        @keyframes slowZoom {
+            0% { transform: scale(1.02); }
+            100% { transform: scale(1.08); }
+        }
+        /* Hide scrollbar for timeline */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Akhila - Meridian Residence Live Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "tertiary-container": "#f8f3ec",
+                "primary-fixed": "#ffddba",
+                "primary-container": "#ffddba",
+                "on-secondary-fixed-variant": "#665a4a",
+                "secondary-fixed-dim": "#e2d2be",
+                "error": "#9e422c",
+                "surface": "#fbf9f6",
+                "on-tertiary-fixed": "#4c4945",
+                "tertiary-dim": "#55534e",
+                "on-secondary": "#fff8f2",
+                "error-container": "#fe8b70",
+                "inverse-surface": "#0e0e0d",
+                "secondary-container": "#f1e0cb",
+                "outline": "#797b77",
+                "surface-bright": "#fbf9f6",
+                "surface-container-lowest": "#ffffff",
+                "primary-fixed-dim": "#f3cea8",
+                "on-primary-container": "#674d2f",
+                "on-secondary-container": "#5b5040",
+                "surface-tint": "#75593b",
+                "secondary": "#695d4d",
+                "on-primary-fixed-variant": "#725638",
+                "surface-dim": "#d8dbd4",
+                "on-background": "#30332f",
+                "error-dim": "#5c1202",
+                "inverse-primary": "#f6d1aa",
+                "on-secondary-fixed": "#483e2f",
+                "surface-container": "#eeeeea",
+                "surface-variant": "#e2e3dd",
+                "on-primary-fixed": "#533b1f",
+                "tertiary-fixed-dim": "#eae4de",
+                "on-tertiary": "#fef8f1",
+                "on-surface": "#30332f",
+                "surface-container-low": "#f5f3f0",
+                "primary-dim": "#684d30",
+                "secondary-dim": "#5d5142",
+                "on-error-container": "#742410",
+                "primary": "#75593b",
+                "tertiary": "#625f5a",
+                "surface-container-high": "#e8e9e3",
+                "on-tertiary-fixed-variant": "#696661",
+                "background": "#fbf9f6",
+                "on-primary": "#fff6f0",
+                "surface-container-highest": "#e2e3dd",
+                "on-tertiary-container": "#5e5b56",
+                "outline-variant": "#b1b3ad",
+                "tertiary-fixed": "#f8f3ec",
+                "on-error": "#fff7f6",
+                "inverse-on-surface": "#9e9d9a",
+                "secondary-fixed": "#f1e0cb",
+                "on-surface-variant": "#5d605b"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+              },
+              "spacing": {},
+              "fontFamily": {
+                "headline": [
+                  "Newsreader"
+                ],
+                "display": [
+                  "Newsreader"
+                ],
+                "body": [
+                  "Manrope"
+                ],
+                "label": [
+                  "Manrope"
+                ]
+              },
+              "fontSize": {}
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #FBF9F6; color: #2C2A26; }
+        h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Newsreader', serif; }
+        
+        .live-badge {
+            background-color: #C23B3B;
+            color: white;
+            animation: pulse-live 2s infinite;
+        }
+        @keyframes pulse-live {
+            0% { opacity: 1; box-shadow: 0 0 0 0 rgba(194, 59, 59, 0.7); }
+            70% { opacity: 0.8; box-shadow: 0 0 0 10px rgba(194, 59, 59, 0); }
+            100% { opacity: 1; box-shadow: 0 0 0 0 rgba(194, 59, 59, 0); }
+        }
+
+        .cam-thumbnail:hover img {
+            transform: scale(1.03);
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .cam-thumbnail img {
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .cam-thumbnail.active {
+            border: 2px solid #9A7B5A; /* Bronze */
+        }
+        
+        /* Smooth transitions */
+        .fade-in { animation: fadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .stagger-1 { animation-delay: 70ms; }
+        .stagger-2 { animation-delay: 140ms; }
+        .stagger-3 { animation-delay: 210ms; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pt-20">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md dark:bg-surface-container-highest/90 border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-8 h-20 max-w-full mx-auto ease-in-out duration-200">
+<div class="font-display text-2xl font-bold text-primary dark:text-primary-fixed">
+            Akhila
+        </div>
+<div class="hidden md:flex gap-8 font-body text-label-md uppercase tracking-wider">
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 pb-1 hover:text-primary transition-colors duration-300" href="#">Overview</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary pb-1 hover:text-primary transition-colors duration-300" href="#">Live Feed</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 pb-1 hover:text-primary transition-colors duration-300" href="#">Timelapses</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 pb-1 hover:text-primary transition-colors duration-300" href="#">Documentation</a>
+</div>
+<div class="flex items-center gap-4 text-primary dark:text-primary-fixed-dim">
+<button class="hover:text-primary transition-colors duration-300 p-2"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span></button>
+<button class="hover:text-primary transition-colors duration-300 p-2"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span></button>
+<div class="w-8 h-8 rounded-lg bg-surface-variant overflow-hidden border border-outline-variant/30">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A subtle, minimalist avatar icon in muted charcoal on an ivory background, suitable for a premium architecture platform. Soft lighting, high contrast, flat vector style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvY_YuROsevi8ZBDbFW1Fr4suLnapJQE316-GWcEvt-W3oriMST2hjOKYUyPq59kL3-gFN5RAJ2LdMLOCn8OcQ6CQgYaiN3A-82KeizYcU05hzDZhjxJg-fhdpgKGGFlmHLy7T1bo9v8x_m21x3YN0T6ZT86FeCaKhS8OuYODXBv7YW1qXg0WjXWAnZvkALvomxffFuU8TdHsf0qRTyMBM4OZ-j6TUKsBUNWeD8Cw4Ls5riOSsypX9Uk0BkMSlCoAU4bkQ821xoU9Z"/>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[1920px] mx-auto p-4 md:p-8 lg:p-12 flex flex-col gap-8 fade-in">
+<!-- Header & Metadata -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-outline-variant/30 pb-6 stagger-1">
+<div>
+<h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-on-surface font-light tracking-tight mb-2">Meridian Residence</h1>
+<div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-on-surface-variant font-body text-sm md:text-base">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span> Beverly Hills, CA</span>
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">partly_cloudy_day</span> Clear, 72°F</span>
+<span class="flex items-center gap-2" id="local-time"><span class="material-symbols-outlined text-sm">schedule</span> --:--</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface text-on-surface border border-outline-variant/50 rounded-lg hover:border-primary transition-colors font-body text-sm font-medium">
+<span class="material-symbols-outlined text-base">download</span> Export Log
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-lg hover:bg-hover transition-colors font-body text-sm font-medium">
+<span class="material-symbols-outlined text-base">add_box</span> New Entry
+                </button>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 stagger-2">
+<!-- Left Column: Video Feed & Switcher -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Main Live Video Frame -->
+<div class="relative w-full aspect-[16/9] bg-inverse-surface rounded-lg overflow-hidden shadow-sm group">
+<!-- Placeholder for Live Feed (Image 31) -->
+<img alt="Meridian Residence Live Feed" class="absolute inset-0 w-full h-full object-cover opacity-90 transition-opacity duration-700" src="https://lh3.googleusercontent.com/aida/AEtjO1UpegW0wPSfHTK0NP6zDKS-OmAvGEkIKcTke3M-7Gm9TAzKEFbHwrA29g8eiguSEzxRJqvIxWQvNDkji2Udgl9Je05DtMFQEMh2yMDhamvaJb81MAGnSBhW7T2_Ibmbkt_FKrEvxZ7n80zlWgSy1idhFO5Dc8EmdflFziMmMPiSxxgrjUHjR8CB_6tv0UKsrlARCHAQ5Mdp7PJ8hPQQn7mmU6AAFiG_XPeJRDeQptZB_kr6kxJp0VPVb_k"/>
+<!-- Overlays -->
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-inverse-surface/20 pointer-events-none"></div>
+<!-- Live Badge -->
+<div class="absolute top-4 left-4 flex items-center gap-2 px-3 py-1 bg-surface-container-highest/80 backdrop-blur-sm rounded-lg border border-outline-variant/20">
+<div class="w-2 h-2 rounded-full live-badge"></div>
+<span class="font-body text-xs font-bold tracking-widest text-on-surface uppercase">Live</span>
+</div>
+<!-- Camera Info Overlay -->
+<div class="absolute top-4 right-4 text-on-primary font-body text-xs text-right drop-shadow-md">
+<div>CAM 01 — ENTRANCE (4K)</div>
+<div class="opacity-70 font-mono mt-1" id="cam-timestamp">2024-10-27 18:42:15 PST</div>
+</div>
+<!-- Controls (Hover) -->
+<div class="absolute bottom-0 left-0 w-full p-4 flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center bg-surface-container/80 backdrop-blur-sm hover:bg-surface text-on-surface rounded-lg transition-colors border border-outline-variant/20" title="Toggle Grid">
+<span class="material-symbols-outlined text-lg">grid_on</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center bg-surface-container/80 backdrop-blur-sm hover:bg-surface text-on-surface rounded-lg transition-colors border border-outline-variant/20" title="Thermal View">
+<span class="material-symbols-outlined text-lg">thermostat</span>
+</button>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center bg-surface-container/80 backdrop-blur-sm hover:bg-surface text-on-surface rounded-lg transition-colors border border-outline-variant/20" title="Take Snapshot">
+<span class="material-symbols-outlined text-lg">photo_camera</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center bg-surface-container/80 backdrop-blur-sm hover:bg-surface text-on-surface rounded-lg transition-colors border border-outline-variant/20" title="Fullscreen">
+<span class="material-symbols-outlined text-lg">fullscreen</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Camera Switcher -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<button class="cam-thumbnail active relative aspect-video bg-surface-variant rounded-lg overflow-hidden text-left focus:outline-none">
+<img alt="Entrance Cam" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UpegW0wPSfHTK0NP6zDKS-OmAvGEkIKcTke3M-7Gm9TAzKEFbHwrA29g8eiguSEzxRJqvIxWQvNDkji2Udgl9Je05DtMFQEMh2yMDhamvaJb81MAGnSBhW7T2_Ibmbkt_FKrEvxZ7n80zlWgSy1idhFO5Dc8EmdflFziMmMPiSxxgrjUHjR8CB_6tv0UKsrlARCHAQ5Mdp7PJ8hPQQn7mmU6AAFiG_XPeJRDeQptZB_kr6kxJp0VPVb_k"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 to-transparent"></div>
+<div class="absolute bottom-2 left-2 text-on-primary font-body text-xs font-medium">CAM 01<br/>Entrance</div>
+</button>
+<button class="cam-thumbnail relative aspect-video bg-surface-variant rounded-lg overflow-hidden text-left focus:outline-none border-2 border-transparent">
+<img alt="North Wing Cam" class="absolute inset-0 w-full h-full object-cover" data-alt="A stark, high-contrast black and white construction site photo of a building's north wing under construction. Exposed steel beams, concrete forms, sharp shadows in bright sunlight. Cinematic architectural documentary style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_NyqhwRKw6T6dSWyuJZD9RI_wDlVqz8QuRgNkIHJ72uwykpjh1AvpaX3_pRzfZPbvizUuidS2lCz03SGT_gjA_AnbywJOzYNoe1IrKahBFjyWfrHxDn_wD8uD5urZVfJei3ExPky3lMZe-UBLmOffhJJL_10y_Dlx0kycqc5Ccxlr5eVEYfM98G6LWCGiX0Y19-J4dS73cVXT0SVXf5Ff6jyn_xcdSSQ9cl-ayrwHKXujHdVRg41FEytsaiagAA_Jv6xFNqTyZPM9"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 to-transparent"></div>
+<div class="absolute bottom-2 left-2 text-on-primary font-body text-xs font-medium">CAM 02<br/>North Wing</div>
+</button>
+<button class="cam-thumbnail relative aspect-video bg-surface-variant rounded-lg overflow-hidden text-left focus:outline-none border-2 border-transparent">
+<img alt="Interior Cam" class="absolute inset-0 w-full h-full object-cover" data-alt="A wide angle, slightly distorted security camera style view of a luxury residential interior under construction. Drywall partially up, wiring exposed, dusty floor, natural light streaming through large unfinished window frames. Desaturated colors, gritty realism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUja2W6BfovZBJY0uFRFtnATyZ6JDiTrRrKlZ12N4AbQxFABrswsFCcisPUzTOFsuLCUTBk1nzkixCrFxK1UJuvIpKnzYDGq9jJcNkjZ8eDha7wOHbgwAA7urjHV_mQukGt5fVQwWAZpyWYyXvPFPLZq1Z9J1C_kYvRvwXFQrwebvC8Tk2TXNjKRKysqW5GCCYzBeyy8tUXqsTrXMZhAAMPE1jaS54HLl7BTH6LfUEwQHPQqQP7wMqG3uwpgdx-JpN_NiuP09AVks9"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 to-transparent"></div>
+<div class="absolute bottom-2 left-2 text-on-primary font-body text-xs font-medium">CAM 03<br/>Interior</div>
+</button>
+<button class="cam-thumbnail relative aspect-video bg-surface-variant rounded-lg overflow-hidden text-left focus:outline-none border-2 border-transparent">
+<img alt="Pool Deck Cam" class="absolute inset-0 w-full h-full object-cover" data-alt="A high angle view of an unfinished outdoor pool deck. Rebar grid laid out for concrete pouring, dirt surroundings, evening dusk light creating long shadows. Premium construction aesthetics, technical but beautiful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrGsnQM6OJOZZyDIll-eUwo-vCMzByb85aUVJ5fHwoLkR7E-RSuh3FFBpENVpt4iGNm3SmyutTNLJSivVyNnN1Dc6_GggpCXVP-OLrbhAQG_RIk7-TE_wNLGTHpzHCR2_yrJtZLJbGkK4fMNGwCmX94i2va6dWULqoHVrn-K7ya4kq1Ze5MP27jjKFJXo8fzBvAPi5tuiYc4O4ft7aJMiWjiohJtoXZmboj8J-wt7KeDw00s7i7hRC_DGsmTPLKDKLjwzt0cqxUTyE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 to-transparent"></div>
+<div class="absolute bottom-2 left-2 text-on-primary font-body text-xs font-medium">CAM 04<br/>Pool Deck</div>
+</button>
+</div>
+</div>
+<!-- Right Column: Dashboard & Status -->
+<div class="lg:col-span-4 flex flex-col gap-6 stagger-3">
+<!-- Quick Stats Grid -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface border border-outline-variant/30 rounded-lg p-5 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<span class="font-body text-xs text-on-surface-variant uppercase tracking-wider">Headcount</span>
+<span class="material-symbols-outlined text-primary text-xl">group</span>
+</div>
+<div>
+<span class="font-display text-3xl text-on-surface block">42</span>
+<span class="font-body text-xs text-tertiary mt-1 block">Active on site</span>
+</div>
+</div>
+<div class="bg-surface border border-outline-variant/30 rounded-lg p-5 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<span class="font-body text-xs text-on-surface-variant uppercase tracking-wider">Safety</span>
+<span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+</div>
+<div>
+<span class="font-display text-3xl text-on-surface block">184</span>
+<span class="font-body text-xs text-tertiary mt-1 block">Days without incident</span>
+</div>
+</div>
+</div>
+<!-- Activity Log -->
+<div class="bg-surface border border-outline-variant/30 rounded-lg p-6 flex-grow flex flex-col">
+<h3 class="font-display text-xl text-on-surface mb-6 border-b border-outline-variant/20 pb-4">Activity Log</h3>
+<div class="flex-grow overflow-y-auto pr-2 space-y-6" style="max-height: 400px;">
+<div class="relative pl-6 before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-[-24px] before:w-px before:bg-outline-variant/40 last:before:hidden">
+<div class="absolute left-[5px] top-1.5 w-1.5 h-1.5 rounded-full bg-primary"></div>
+<div class="font-body text-xs text-primary font-medium mb-1">10:45 AM</div>
+<div class="font-body text-sm text-on-surface">Structural inspection complete.</div>
+<div class="font-body text-xs text-on-surface-variant mt-1">North Wing - Sector B</div>
+</div>
+<div class="relative pl-6 before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-[-24px] before:w-px before:bg-outline-variant/40 last:before:hidden">
+<div class="absolute left-[5px] top-1.5 w-1.5 h-1.5 rounded-full bg-outline-variant"></div>
+<div class="font-body text-xs text-on-surface-variant mb-1">08:15 AM</div>
+<div class="font-body text-sm text-on-surface">Concrete pour scheduled for tomorrow.</div>
+<div class="font-body text-xs text-on-surface-variant mt-1">Pool Deck perimeter</div>
+</div>
+<div class="relative pl-6 before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-[-24px] before:w-px before:bg-outline-variant/40 last:before:hidden">
+<div class="absolute left-[5px] top-1.5 w-1.5 h-1.5 rounded-full bg-outline-variant"></div>
+<div class="font-body text-xs text-on-surface-variant mb-1">Yesterday, 4:30 PM</div>
+<div class="font-body text-sm text-on-surface">Material delivery logged: Steel framing.</div>
+<div class="font-body text-xs text-on-surface-variant mt-1">Main Gate</div>
+</div>
+<div class="relative pl-6 before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-[-24px] before:w-px before:bg-outline-variant/40 last:before:hidden">
+<div class="absolute left-[5px] top-1.5 w-1.5 h-1.5 rounded-full bg-outline-variant"></div>
+<div class="font-body text-xs text-on-surface-variant mb-1">Yesterday, 1:00 PM</div>
+<div class="font-body text-sm text-on-surface">HVAC contractor site walk-through.</div>
+<div class="font-body text-xs text-on-surface-variant mt-1">Interior Levels 1-2</div>
+</div>
+</div>
+<button class="mt-6 w-full py-3 border border-outline-variant/40 rounded-lg font-body text-sm text-on-surface hover:bg-surface-variant/50 transition-colors">
+                        View Full History
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container dark:bg-inverse-surface border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center px-8 py-12 gap-4">
+<div class="font-display text-lg text-on-surface dark:text-on-surface">
+            Akhila
+        </div>
+<div class="font-body text-label-sm text-secondary dark:text-secondary-fixed-dim">
+            © 2024 Akhila Architectural Systems. Precision in Construction.
+        </div>
+<div class="flex gap-6 font-body text-label-sm">
+<a class="text-on-secondary-fixed-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-secondary-fixed-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-on-secondary-fixed-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Contact Support</a>
+</div>
+</footer>
+<script>
+        // Update local time and timestamp
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            const dateString = now.toISOString().replace('T', ' ').substring(0, 19) + ' PST';
+            
+            document.getElementById('local-time').innerHTML = `<span class="material-symbols-outlined text-sm">schedule</span> ${timeString}`;
+            document.getElementById('cam-timestamp').innerText = dateString;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Thumbnail interaction simulation
+        const thumbnails = document.querySelectorAll('.cam-thumbnail');
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                thumbnails.forEach(t => {
+                    t.classList.remove('active');
+                    t.classList.add('border-transparent');
+                    t.classList.remove('border-primary');
+                });
+                thumb.classList.add('active');
+                thumb.classList.remove('border-transparent');
+                thumb.classList.add('border-primary');
+                // In a real app, this would swap the main video feed
+            });
+        });
+    </script>
+</body></html>

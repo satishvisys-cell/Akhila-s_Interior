@@ -1,0 +1,269 @@
+
+<!-- TopNavBar (Services) -->
+<header class="fixed top-0 w-full z-50 bg-canvas border-b border-stone-gray">
+<div class="flex justify-between items-center px-margin-edge py-unit h-20 max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-ink" href="#">Akhila</a>
+<nav class="hidden md:flex gap-8">
+<a class="text-ink font-medium font-label-caps text-label-caps hover:text-patina transition-colors duration-300" href="#">Projects</a>
+<a class="text-patina font-bold border-b-2 border-patina pb-1 font-label-caps text-label-caps hover:text-patina transition-colors duration-300" href="#">Services</a>
+<a class="text-ink font-medium font-label-caps text-label-caps hover:text-patina transition-colors duration-300" href="#">Process</a>
+</nav>
+<a class="bg-ink text-canvas font-label-caps text-label-caps px-6 py-3 rounded-none hover:bg-graphite transition-colors duration-300 hidden md:inline-block" href="#">Start a Project</a>
+</div>
+</header>
+<main class="pt-32 pb-stack-lg max-w-container-max mx-auto px-margin-edge">
+<!-- Hero -->
+<section class="text-center py-stack-lg md:py-24 max-w-3xl mx-auto">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-ink mb-6">Services</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Comprehensive architectural and design solutions delivered with precision and structural integrity. A built-to-last approach for enduring environments.</p>
+</section>
+<!-- Service 1: Architecture -->
+<section class="py-stack-md flex flex-col md:flex-row gap-gutter items-center border-t border-stone-gray">
+<div class="w-full md:w-1/2">
+<img alt="Architecture" class="w-full h-[600px] object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AEtjO1W8Su2DqAxKq4V8RYnaLFbDcuJZjuSpnn_eHZL3c1EKCEZ_UxT0oRuWuyPLLnZoWb2VD6ZkeWNsN7T4uW0Js_GKg1xQOev3nTR8-w7scnfz0Obn3ZfWUxHK5S-rIVU-sVt93tfZZsiXIVJWGELSLQ5B0VJwAnL_bsl9YSXLsqgb_BJrVbrVN3QL6Z5ZrC1ExdB8SZPEXV-ioT05h5Rd4l6XmHuXNfF48BE0aJbYiDVGIfn9p3EerVh31qs"/>
+</div>
+<div class="w-full md:w-1/2 md:pl-12">
+<h2 class="font-headline-md text-headline-md text-ink mb-6">Architecture</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Structural elegance combined with functional mastery. We design spaces that respond to their environment, utilizing premium materials to create enduring architectural statements.</p>
+<div class="mb-8">
+<h3 class="font-label-caps text-label-caps text-ink uppercase tracking-widest mb-4">Process</h3>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2">
+<li>Site Analysis &amp; Conceptualization</li>
+<li>Schematic Design &amp; Development</li>
+<li>Technical Documentation</li>
+</ul>
+</div>
+<div class="mb-10">
+<h3 class="font-label-caps text-label-caps text-ink uppercase tracking-widest mb-4">Deliverables</h3>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2">
+<li>Complete Blueprint Sets</li>
+<li>Structural Engineering Plans</li>
+<li>Permit Documentation</li>
+</ul>
+</div>
+<a class="inline-flex items-center font-body-lg text-body-lg text-patina border-b border-patina pb-1 hover:text-ink hover:border-ink transition-colors duration-300" href="#">
+                    Discuss This Service <span class="material-symbols-outlined ml-2 text-sm" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Service 2: Interior Design -->
+<section class="py-stack-md flex flex-col md:flex-row-reverse gap-gutter items-center border-t border-stone-gray">
+<div class="w-full md:w-1/2">
+<img alt="Interior Design" class="w-full h-[600px] object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AEtjO1WHg5jjNAd-1PeiRE7Cob8HOgsCHRs_dFZb_9Yi6uuNypXqgspTGqA3-nZj27-IFc9LsTkQSDZ_qcYoKa4Qd-cpHsft_7gtxTsJTWkqXVNDjGHPj5phXFLr1BxHmYNe6E7z1duAnWf6OvgAkQ7dkk240jk_Db0J-vaLZs74SgJim6JUyKzUYFNhuIQ8BLXdhpZ7GQZ-CzK8K-ZBs5gUB9zCs5oFz1O4thx2Rk49meKwjFeiy0inW5iopM8"/>
+</div>
+<div class="w-full md:w-1/2 md:pr-12">
+<h2 class="font-headline-md text-headline-md text-ink mb-6">Interior Design</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Crafting interior atmospheres with meticulous attention to detail. We curate materials, lighting, and bespoke elements to align seamlessly with the architectural shell.</p>
+<div class="mb-8">
+<h3 class="font-label-caps text-label-caps text-ink uppercase tracking-widest mb-4">Process</h3>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2">
+<li>Spatial Planning &amp; Flow</li>
+<li>Material &amp; Palette Curation</li>
+<li>Custom Millwork Design</li>
+</ul>
+</div>
+<div class="mb-10">
+<h3 class="font-label-caps text-label-caps text-ink uppercase tracking-widest mb-4">Deliverables</h3>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2">
+<li>Interior Elevations</li>
+<li>Finish &amp; Fixture Schedules</li>
+<li>Furniture Layouts</li>
+</ul>
+</div>
+<a class="inline-flex items-center font-body-lg text-body-lg text-patina border-b border-patina pb-1 hover:text-ink hover:border-ink transition-colors duration-300" href="#">
+                    Discuss This Service <span class="material-symbols-outlined ml-2 text-sm" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Service 3: Construction -->
+<section class="py-stack-md flex flex-col md:flex-row gap-gutter items-center border-t border-stone-gray">
+<div class="w-full md:w-1/2">
+<img alt="Construction" class="w-full h-[600px] object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AEtjO1WfzUTBA6YO5m3dwMtwl8xDNChWma7n9d-n7yk9j58fSnaqTj9Ln_8s-9UoOP1i1k8GYVUjqWsNkl82MTe7ekjySZe5dZmOPOrLP5vLlqX5sC9xW8uotLFWnqm4w39QE-yoMSCtdls8c1UtwKEUgWl2cwB7GALMM-Xlkr_CtSwtHi0EJW-3gzGi97CTTpAJ42oeOtMfpHXvdweAIKWqiKrPMa7zHbvUWezMnkasUjBZRyayKsw07IsuM3A"/>
+</div>
+<div class="w-full md:w-1/2 md:pl-12">
+<h2 class="font-headline-md text-headline-md text-ink mb-6">Construction</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Executing the vision with uncompromising technical standards. Our construction arm ensures that the architectural intent is realized precisely as detailed in the blueprints.</p>
+<div class="mb-8">
+<h3 class="font-label-caps text-label-caps text-ink uppercase tracking-widest mb-4">Process</h3>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2">
+<li>Site Preparation &amp; Foundation</li>
+<li>Structural Framing</li>
+<li>Envelope &amp; Systems Integration</li>
+</ul>
+</div>
+<div class="mb-10">
+<h3 class="font-label-caps text-label-caps text-ink uppercase tracking-widest mb-4">Deliverables</h3>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2">
+<li>Turnkey Structural Build</li>
+<li>Systems Commissioning</li>
+<li>Final Inspections</li>
+</ul>
+</div>
+<a class="inline-flex items-center font-body-lg text-body-lg text-patina border-b border-patina pb-1 hover:text-ink hover:border-ink transition-colors duration-300" href="#">
+                    Discuss This Service <span class="material-symbols-outlined ml-2 text-sm" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Service 4: Renovation -->
+<section class="py-stack-md flex flex-col md:flex-row-reverse gap-gutter items-center border-t border-stone-gray">
+<div class="w-full md:w-1/2">
+<img alt="Renovation" class="w-full h-[600px] object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AEtjO1V9BaiICGqPene0fuk3V1IcM-hIYOD4Vq4QpTCCge9JbyCM57VoShlJMG_85K9gbmUg8DIICWrDk9xzuh5XkRPjwK7jeZPYakutxcZOHe3SyYkR0bi_6bstvTelh81FXnV_t_DOjhA9YBlGviHU6TBYRrywNQPre9HOOnVcFUG8PPIeURHkPj1ngyGSdK-SQBfmMJRtvzMqhUEujVfhsomkFZcIdNl5dajvobXXxbAO16Ue-lU1UQrPNZ8"/>
+</div>
+<div class="w-full md:w-1/2 md:pr-12">
+<h2 class="font-headline-md text-headline-md text-ink mb-6">Renovation</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Respecting heritage while infusing modern utility. We carefully integrate contemporary elements into existing structures, maintaining the historical soul of the building.</p>
+<div class="mb-8">
+<h3 class="font-label-caps text-label-caps text-ink uppercase tracking-widest mb-4">Process</h3>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2">
+<li>Structural Assessment</li>
+<li>Preservation Strategy</li>
+<li>Modern Integration Design</li>
+</ul>
+</div>
+<div class="mb-10">
+<h3 class="font-label-caps text-label-caps text-ink uppercase tracking-widest mb-4">Deliverables</h3>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2">
+<li>Retrofitting Plans</li>
+<li>Heritage Conservation Docs</li>
+<li>Updated Systems Blueprints</li>
+</ul>
+</div>
+<a class="inline-flex items-center font-body-lg text-body-lg text-patina border-b border-patina pb-1 hover:text-ink hover:border-ink transition-colors duration-300" href="#">
+                    Discuss This Service <span class="material-symbols-outlined ml-2 text-sm" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Service 5: Project Management -->
+<section class="py-stack-md flex flex-col md:flex-row gap-gutter items-center border-t border-stone-gray">
+<div class="w-full md:w-1/2">
+<img alt="Project Management" class="w-full h-[600px] object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AEtjO1USZPYCkMcwi79_qHKmnq6Hwq8KSCqwxwyN4CAhOtdaC8DJmyYyuxzjE-u3RJOEMrg-TzpcBJLfsvQBTkM65hfIUPBjcBEas_jcl52CeGMQEwQcaA1VlXZ6nCZmeCD3MNpW3TLpn8TR7yV7-j3UHAIFcQ8ibPo0EzvnteZG_sfSxM9l_s9J6bmSzWiqCithQIdeRZG2I8gXZInN4W_FBRk5WLUy0obI7tm5OcG8rd21DW2LTmnQuZTRZUA"/>
+</div>
+<div class="w-full md:w-1/2 md:pl-12">
+<h2 class="font-headline-md text-headline-md text-ink mb-6">Project Management</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Rigorous oversight of the entire lifecycle. We act as the central node, coordinating contractors, budgets, and timelines to ensure the project remains aligned with the initial vision.</p>
+<div class="mb-8">
+<h3 class="font-label-caps text-label-caps text-ink uppercase tracking-widest mb-4">Process</h3>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2">
+<li>Timeline &amp; Budget Modeling</li>
+<li>Contractor Procurement</li>
+<li>On-site Coordination</li>
+</ul>
+</div>
+<div class="mb-10">
+<h3 class="font-label-caps text-label-caps text-ink uppercase tracking-widest mb-4">Deliverables</h3>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2">
+<li>Master Project Schedule</li>
+<li>Budget Audits</li>
+<li>Weekly Progress Briefs</li>
+</ul>
+</div>
+<a class="inline-flex items-center font-body-lg text-body-lg text-patina border-b border-patina pb-1 hover:text-ink hover:border-ink transition-colors duration-300" href="#">
+                    Discuss This Service <span class="material-symbols-outlined ml-2 text-sm" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Service 6: 3D Visualization -->
+<section class="py-stack-md flex flex-col md:flex-row-reverse gap-gutter items-center border-t border-stone-gray">
+<div class="w-full md:w-1/2">
+<img alt="3D Visualization" class="w-full h-[600px] object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AEtjO1UAUJsEjRVjUNQ8rcjTG1Tv5mfmdcAO8yjnr2g3NFp8-NjWCnWSsh-lpgDdXXMPOQTOlNlMnD90we3ujvqd5u8rCmGk2SBYfWJHQgPET3Yy-HWDdyClS18VreoU1QA00gX8BnLzBL8B6MmGCGrgP-YrMaqPX95ao1y0OJ7zMLhNn8GqJjqFjuLHFIz5onDZGp38kevcOUYhLlKM6iiXEhxpTMtytiRzVO6U-azDtojq_NKI0Cjz_57J8g"/>
+</div>
+<div class="w-full md:w-1/2 md:pr-12">
+<h2 class="font-headline-md text-headline-md text-ink mb-6">3D Visualization</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Photorealistic pre-visualization of unbuilt environments. We render spaces with precise lighting and material accuracy to convey the exact atmosphere before ground is broken.</p>
+<div class="mb-8">
+<h3 class="font-label-caps text-label-caps text-ink uppercase tracking-widest mb-4">Process</h3>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2">
+<li>Digital Geometry Modeling</li>
+<li>Material &amp; Texture Application</li>
+<li>Lighting Simulation</li>
+</ul>
+</div>
+<div class="mb-10">
+<h3 class="font-label-caps text-label-caps text-ink uppercase tracking-widest mb-4">Deliverables</h3>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2">
+<li>High-Resolution Stills</li>
+<li>Architectural Walkthroughs</li>
+<li>VR Immersion Files</li>
+</ul>
+</div>
+<a class="inline-flex items-center font-body-lg text-body-lg text-patina border-b border-patina pb-1 hover:text-ink hover:border-ink transition-colors duration-300" href="#">
+                    Discuss This Service <span class="material-symbols-outlined ml-2 text-sm" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Service 7: Smart Home -->
+<section class="py-stack-md flex flex-col md:flex-row gap-gutter items-center border-t border-stone-gray">
+<div class="w-full md:w-1/2">
+<img alt="Smart Home Integration" class="w-full h-[600px] object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AEtjO1XAWYf_MCTGD_TgexAs2yQ51FZ72c-QMi1ABb-ew_8UeCRAWnzOW6zmyb6Wi5SdDj-i9WNFD-U3FVJp05PC5ol_huOCMAoctuEAp443qGa5r17lv4g9o_o_iusbpfvBAZ0vgvVpn8xpeiEAabwMItb7LfGaWzbk4Pwg28wFBVWm1THVMyLBr5OUSim_bV_bH-p8TCdvU9bJ1dzExxu7SY7eZQ6b8zraA1RI06gP8pL3r_-7xUv_FX9Yng"/>
+</div>
+<div class="w-full md:w-1/2 md:pl-12">
+<h2 class="font-headline-md text-headline-md text-ink mb-6">Smart Home</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Invisible technology integrated into the architectural fabric. We design automated systems that enhance the living experience without cluttering the visual environment.</p>
+<div class="mb-8">
+<h3 class="font-label-caps text-label-caps text-ink uppercase tracking-widest mb-4">Process</h3>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2">
+<li>Systems Requirements Analysis</li>
+<li>In-wall Tech Integration Design</li>
+<li>Interface Curation</li>
+</ul>
+</div>
+<div class="mb-10">
+<h3 class="font-label-caps text-label-caps text-ink uppercase tracking-widest mb-4">Deliverables</h3>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2">
+<li>Low-Voltage Wiring Plans</li>
+<li>Hardware Specifications</li>
+<li>Automation Logic Setup</li>
+</ul>
+</div>
+<a class="inline-flex items-center font-body-lg text-body-lg text-patina border-b border-patina pb-1 hover:text-ink hover:border-ink transition-colors duration-300" href="#">
+                    Discuss This Service <span class="material-symbols-outlined ml-2 text-sm" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Service 8: Construction Monitoring -->
+<section class="py-stack-md flex flex-col md:flex-row-reverse gap-gutter items-center border-t border-stone-gray border-b">
+<div class="w-full md:w-1/2">
+<img alt="Construction Monitoring" class="w-full h-[600px] object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AEtjO1VTjmoPoYaRRDmtNQD6506yYQrr5Y3ZWwNl8XVcUpG_7QJs261bnFGP8GhdrllY1k6Fx6xkQvH9E5bhN3z3wQpAdoB64ODuy8VBfcGiKOaqNeWLsab11NLmw03rC5CyonUx7koBDncGpFN3mSrj5h0VChv1x4Q9ZzMXN92vDwX3QZpaeOYAAbDEgTnZZlMaVlsScPSLDaUpVq-ovprczT_QinxeyX1Dqw57LJsw15rXkzQJxhXxU_ykxc8"/>
+</div>
+<div class="w-full md:w-1/2 md:pr-12">
+<h2 class="font-headline-md text-headline-md text-ink mb-6">Construction Monitoring</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Data-driven oversight utilizing advanced technology. We monitor site progress to ensure structural fidelity and compliance with the architectural blueprints.</p>
+<div class="mb-8">
+<h3 class="font-label-caps text-label-caps text-ink uppercase tracking-widest mb-4">Process</h3>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2">
+<li>Remote Feed Setup</li>
+<li>Data Dashboarding</li>
+<li>Structural Verification</li>
+</ul>
+</div>
+<div class="mb-10">
+<h3 class="font-label-caps text-label-caps text-ink uppercase tracking-widest mb-4">Deliverables</h3>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2">
+<li>Live Monitoring Access</li>
+<li>Technical Compliance Reports</li>
+<li>Visual Progress Logs</li>
+</ul>
+</div>
+<a class="inline-flex items-center font-body-lg text-body-lg text-patina border-b border-patina pb-1 hover:text-ink hover:border-ink transition-colors duration-300" href="#">
+                    Discuss This Service <span class="material-symbols-outlined ml-2 text-sm" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-ink w-full border-t border-on-tertiary-fixed-variant transition-opacity duration-200">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-lg px-margin-edge py-stack-lg max-w-container-max mx-auto">
+<div>
+<span class="font-headline-sm text-headline-sm text-canvas uppercase tracking-widest block mb-6">Akhila</span>
+<p class="font-body-md text-body-md text-tertiary-fixed-dim max-w-xs">© 2024 Akhila Architectural Studio. All rights reserved.</p>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-label-caps text-label-caps text-tertiary-fixed-dim hover:text-canvas underline decoration-patina transition-colors" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-tertiary-fixed-dim hover:text-canvas underline decoration-patina transition-colors" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-4 md:items-end">
+<a class="font-label-caps text-label-caps text-tertiary-fixed-dim hover:text-canvas underline decoration-patina transition-colors" href="#">Contact Us</a>
+<a class="font-label-caps text-label-caps text-tertiary-fixed-dim hover:text-canvas underline decoration-patina transition-colors" href="#">Our Credo</a>
+</div>
+</div>
+</footer>

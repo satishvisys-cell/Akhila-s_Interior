@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Selected Works | AKHILA ARCHITECTURE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "surface-variant": "#e2e3dd",
+                "secondary-dim": "#5d5142",
+                "on-tertiary-fixed": "#4c4945",
+                "secondary-container": "#f1e0cb",
+                "on-primary-fixed": "#533b1f",
+                "on-surface": "#30332f",
+                "on-secondary": "#fff8f2",
+                "surface-container-highest": "#e2e3dd",
+                "surface-container-low": "#f5f3f0",
+                "error": "#9e422c",
+                "surface-bright": "#fbf9f6",
+                "error-container": "#fe8b70",
+                "secondary-fixed-dim": "#e2d2be",
+                "on-primary-container": "#674d2f",
+                "inverse-on-surface": "#9e9d9a",
+                "surface": "#fbf9f6",
+                "tertiary-dim": "#55534e",
+                "primary-fixed": "#ffddba",
+                "on-error": "#fff7f6",
+                "primary-fixed-dim": "#f3cea8",
+                "surface-tint": "#75593b",
+                "on-tertiary": "#fef8f1",
+                "tertiary-container": "#f8f3ec",
+                "primary": "#75593b",
+                "surface-container-lowest": "#ffffff",
+                "inverse-surface": "#0e0e0d",
+                "on-secondary-container": "#5b5040",
+                "on-primary-fixed-variant": "#725638",
+                "background": "#fbf9f6",
+                "surface-container-high": "#e8e9e3",
+                "on-secondary-fixed-variant": "#665a4a",
+                "surface-container": "#eeeeea",
+                "on-secondary-fixed": "#483e2f",
+                "inverse-primary": "#f6d1aa",
+                "tertiary-fixed": "#f8f3ec",
+                "outline-variant": "#b1b3ad",
+                "on-tertiary-fixed-variant": "#696661",
+                "primary-container": "#ffddba",
+                "secondary": "#695d4d",
+                "tertiary-fixed-dim": "#eae4de",
+                "outline": "#797b77",
+                "on-tertiary-container": "#5e5b56",
+                "surface-dim": "#d8dbd4",
+                "on-primary": "#fff6f0",
+                "primary-dim": "#684d30",
+                "on-error-container": "#742410",
+                "error-dim": "#5c1202",
+                "tertiary": "#625f5a",
+                "on-surface-variant": "#5d605b",
+                "secondary-fixed": "#f1e0cb",
+                "on-background": "#30332f"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+              },
+              "spacing": {},
+              "fontFamily": {
+                "headline": [
+                  "Newsreader", "serif"
+                ],
+                "display": [
+                  "Newsreader", "serif"
+                ],
+                "body": [
+                  "Manrope", "sans-serif"
+                ],
+                "label": [
+                  "Manrope", "sans-serif"
+                ]
+              },
+              "fontSize": {}
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #FBF9F6;
+        }
+        .image-hover-zoom {
+            transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .group:hover .image-hover-zoom {
+            transform: scale(1.03);
+        }
+        .overlay-slide-up {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .group:hover .overlay-slide-up {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface antialiased bg-surface min-h-screen flex flex-col">
+<!-- TopAppBar from JSON -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md dark:bg-inverse-surface/90 border-b border-outline-variant/30 shadow-sm ease-out duration-500">
+<div class="flex justify-between items-center px-8 py-4 w-full max-w-screen-2xl mx-auto">
+<a class="font-display text-2xl font-bold tracking-tighter text-on-surface dark:text-surface-bright" href="#">AKHILA</a>
+<nav class="hidden md:flex space-x-8">
+<a class="text-primary dark:text-inverse-primary border-b border-primary pb-1 font-display text-headline-sm uppercase tracking-widest hover:bg-surface-container-low/50 transition-all duration-300" href="#">Portfolio</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-display text-headline-sm uppercase tracking-widest hover:bg-surface-container-low/50 transition-all duration-300" href="#">Master Tour</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-display text-headline-sm uppercase tracking-widest hover:bg-surface-container-low/50 transition-all duration-300" href="#">Live CCTV</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-display text-headline-sm uppercase tracking-widest hover:bg-surface-container-low/50 transition-all duration-300" href="#">Studio</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-display text-headline-sm uppercase tracking-widest hover:bg-surface-container-low/50 transition-all duration-300" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">search</span>
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-label text-sm uppercase tracking-wider hover:bg-primary-dim transition-colors">Enquire</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-24 px-4 md:px-8 max-w-screen-2xl mx-auto w-full">
+<!-- Header Section -->
+<section class="mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-end gap-8">
+<h1 class="font-display text-5xl md:text-7xl lg:text-8xl tracking-tight text-on-surface">
+                Selected <br/>
+<span class="italic text-primary font-light">Works</span>
+</h1>
+<!-- Filters -->
+<div class="flex flex-wrap gap-3 pb-2">
+<button class="px-5 py-2 rounded-full border border-primary bg-primary text-on-primary font-label text-sm tracking-wide transition-colors">All</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant bg-transparent text-on-surface hover:border-primary hover:text-primary font-label text-sm tracking-wide transition-colors">Residential</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant bg-transparent text-on-surface hover:border-primary hover:text-primary font-label text-sm tracking-wide transition-colors">Commercial</button>
+</div>
+</section>
+<!-- Asymmetric Editorial Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 lg:gap-12 auto-rows-min">
+<!-- Project 1: Landscape (Casa Horizon) -->
+<article class="group relative overflow-hidden rounded col-span-1 md:col-span-12 lg:col-span-8 cursor-pointer aspect-video bg-surface-container-low">
+<img class="absolute inset-0 w-full h-full object-cover image-hover-zoom" data-alt="A sweeping architectural photograph of Casa Horizon, a luxury modernist coastal residence at sunset. Wide landscape orientation. The home features vast expanses of floor-to-ceiling glass and sleek white stone facade elements. An infinity pool reflects the orange and purple hues of the sunset over the ocean. Warm, cinematic lighting. High-end, pristine residential architecture style." src="https://lh3.googleusercontent.com/aida/AEtjO1WQ-JkkEqxN0bmM2zf0Ls1pqPxjhJtqI_94NTn0CWcl89q1txet4HG4PL2JWVfjfPJlKASZiYbvOhhg7EnMhmUvm_ud2ZRCE164Uz2FMJ-IMl3REA9A9hD_fw0xXnbEEoC3HZATOfQxkgSkbpyg2lZlAd_mtX3Q047sUvBjaIPJn6lvoI10RD4MTo11Skmry8FMBLbXSR6Bkono_YT5AX21UvLSH2epZ8pkbfeIbgLIXz4G7waXyA5WF5wU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-6 md:p-10 w-full overlay-slide-up flex justify-between items-end">
+<div>
+<p class="font-label text-surface-bright/80 text-xs tracking-widest uppercase mb-2">Residential · 2023</p>
+<h2 class="font-display text-3xl md:text-4xl text-surface-bright">Casa Horizon</h2>
+</div>
+<span class="material-symbols-outlined text-surface-bright text-3xl">arrow_forward</span>
+</div>
+</article>
+<!-- Project 2: Portrait (Meridian Residence) -->
+<article class="group relative overflow-hidden rounded col-span-1 md:col-span-6 lg:col-span-4 cursor-pointer aspect-[3/4] md:aspect-auto bg-surface-container-low">
+<img class="absolute inset-0 w-full h-full object-cover image-hover-zoom" data-alt="A dramatic vertical architectural photograph of Meridian Residence, a multi-tiered concrete and glass luxury home built into a steep hillside. Shot during blue hour with warm interior lights glowing against the twilight sky. Brutalist concrete textures contrasted with lush green landscaping. A curving driveway leads to the lower level. High-end, imposing hillside architecture." src="https://lh3.googleusercontent.com/aida/AEtjO1VWO_6mm0TM2Q0ARabHqE-I-jNG4sYHWiIfzNqquKFBrGC1W_LX59OUZDbMxcRz4ta4tebBbvEpUwToZu022mnmKLdhwak2z-Ayp9-4HOBCuYAu-TWF8Wtg3PuCxTqdTekv4vLyHbH2fZS0UTXYz6kUnSavVkF6a8YQi8sq1KgYPYCJHz4rnx_vF6HJjeAdS6HQ96Zg0HjQ1DtT9lqI51W8nBJj67Lo5EmJK-gxbj296Hh6mvMHHllImoE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-6 md:p-8 w-full overlay-slide-up flex justify-between items-end">
+<div>
+<p class="font-label text-surface-bright/80 text-xs tracking-widest uppercase mb-2">Residential · 2022</p>
+<h2 class="font-display text-2xl md:text-3xl text-surface-bright">Meridian Residence</h2>
+</div>
+</div>
+</article>
+<!-- Project 3: Landscape (Atelier House) -->
+<article class="group relative overflow-hidden rounded col-span-1 md:col-span-6 lg:col-span-5 cursor-pointer aspect-square md:aspect-auto md:h-[600px] bg-surface-container-low">
+<img class="absolute inset-0 w-full h-full object-cover image-hover-zoom" data-alt="An interior architectural photograph of Atelier House, a minimalist artist studio and residence. The space features raw, exposed concrete walls, a pitched roof with a large central skylight flooding the room with soft, diffused daylight. A long light wood dining table and minimalist wooden kitchen cabinetry add warmth to the industrial concrete shell. Artistic, serene, and textured aesthetic." src="https://lh3.googleusercontent.com/aida/AEtjO1UlxLJtrk6kx9y4KXMLb3OuQ-bDyf0AAxN55DTYPB3rY1ktDojeXSSUsMhUoqjaviIp_Z6xKW4NBdmO6JH2JV4TwSMhyBjf1HahU1juRaoXx9W12vGPHI7Ff3Xjo5JjhkJhchjmLrekQm8Ubx3QpJvSBy2E3z9Ko7cfs5gWoF4mdkjiI0jh12sVThqaIVwWpwF5wvJLHzg1qVIU884htjckngYjT_mAbm5pYFySi2X1Hue5XcnM9H8rKOxe"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-6 md:p-8 w-full overlay-slide-up flex justify-between items-end">
+<div>
+<p class="font-label text-surface-bright/80 text-xs tracking-widest uppercase mb-2">Residential / Studio · 2024</p>
+<h2 class="font-display text-2xl md:text-3xl text-surface-bright">Atelier House</h2>
+</div>
+</div>
+</article>
+<!-- Project 4: Portrait (Northline Tower) -->
+<article class="group relative overflow-hidden rounded col-span-1 md:col-span-12 lg:col-span-7 cursor-pointer aspect-[4/3] md:aspect-[16/9] lg:aspect-auto lg:h-[600px] bg-surface-container-low">
+<img class="absolute inset-0 w-full h-full object-cover image-hover-zoom" data-alt="An aerial architectural photograph of Northline Tower, a soaring modern commercial skyscraper clad in dark glass reflecting the golden hour sunset. The tower features integrated green terraces and living walls on upper levels. Situated alongside a calm river reflecting the city skyline. Sleek, corporate, yet sustainable architectural design. High-resolution twilight photography." src="https://lh3.googleusercontent.com/aida/AEtjO1Xpoq00MQCifBUI2myo-AgviT0YtGq76PbjZ6IfQGihLZmkEIAuVaBu96LykoCQlr4u0pbuztO4O8nYt7AYoDx_c2OYLsCGvkWlStQAQyZQC6DY-5judp2SPSEs2uEeRmvkymGjzCHuWqDcoUhSFPw1pXMRSjehV0QfdEjCspGgwUpHlyznc71J4IA9fH9QleZO_98N3Dri3YEwRJ-_NG8_A79eyXwmwiFBcgz9ntxV8GpVQczPTprNt02C"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-4 right-4 bg-error/90 px-3 py-1 rounded flex items-center gap-2 z-10 backdrop-blur-sm shadow-sm">
+<span class="w-2 h-2 rounded-full bg-surface-bright animate-pulse"></span>
+<span class="font-label text-xs tracking-widest text-surface-bright uppercase font-bold">Live</span>
+</div>
+<div class="absolute bottom-0 left-0 p-6 md:p-10 w-full overlay-slide-up flex justify-between items-end">
+<div>
+<p class="font-label text-surface-bright/80 text-xs tracking-widest uppercase mb-2">Commercial · In Progress</p>
+<h2 class="font-display text-3xl md:text-4xl text-surface-bright">Northline Tower</h2>
+</div>
+<span class="material-symbols-outlined text-surface-bright text-3xl">arrow_forward</span>
+</div>
+</article>
+</section>
+<div class="mt-20 text-center">
+<button class="inline-flex items-center gap-2 border-b border-primary pb-1 text-primary hover:text-primary-dim hover:border-primary-dim transition-colors font-label uppercase tracking-widest text-sm">
+                View Archive <span class="material-symbols-outlined text-sm">arrow_downward</span>
+</button>
+</div>
+</main>
+<!-- Footer from JSON -->
+<footer class="bg-inverse-surface dark:bg-surface-dim w-full py-12 px-8 border-t border-outline/20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-screen-2xl mx-auto items-center">
+<div class="font-display text-xl text-surface-bright">AKHILA</div>
+<nav class="flex flex-wrap gap-6 font-body text-label-md tracking-normal text-on-tertiary-fixed-variant md:justify-center">
+<a class="hover:text-primary-fixed transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="hover:text-primary-fixed transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="hover:text-primary-fixed transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Careers</a>
+<a class="hover:text-primary-fixed transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Press Kit</a>
+</nav>
+<div class="font-body text-label-md tracking-normal text-on-tertiary-fixed-variant md:text-right">
+                © 2024 AKHILA ARCHITECTURE &amp; CONSTRUCTION. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+</body></html>

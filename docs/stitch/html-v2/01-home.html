@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Akhila - Premium Architecture &amp; Construction</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-dim": "#d8dbd4",
+          "on-primary-container": "#674d2f",
+          "error-container": "#fe8b70",
+          "secondary": "#695d4d",
+          "on-primary-fixed-variant": "#725638",
+          "on-tertiary-fixed-variant": "#696661",
+          "on-error-container": "#742410",
+          "primary-fixed": "#ffddba",
+          "surface-container-high": "#e8e9e3",
+          "secondary-fixed": "#f1e0cb",
+          "error-dim": "#5c1202",
+          "surface-tint": "#75593b",
+          "on-secondary-container": "#5b5040",
+          "tertiary": "#625f5a",
+          "on-secondary": "#fff8f2",
+          "outline-variant": "#b1b3ad",
+          "surface-container-lowest": "#ffffff",
+          "tertiary-container": "#f8f3ec",
+          "surface-variant": "#e2e3dd",
+          "tertiary-fixed": "#f8f3ec",
+          "primary-fixed-dim": "#f3cea8",
+          "on-surface-variant": "#5d605b",
+          "secondary-container": "#f1e0cb",
+          "primary": "#9A7B5A",
+          "surface-container": "#eeeeea",
+          "outline": "#797b77",
+          "on-primary": "#fff6f0",
+          "on-tertiary-fixed": "#4c4945",
+          "secondary-fixed-dim": "#e2d2be",
+          "surface-container-low": "#f5f3f0",
+          "on-tertiary": "#fef8f1",
+          "primary-dim": "#684d30",
+          "on-tertiary-container": "#5e5b56",
+          "on-surface": "#30332f",
+          "surface-container-highest": "#e2e3dd",
+          "inverse-primary": "#f6d1aa",
+          "surface": "#FBF9F6",
+          "secondary-dim": "#5d5142",
+          "on-error": "#fff7f6",
+          "primary-container": "#ffddba",
+          "on-background": "#30332f",
+          "inverse-surface": "#0e0e0d",
+          "on-primary-fixed": "#533b1f",
+          "tertiary-dim": "#55534e",
+          "surface-bright": "#fbf9f6",
+          "tertiary-fixed-dim": "#eae4de",
+          "on-secondary-fixed-variant": "#665a4a",
+          "inverse-on-surface": "#9e9d9a",
+          "on-secondary-fixed": "#483e2f",
+          "background": "#FBF9F6",
+          "error": "#9e422c",
+          "charcoal": "#2C2A26",
+          "live-hot": "#C23B3B"
+        },
+        "borderRadius": {
+          "DEFAULT": "4px",
+          "lg": "4px",
+          "xl": "4px",
+          "full": "4px"
+        },
+        "spacing": {},
+        "fontFamily": {
+          "headline": [
+            "Newsreader"
+          ],
+          "display": [
+            "Newsreader"
+          ],
+          "body": [
+            "Manrope"
+          ],
+          "label": [
+            "Manrope"
+          ]
+        },
+        "fontSize": {}
+      },
+    },
+  }
+</script>
+<style>
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+
+        .img-hover-zoom {
+            transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .group:hover .img-hover-zoom {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/30 backdrop-blur-sm dark:bg-inverse-surface/30 border-b border-outline-variant/30 shadow-sm transition-all duration-300" id="main-header">
+<div class="flex justify-between items-center px-8 py-4 max-w-[1920px] mx-auto">
+<!-- Brand -->
+<a class="font-display text-2xl font-bold tracking-tighter text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity" href="#">
+                AKHILA
+            </a>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex space-x-8">
+<a class="font-label uppercase tracking-widest text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">PROJECTS</a>
+<a class="font-label uppercase tracking-widest text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">SERVICES</a>
+<a class="font-label uppercase tracking-widest text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">PROCESS</a>
+<a class="font-label uppercase tracking-widest text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">LIVE SITES</a>
+<a class="font-label uppercase tracking-widest text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">GALLERY</a>
+<a class="font-label uppercase tracking-widest text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">ABOUT</a>
+<a class="font-label uppercase tracking-widest text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">CONTACT</a>
+</nav>
+<!-- Actions -->
+<div class="hidden md:flex items-center space-x-6">
+<a class="font-label uppercase tracking-widest text-label-sm text-primary font-bold hover:opacity-80 transition-opacity" href="#">Start a Project</a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button aria-label="Menu" class="md:hidden text-on-surface hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-start overflow-hidden pt-20">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-charcoal/60 z-10 mix-blend-multiply"></div>
+<div class="w-full h-full bg-cover bg-center" data-alt="Photorealistic 4K luxury modern residence interior. Floor-to-ceiling glass windows overlooking a serene landscape, bronze accents, stone textures, ivory plaster walls. Cinematic natural daylight, soft shadows. High-end architectural photography, magazine style. Clean, minimalist, sophisticated. 16:9 aspect ratio." style="background-image: url('https://lh3.googleusercontent.com/aida/AEtjO1UOS1oPbFVEZsZbBTNR3SkfKEBYlZmw2Vg9WgKKE1hHQG7OTsG5P74zJrjtB7LQ193Wo0JJcnXhhaL0ARQcqZxf18UFOPIMM2KHoKkQp9LLrwPQ932z9XTZLsvv3YipuBam_ZW3tnqJDk2t1B5KeVxQ65NZFM2dcx4zgeha48QR5zCOfv_d_pZ5-khANfZn7LWzu5B-F7R4t6DmtUbipWth8Lwggr0bfYV2dq-6dZpKnwzqTR5zP1YlQfR2')"></div>
+</div>
+<div class="relative z-20 max-w-7xl mx-auto px-8 w-full">
+<div class="max-w-3xl fade-up">
+<p class="font-label uppercase tracking-[0.3em] text-surface-bright text-xs md:text-sm font-semibold mb-6 flex items-center gap-4">
+<span class="h-[1px] w-12 bg-surface-bright/50"></span>
+                        ARCHITECTURE • DESIGN • CONSTRUCTION
+                    </p>
+<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl text-surface-bright leading-[1.05] mb-8 font-light tracking-tight">
+                        Spaces Designed to <br/><i class="text-surface-bright/90">Become Experiences</i>
+</h1>
+<p class="font-body text-surface-bright/80 text-lg md:text-xl max-w-xl mb-12 font-light leading-relaxed">
+                        Uncompromising precision and transparent processes. We shape raw materials into cinematic architectural realities that endure.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+<a class="inline-flex items-center justify-center px-8 py-4 bg-primary text-surface-bright font-label uppercase tracking-wider text-sm rounded hover:bg-primary-dim transition-colors duration-300" href="#">
+                            Explore Our Projects
+                        </a>
+<a class="inline-flex items-center text-surface-bright font-label uppercase tracking-widest text-sm hover:text-primary transition-colors group" href="#">
+                            Start Your Project
+                            <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform duration-300" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="absolute bottom-12 left-8 z-20 fade-up stagger-3 hidden md:block">
+<div class="flex flex-col items-center gap-4">
+<span class="font-label uppercase tracking-widest text-[10px] text-surface-bright rotate-90 origin-left ml-2">Scroll</span>
+<div class="w-[1px] h-16 bg-surface-bright/30 relative overflow-hidden">
+<div class="w-full h-1/2 bg-surface-bright absolute top-0 animate-[shimmer_2s_infinite]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Metrics -->
+<section class="py-24 bg-surface relative z-10 border-b border-surface-variant">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8 divide-x-0 md:divide-x divide-surface-variant">
+<div class="fade-up text-center md:text-left md:px-8 first:pl-0">
+<h3 class="font-headline text-5xl md:text-6xl text-charcoal mb-2 font-light">120+</h3>
+<p class="font-label uppercase tracking-widest text-xs text-on-surface-variant">Projects Delivered</p>
+</div>
+<div class="fade-up stagger-1 text-center md:text-left md:px-8">
+<h3 class="font-headline text-5xl md:text-6xl text-charcoal mb-2 font-light">18+</h3>
+<p class="font-label uppercase tracking-widest text-xs text-on-surface-variant">Years Experience</p>
+</div>
+<div class="fade-up stagger-2 text-center md:text-left md:px-8">
+<h3 class="font-headline text-5xl md:text-6xl text-charcoal mb-2 font-light">42</h3>
+<p class="font-label uppercase tracking-widest text-xs text-on-surface-variant">Cities</p>
+</div>
+<div class="fade-up stagger-3 text-center md:text-left md:px-8 border-l-0 md:border-l">
+<h3 class="font-headline text-5xl md:text-6xl text-charcoal mb-2 font-light">98%</h3>
+<p class="font-label uppercase tracking-widest text-xs text-on-surface-variant">Client Satisfaction</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Work -->
+<section class="py-32 bg-surface">
+<div class="max-w-[1920px] mx-auto px-8 md:px-16">
+<div class="flex justify-between items-end mb-16 fade-up">
+<h2 class="font-headline text-4xl md:text-6xl text-charcoal font-light tracking-tight">Selected <i class="text-primary">Works</i></h2>
+<a class="hidden md:inline-flex items-center text-charcoal font-label uppercase tracking-widest text-sm hover:text-primary transition-colors group border-b border-charcoal/30 hover:border-primary pb-1" href="#">
+                        View Full Portfolio
+                    </a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+<!-- Card 1: Large Landscape -->
+<a class="group block md:col-span-8 fade-up relative overflow-hidden rounded" href="#">
+<div class="aspect-[16/9] w-full overflow-hidden bg-surface-variant rounded">
+<div class="w-full h-full bg-cover bg-center img-hover-zoom rounded" data-alt="Modern coastal residence 'Casa Horizon'. Minimalist architecture, floor-to-ceiling glass, white stone, sunset lighting, infinity pool. High-end architectural photography, 4K, premium quality. 16:9 aspect ratio." style="background-image: url('https://lh3.googleusercontent.com/aida/AEtjO1WQ-JkkEqxN0bmM2zf0Ls1pqPxjhJtqI_94NTn0CWcl89q1txet4HG4PL2JWVfjfPJlKASZiYbvOhhg7EnMhmUvm_ud2ZRCE164Uz2FMJ-IMl3REA9A9hD_fw0xXnbEEoC3HZATOfQxkgSkbpyg2lZlAd_mtX3Q047sUvBjaIPJn6lvoI10RD4MTo11Skmry8FMBLbXSR6Bkono_YT5AX21UvLSH2epZ8pkbfeIbgLIXz4G7waXyA5WF5wU')"></div>
+</div>
+<div class="mt-6 flex justify-between items-start">
+<div>
+<h3 class="font-headline text-2xl text-charcoal mb-1 group-hover:text-primary transition-colors">Casa Horizon</h3>
+<p class="font-body text-sm text-on-surface-variant">Residential Architecture</p>
+</div>
+<div class="text-right font-label text-xs text-on-surface-variant tracking-wider">
+<span class="block">2023</span>
+<span>8,400 SQ FT</span>
+</div>
+</div>
+</a>
+<!-- Card 2: Vertical -->
+<a class="group block md:col-span-4 fade-up stagger-1 relative overflow-hidden rounded md:-mt-24" href="#">
+<div class="aspect-[2/3] w-full overflow-hidden bg-surface-variant rounded">
+<div class="w-full h-full bg-cover bg-center img-hover-zoom rounded" data-alt="Modern hillside residence 'Meridian Residence'. Vertical architectural shot, tiered concrete and glass structure, lush greenery, twilight lighting. High-end architectural photography, 4K. 2:3 aspect ratio." style="background-image: url('https://lh3.googleusercontent.com/aida/AEtjO1VWO_6mm0TM2Q0ARabHqE-I-jNG4sYHWiIfzNqquKFBrGC1W_LX59OUZDbMxcRz4ta4tebBbvEpUwToZu022mnmKLdhwak2z-Ayp9-4HOBCuYAu-TWF8Wtg3PuCxTqdTekv4vLyHbH2fZS0UTXYz6kUnSavVkF6a8YQi8sq1KgYPYCJHz4rnx_vF6HJjeAdS6HQ96Zg0HjQ1DtT9lqI51W8nBJj67Lo5EmJK-gxbj296Hh6mvMHHllImoE')"></div>
+</div>
+<div class="mt-6 flex justify-between items-start">
+<div>
+<h3 class="font-headline text-2xl text-charcoal mb-1 group-hover:text-primary transition-colors">Meridian Residence</h3>
+<p class="font-body text-sm text-on-surface-variant">Design &amp; Build</p>
+</div>
+<div class="text-right font-label text-xs text-on-surface-variant tracking-wider">
+<span class="block">2022</span>
+<span>6,200 SQ FT</span>
+</div>
+</div>
+</a>
+<!-- Card 3: Ultra-wide -->
+<a class="group block md:col-span-12 fade-up relative overflow-hidden rounded mt-12 md:mt-0" href="#">
+<div class="aspect-[21/9] md:aspect-[3/1] w-full overflow-hidden bg-surface-variant rounded">
+<div class="w-full h-full bg-cover bg-center img-hover-zoom rounded" data-alt="'Atelier House' interior. Ultra-wide architectural shot of a minimalist studio or living space. Raw concrete, warm wood accents, large skylights, soft diffused daylight. High-end architectural photography, 4K. 16:9 aspect ratio." style="background-image: url('https://lh3.googleusercontent.com/aida/AEtjO1UlxLJtrk6kx9y4KXMLb3OuQ-bDyf0AAxN55DTYPB3rY1ktDojeXSSUsMhUoqjaviIp_Z6xKW4NBdmO6JH2JV4TwSMhyBjf1HahU1juRaoXx9W12vGPHI7Ff3Xjo5JjhkJhchjmLrekQm8Ubx3QpJvSBy2E3z9Ko7cfs5gWoF4mdkjiI0jh12sVThqaIVwWpwF5wvJLHzg1qVIU884htjckngYjT_mAbm5pYFySi2X1Hue5XcnM9H8rKOxe')"></div>
+</div>
+<div class="mt-6 flex justify-between items-start">
+<div>
+<h3 class="font-headline text-2xl text-charcoal mb-1 group-hover:text-primary transition-colors">Atelier House</h3>
+<p class="font-body text-sm text-on-surface-variant">Interior Architecture</p>
+</div>
+<div class="text-right font-label text-xs text-on-surface-variant tracking-wider">
+<span class="block">2024</span>
+<span>4,100 SQ FT</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Expertise -->
+<section class="py-32 bg-[#2C2A26] text-surface-bright">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col gap-12 md:gap-16">
+<p class="font-label uppercase tracking-widest text-xs text-surface-bright/50 fade-up">Our Core Disciplines</p>
+<ul class="flex flex-col gap-8 md:gap-12 w-full border-t border-surface-bright/10 pt-12">
+<li class="fade-up group cursor-pointer">
+<div class="flex justify-between items-center pb-8 border-b border-surface-bright/10 hover:border-surface-bright/40 transition-colors">
+<h3 class="font-headline text-4xl md:text-6xl font-light group-hover:text-primary transition-colors group-hover:italic">Architecture</h3>
+<span class="material-symbols-outlined text-4xl text-surface-bright/30 group-hover:text-surface-bright group-hover:-rotate-45 transition-all duration-300" style="font-variation-settings: 'wght' 200;">arrow_forward</span>
+</div>
+</li>
+<li class="fade-up stagger-1 group cursor-pointer">
+<div class="flex justify-between items-center pb-8 border-b border-surface-bright/10 hover:border-surface-bright/40 transition-colors">
+<h3 class="font-headline text-4xl md:text-6xl font-light group-hover:text-primary transition-colors group-hover:italic">Interior Design</h3>
+<span class="material-symbols-outlined text-4xl text-surface-bright/30 group-hover:text-surface-bright group-hover:-rotate-45 transition-all duration-300" style="font-variation-settings: 'wght' 200;">arrow_forward</span>
+</div>
+</li>
+<li class="fade-up stagger-2 group cursor-pointer">
+<div class="flex justify-between items-center pb-8 border-b border-surface-bright/10 hover:border-surface-bright/40 transition-colors">
+<h3 class="font-headline text-4xl md:text-6xl font-light group-hover:text-primary transition-colors group-hover:italic">Construction</h3>
+<span class="material-symbols-outlined text-4xl text-surface-bright/30 group-hover:text-surface-bright group-hover:-rotate-45 transition-all duration-300" style="font-variation-settings: 'wght' 200;">arrow_forward</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Live Sites Teaser -->
+<section class="py-16 bg-surface border-y border-surface-variant overflow-hidden">
+<div class="max-w-[1920px] mx-auto px-8 flex justify-between items-center fade-up">
+<div class="flex items-center gap-6">
+<span class="inline-flex items-center px-3 py-1 rounded bg-live-hot/10 text-live-hot font-label uppercase tracking-widest text-xs font-bold">
+<span class="w-2 h-2 rounded-full bg-live-hot mr-2 animate-pulse"></span>
+                        LIVE
+                    </span>
+<h3 class="font-headline text-2xl text-charcoal font-light">Monitor Ongoing Projects</h3>
+</div>
+<a class="font-label uppercase tracking-widest text-sm text-primary hover:opacity-80 transition-opacity flex items-center group" href="#">
+                    Access CCTV Portal
+                    <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform" style="font-size: 18px;">east</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 bg-[#2C2A26] border-t border-white/5 text-surface-bright">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-7xl mx-auto">
+<!-- Brand Column -->
+<div class="md:col-span-1 flex flex-col justify-between">
+<div>
+<h2 class="font-display text-4xl uppercase tracking-tighter text-surface-bright mb-6">AKHILA</h2>
+<p class="font-body font-light text-surface-bright/70 text-sm leading-relaxed max-w-xs">
+                        Premium architecture, design, and construction. Building cinematic experiences through uncompromising precision.
+                    </p>
+</div>
+</div>
+<!-- Nav Columns -->
+<div class="md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
+<div>
+<h4 class="font-label uppercase tracking-widest text-xs text-surface-bright/50 mb-6">Menu</h4>
+<ul class="space-y-4">
+<li><a class="font-body font-light text-surface-bright/70 hover:text-primary hover:translate-x-1 transition-all duration-300 inline-block" href="#">Projects</a></li>
+<li><a class="font-body font-light text-surface-bright/70 hover:text-primary hover:translate-x-1 transition-all duration-300 inline-block" href="#">Services</a></li>
+<li><a class="font-body font-light text-surface-bright/70 hover:text-primary hover:translate-x-1 transition-all duration-300 inline-block" href="#">Process</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label uppercase tracking-widest text-xs text-surface-bright/50 mb-6">Explore</h4>
+<ul class="space-y-4">
+<li><a class="font-body font-light text-surface-bright/70 hover:text-primary hover:translate-x-1 transition-all duration-300 inline-block" href="#">Live Sites</a></li>
+<li><a class="font-body font-light text-surface-bright/70 hover:text-primary hover:translate-x-1 transition-all duration-300 inline-block" href="#">Gallery</a></li>
+<li><a class="font-body font-light text-surface-bright/70 hover:text-primary hover:translate-x-1 transition-all duration-300 inline-block" href="#">About</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label uppercase tracking-widest text-xs text-surface-bright/50 mb-6">Legal</h4>
+<ul class="space-y-4">
+<li><a class="font-body font-light text-surface-bright/70 hover:text-primary hover:translate-x-1 transition-all duration-300 inline-block" href="#">Contact</a></li>
+<li><a class="font-body font-light text-surface-bright/70 hover:text-primary hover:translate-x-1 transition-all duration-300 inline-block" href="#">Privacy Policy</a></li>
+<li><a class="font-body font-light text-surface-bright/70 hover:text-primary hover:translate-x-1 transition-all duration-300 inline-block" href="#">Terms</a></li>
+</ul>
+</div>
+</div>
+<!-- Copyright Row -->
+<div class="md:col-span-4 mt-12 pt-8 border-t border-surface-bright/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body font-light text-xs text-surface-bright/50">
+                    © 2024 AKHILA. Precision in Architecture.
+                </p>
+<div class="flex gap-4">
+<!-- Social placeholders -->
+<a class="text-surface-bright/50 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">language</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for fade-up animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-up').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Header background on scroll
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-md');
+                    header.classList.replace('bg-surface/30', 'bg-surface/90');
+                } else {
+                    header.classList.remove('shadow-md');
+                    header.classList.replace('bg-surface/90', 'bg-surface/30');
+                }
+            });
+        });
+    </script>
+</body></html>

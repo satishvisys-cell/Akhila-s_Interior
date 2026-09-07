@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Selected Works | Akhila Architectural Excellence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;family=Public+Sans:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "surface-container-low": "#f5f3f0",
+              "on-primary": "#fff6f0",
+              "on-tertiary-fixed": "#4c4945",
+              "on-error-container": "#742410",
+              "surface-container-lowest": "#ffffff",
+              "outline-variant": "#b1b3ad",
+              "outline": "#797b77",
+              "inverse-surface": "#0e0e0d",
+              "surface-container-high": "#e8e9e3",
+              "primary-fixed-dim": "#f3cea8",
+              "primary-dim": "#684d30",
+              "on-tertiary": "#fef8f1",
+              "on-secondary-fixed-variant": "#665a4a",
+              "on-secondary-fixed": "#483e2f",
+              "error-dim": "#5c1202",
+              "error": "#9e422c",
+              "on-surface-variant": "#5d605b",
+              "background": "#fbf9f6",
+              "primary": "#75593b",
+              "tertiary-fixed": "#f8f3ec",
+              "surface-container": "#eeeeea",
+              "surface-container-highest": "#e2e3dd",
+              "tertiary-container": "#f8f3ec",
+              "on-tertiary-fixed-variant": "#696661",
+              "on-error": "#fff7f6",
+              "secondary": "#695d4d",
+              "on-background": "#30332f",
+              "on-secondary": "#fff8f2",
+              "inverse-on-surface": "#9e9d9a",
+              "tertiary": "#625f5a",
+              "on-primary-fixed": "#533b1f",
+              "surface-tint": "#75593b",
+              "secondary-fixed-dim": "#e2d2be",
+              "tertiary-dim": "#55534e",
+              "surface-dim": "#d8dbd4",
+              "on-primary-fixed-variant": "#725638",
+              "surface": "#fbf9f6",
+              "inverse-primary": "#f6d1aa",
+              "secondary-container": "#f1e0cb",
+              "primary-container": "#ffddba",
+              "tertiary-fixed-dim": "#eae4de",
+              "error-container": "#fe8b70",
+              "surface-variant": "#e2e3dd",
+              "surface-bright": "#fbf9f6",
+              "secondary-fixed": "#f1e0cb",
+              "on-surface": "#30332f",
+              "on-secondary-container": "#5b5040",
+              "primary-fixed": "#ffddba",
+              "on-primary-container": "#674d2f",
+              "on-tertiary-container": "#5e5b56",
+              "secondary-dim": "#5d5142"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.25rem",
+              "lg": "0.25rem",
+              "xl": "0.25rem",
+              "full": "0.25rem"
+            },
+            "spacing": {
+              "margin-desktop": "64px",
+              "unit": "4px",
+              "margin-mobile": "24px",
+              "gutter": "24px",
+              "section-gap": "128px"
+            },
+            "fontFamily": {
+              "body-md": ["Manrope", "sans-serif"],
+              "headline-lg-mobile": ["Newsreader", "serif"],
+              "display-lg": ["Newsreader", "serif"],
+              "headline-lg": ["Newsreader", "serif"],
+              "body-lg": ["Manrope", "sans-serif"],
+              "label-sm": ["Public Sans", "sans-serif"]
+            },
+            "fontSize": {
+              "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+              "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+              "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+              "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "400" }],
+              "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+              "label-sm": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-accent-bronze { color: #9A7B5A; }
+        .bg-accent-bronze { background-color: #9A7B5A; }
+        .border-accent-bronze { border-color: #9A7B5A; }
+        
+        /* Editorial Masonry/Asymmetric grid overrides */
+        .grid-editorial {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .item-hero { grid-column: 1 / -1; }
+        .item-half-left { grid-column: 1 / 7; }
+        .item-half-right { grid-column: 7 / 13; }
+        .item-third { grid-column: span 4; }
+        .item-offset-left { grid-column: 2 / 8; }
+        .item-offset-right { grid-column: 6 / -2; }
+        
+        @media (max-width: 768px) {
+            .grid-editorial { display: flex; flex-direction: column; gap: 48px; }
+            .item-half-left, .item-half-right, .item-third, .item-offset-left, .item-offset-right { width: 100%; }
+        }
+        
+        /* Image overlay gradient */
+        .image-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(14, 14, 13, 0.4) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        
+        .hover-lift {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-[#FDFCFB]/90 backdrop-blur-md border-b border-[#2D2D2D]/5 transition-transform duration-300" id="navbar">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-[1920px] mx-auto">
+<!-- Brand -->
+<a class="font-headline-lg text-headline-lg md:font-display-lg md:text-headline-lg tracking-tighter text-[#2D2D2D]" href="#">
+                AKHILA
+            </a>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-label-sm text-label-sm uppercase tracking-wide text-[#A68966] font-medium border-b border-[#A68966] pb-1 translate-y-[1px] transition-transform duration-200" href="#">Projects</a>
+<a class="font-label-sm text-label-sm uppercase tracking-wide text-[#2D2D2D] hover:text-[#A68966] transition-colors duration-300" href="#">Services</a>
+<a class="font-label-sm text-label-sm uppercase tracking-wide text-[#2D2D2D] hover:text-[#A68966] transition-colors duration-300" href="#">Process</a>
+<a class="font-label-sm text-label-sm uppercase tracking-wide text-[#2D2D2D] hover:text-[#A68966] transition-colors duration-300" href="#">Live Sites</a>
+<a class="font-label-sm text-label-sm uppercase tracking-wide text-[#2D2D2D] hover:text-[#A68966] transition-colors duration-300" href="#">Gallery</a>
+<a class="font-label-sm text-label-sm uppercase tracking-wide text-[#2D2D2D] hover:text-[#A68966] transition-colors duration-300" href="#">About</a>
+<a class="font-label-sm text-label-sm uppercase tracking-wide text-[#2D2D2D] hover:text-[#A68966] transition-colors duration-300" href="#">Contact</a>
+</div>
+<!-- Primary Action -->
+<a class="hidden md:inline-flex bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-wide px-6 py-3 rounded hover:opacity-80 transition-opacity duration-300" href="#">
+                Start a Project
+            </a>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-[#2D2D2D] hover:text-[#A68966] transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-[140px] pb-section-gap px-margin-mobile md:px-margin-desktop max-w-[1920px] mx-auto min-h-screen">
+<!-- Intro Section -->
+<header class="mb-24 md:mb-32 max-w-4xl">
+<h1 class="font-display-lg text-display-lg text-on-background mb-6">Selected Works</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                A curated collection of cinematic architectural spaces. Precision craftsmanship meets editorial design to create environments of enduring quality and quiet luxury.
+            </p>
+</header>
+<!-- Minimal Filters -->
+<div class="mb-16 md:mb-24 flex flex-wrap gap-8 border-b border-outline-variant/30 pb-4">
+<button class="font-label-sm text-label-sm uppercase tracking-widest text-accent-bronze border-b-2 border-accent-bronze pb-1">All</button>
+<button class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-on-background transition-colors">Residential</button>
+<button class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-on-background transition-colors">Commercial</button>
+<button class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-on-background transition-colors">Interior</button>
+<button class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-on-background transition-colors">Renovation</button>
+</div>
+<!-- Asymmetric Editorial Grid -->
+<div class="grid-editorial">
+<!-- Project 1: Hero Full Bleed -->
+<article class="item-hero group cursor-pointer mb-24 hover-lift">
+<div class="relative w-full aspect-[21/9] md:aspect-[24/10] overflow-hidden rounded bg-surface-container-high image-overlay mb-6">
+<img class="object-cover w-full h-full group-hover:scale-[1.02] transition-transform duration-700 ease-in-out" data-alt="A breathtaking exterior shot of a modern architectural villa (Casa Horizon) at dusk. The building features clean horizontal lines, expansive floor-to-ceiling glass, and warm wood accents. The lighting is cinematic, casting long shadows across a minimalist stone terrace leading to an infinity pool. The overall mood is luxurious, serene, and highly premium, adhering to an editorial light-mode architectural aesthetic with deep blacks and stark whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_d379BKeCCB1aE0IVXFX-tcuNM6-m-FVbfGCfwtgtYL7CO12f74y27zoH_MviXsJ7yI79SMDv9lwjQPgm14gvFcphlZMrPmeh5jmSPeSWe1qSlxmFZSvQNQa95-DxwhGp-vAHVyCI5ldJgwb2mfekb_P8Klnpz3ozEc0bFlL9_BHF4YfeKd4kbbdrGTKdpRsgpJQgi73IyBJq_5JgpR4PLUzaLT9buyjlCOiVbmnCQNCb8tuEo9nfKMbshjMDBAq6TOmUpsTCjv0"/>
+</div>
+<div class="flex flex-col md:flex-row md:justify-between md:items-end gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-2 group-hover:text-primary transition-colors">Casa Horizon</h2>
+<div class="flex flex-wrap items-center gap-4 font-label-sm text-label-sm uppercase text-on-surface-variant tracking-widest">
+<span>Residential</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Malibu, CA</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>2023</span>
+</div>
+</div>
+<div class="text-right hidden md:block">
+<span class="block font-label-sm text-label-sm uppercase text-on-surface-variant tracking-widest mb-1">Status</span>
+<span class="font-body-md text-body-md text-on-background">Completed</span>
+</div>
+</div>
+</article>
+<!-- Project 2: Half Left -->
+<article class="item-half-left group cursor-pointer mb-16 md:mb-32 hover-lift">
+<div class="relative w-full aspect-[4/5] overflow-hidden rounded bg-surface-container-high image-overlay mb-6">
+<img class="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-700 ease-in-out" data-alt="An editorial interior shot of a sophisticated living room in Meridian Residence. The space features soaring double-height ceilings, raw concrete walls, and large expanses of glass framing a forest view. The furniture is minimalist and sculptural, upholstered in ivory and warm sand tones. Cinematic natural light floods the room, creating a calm, premium architectural mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCyVZO70zlv-0C8HJKdASmHLpyw0e9IuwoQiZSwh2cynnLbTfbvJhyFPrIuR8Ie9odUnyTKSLUqJjIJzgQ4i9JjJoBv_h9uQ6lBKQ-ETcV3aLxDbIe73nXgWWLgrVPLGM__028U9nQeb1tlwQFAPC7GhhyCvWloV_7D-arh9T119MJdhfkH_wklTBa2yPfREZHV89SPlqwCSjWTKizrv3vwjkhMMrXMxxAIw37k7w-uI97vTW8U6kC6AH3gqyZlkpDUu100rbGdeQ"/>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background mb-2">Meridian Residence</h3>
+<div class="flex gap-4 font-label-sm text-label-sm uppercase text-on-surface-variant tracking-widest">
+<span>Interior</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant mt-1.5"></span>
+<span>Austin, TX</span>
+</div>
+</article>
+<!-- Project 3: Half Right, staggered down -->
+<article class="item-half-right group cursor-pointer mt-0 md:mt-32 mb-16 md:mb-32 hover-lift">
+<div class="relative w-full aspect-[4/5] overflow-hidden rounded bg-surface-container-high image-overlay mb-6">
+<img class="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-700 ease-in-out" data-alt="A striking exterior detail of Atelier House showcasing brutalist concrete textures contrasting with warm, slatted wood screens. The composition is highly asymmetric and editorial, focusing on the precision of the construction joints and material interplay. The lighting is bright, harsh midday sun creating sharp, cinematic shadows that emphasize form and structure in a premium light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGWB3tJIQ3ZZHKQQmcYA2Egg18Vbb0x9RarTHFgY_hQu4NeCktXJKLDL5MjdgUneKl-4BRSI_oe47gfpKS22dtpszTbswLvCD2iDo-Ye1EjusneyX2JkDjokg6oL7lqTNmZ7Y-qpaUnbTaH1-MT3FRgWWMBu9jslP-VKMNgMB-gAqdHhnVr4J4a7uUQTNrLEesi1q0wtelrjabKc0o81NpdzWvq7vls3YEc96fUBPctARGQzHfhf6Djy0vv8dOCVk3UwCcL_yH32Y"/>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background mb-2">Atelier House</h3>
+<div class="flex gap-4 font-label-sm text-label-sm uppercase text-on-surface-variant tracking-widest">
+<span>Residential</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant mt-1.5"></span>
+<span>Portland, OR</span>
+</div>
+</article>
+<!-- Project 4: Offset Left wide -->
+<article class="item-offset-left group cursor-pointer mb-24 md:mb-40 hover-lift">
+<div class="relative w-full aspect-[16/9] overflow-hidden rounded bg-surface-container-high image-overlay mb-6">
+<img class="object-cover w-full h-full group-hover:scale-[1.02] transition-transform duration-700 ease-in-out" data-alt="A wide, sweeping view of Harbor Point commercial complex. The architecture is characterized by sleek, minimal glass pavilions seamlessly integrated into a waterfront landscape. The scene is bathed in soft, diffused morning light, reflecting a pristine ivory and charcoal color palette. The mood is professional, calm, and exquisitely crafted." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEqgBa-4eDAwZjux05c3SSks4dMN56587yWfH7pBlqAmtKop7AKFgU-iD5_dXJAo8PYlRAuYsRsimXvHV7vMMaoSv7HwsgcwJyFWW5p9fdTiFrI443BCXEXNEk7ofg3GHSv1SW1vPVrS8L8HXZiv8Zz2NnRAoZKRLdG9rcdfNHTyC0nSQkUU5IaaAH57gGJ__tGMIcZ0tiImDWyzcmFOjM-_ZoNj5XDtELixheQ_MSSbU5oRu8hRycUfPqL-uce_QSRiOY1IXYDWo"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background mb-2">Harbor Point</h3>
+<div class="flex gap-4 font-label-sm text-label-sm uppercase text-on-surface-variant tracking-widest">
+<span>Commercial</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant mt-1.5"></span>
+<span>Seattle, WA</span>
+</div>
+</div>
+<div class="hidden sm:block text-right">
+<span class="font-label-sm text-label-sm uppercase text-accent-bronze tracking-widest">In Progress</span>
+</div>
+</div>
+</article>
+<!-- Grid of 3 for rhythm change -->
+<article class="item-third group cursor-pointer mb-16 hover-lift">
+<div class="relative w-full aspect-square overflow-hidden rounded bg-surface-container-high image-overlay mb-4">
+<img class="object-cover w-full h-full group-hover:scale-[1.05] transition-transform duration-700 ease-in-out" data-alt="A towering view looking up at Skyline Villa, highlighting sharp geometric angles and premium stone cladding against a clear, pale sky. The composition is architectural and minimal, emphasizing verticality and precision craftsmanship in a stark, clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaMz98QjG6hOnoq-KVrMWAH9aXOEUY85lZ_gNJsBnUz-umzgb4eIkcnldF8SQmUeVIdG2TZQt85aBCdvNKawA_Kj3zFH6GdgRGadCMoDkAs2vj0SFqtB_YXKG_0K_HwjKNJfR5m1NJtL3at7KpbmB7huCIaTSpYVLaSBiubg_OXKqDTv6_WVhV2f7J0l_RqOAvM68sIGbHKG8XVEzAY_3aUwtZ9mBDdlGdELc2FWVn7R6se6xFgFkCSIwktlxueCNPiTEnrwnSxBk"/>
+</div>
+<h4 class="font-body-lg text-body-lg font-medium text-on-background mb-1">Skyline Villa</h4>
+<p class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-widest">Residential • 2022</p>
+</article>
+<article class="item-third group cursor-pointer mb-16 md:mt-16 hover-lift">
+<div class="relative w-full aspect-square overflow-hidden rounded bg-surface-container-high image-overlay mb-4">
+<img class="object-cover w-full h-full group-hover:scale-[1.05] transition-transform duration-700 ease-in-out" data-alt="An interior view of Glass Pavilion focusing on a massive structural steel column meeting a seamless glass wall. The surrounding landscape is blurred, drawing attention to the raw, high-end materials. The color palette relies heavily on charcoal greys and off-whites, creating a cinematic, minimal mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsIdygVFFj50FGXN0spOox9eRAtueJyemUtGFwcCO53l5MxZga5q6WU_qBIJscOBnThizy4Yos0TPnmyAIqCvpxDPuQ7xms2ticaVu2zvGojxEKSytuBxglOIoIQrN9_l2KWrw0qRlR3qnfIhuiflBkKIzjCoOC897p6WgLX7Q3kVs62BqLrYDYZYGX4GNi-palSLu_Arta4wr5VLFnxmqf2CIB67R7wNsesQn2TfpTgfCwfwNYPhVNpd63t1TwgwYwYvKC-ecwbc"/>
+</div>
+<h4 class="font-body-lg text-body-lg font-medium text-on-background mb-1">Glass Pavilion</h4>
+<p class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-widest">Commercial • 2024</p>
+</article>
+<article class="item-third group cursor-pointer mb-16 md:mt-32 hover-lift">
+<div class="relative w-full aspect-square overflow-hidden rounded bg-surface-container-high image-overlay mb-4">
+<img class="object-cover w-full h-full group-hover:scale-[1.05] transition-transform duration-700 ease-in-out" data-alt="A serene, minimalist courtyard in Courtyard House featuring a single sculptural tree surrounded by raked gravel and pale stone walls. Soft, indirect lighting creates a tranquil, meditative atmosphere. The aesthetic is extremely high-end, clean, and architecturally rigorous." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLbtZqg7Dzi3R6uVEfBKNkxLSYqGSI6SysaEp4Ln9rQPdKgS4TrJEMHy4n9hvuI5LuNra8FrG21KQ22arKUDevANDg9C5dOeJzWjLaNFTmB_Pkyfbw41d87n93UXcwQG0q2TocC_q8FYkcc3Y3CAICgjLUFZ052cwBiKpS6kwMvE_IvDIMLNQX_6yDAdfJps0M6ebdz4WzKE56QE37AjQdRdWx7Z1CWJYiDt7fEQkHYscF57K20xQAIN5VrNMl2X9A712tY7hERLw"/>
+</div>
+<h4 class="font-body-lg text-body-lg font-medium text-on-background mb-1">Courtyard House</h4>
+<p class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-widest">Renovation • 2021</p>
+</article>
+<!-- Final Large Offset -->
+<article class="item-offset-right group cursor-pointer mt-16 md:mt-24 mb-24 hover-lift">
+<div class="relative w-full aspect-[4/3] md:aspect-[16/10] overflow-hidden rounded bg-surface-container-high image-overlay mb-6">
+<img class="object-cover w-full h-full group-hover:scale-[1.02] transition-transform duration-700 ease-in-out" data-alt="A dramatic evening rendering of Northline Tower, a sleek high-rise with minimal detailing. The building glows with warm interior lighting against a deep dusk sky, showcasing the bronze accents in the facade. The shot is monumental and cinematic, conveying immense scale and premium construction quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwZEhB2fYGPoZUrwOXE6aRH290p-Kq6KYWIj0gOs2mK1Y4egVGxbQrTuSDxeoVeH8msgyKHYupzuRJSUNoadciRM6Y7xCGbmXq2FHA-AUSZ6SQHoXHfAq_Y6FgSTk1ddQ5n8tXSxVVqQMp44-JzHC5vxmsrpCUpArSyro2Z8agyj1Pl64xSq0fkI6W41_0Y0RsT3k6L3t2HgIN7pdDcqrZKOrGF6igCRaws5offT0mCgzt_6R-mV2McVfqW3yVcOEWZEOQ2Mk-10g"/>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/30 pb-6">
+<div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background mb-2">Northline Tower</h3>
+<div class="flex gap-4 font-label-sm text-label-sm uppercase text-on-surface-variant tracking-widest">
+<span>Commercial</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant mt-1.5"></span>
+<span>Chicago, IL</span>
+</div>
+</div>
+<span class="hidden sm:inline-flex items-center gap-2 font-label-sm text-label-sm uppercase text-on-background tracking-widest hover:text-primary transition-colors">
+                        View Project
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</div>
+</article>
+</div>
+<!-- Load More CTA -->
+<div class="flex justify-center mt-12 mb-32">
+<button class="px-8 py-4 border border-outline text-on-background font-label-sm text-label-sm uppercase tracking-widest rounded hover:bg-surface-container hover:border-transparent transition-all duration-300">
+                Load More Projects
+            </button>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-[#1A1A1A] dark:bg-[#0D0D0D] border-t border-[#FDFCFB]/10 relative w-full rounded-none">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-16 px-12 py-24 w-full max-w-[1920px] mx-auto">
+<!-- Brand Column -->
+<div class="md:col-span-2">
+<span class="font-headline-lg text-headline-lg md:text-5xl text-[#FDFCFB] mb-8 block tracking-tighter">
+                    AKHILA
+                </span>
+<p class="font-body-md text-body-md text-[#FDFCFB]/70 max-w-sm mb-12">
+                    Premium cinematic architectural design &amp; construction. Crafting spaces of enduring quality and quiet luxury.
+                </p>
+<p class="font-label-sm text-label-sm text-[#FDFCFB]/50 uppercase tracking-[0.2em]">
+                    © 2024 AKHILA Architectural Excellence. All rights reserved.
+                </p>
+</div>
+<!-- Links Column 1 -->
+<div>
+<h4 class="font-label-sm text-label-sm text-[#FDFCFB] uppercase tracking-[0.2em] mb-6">Company</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-[#FDFCFB]/60 hover:text-[#A68966] transition-colors duration-300 focus:ring-1 focus:ring-[#A68966] focus:ring-offset-2 focus:outline-none" href="#">About</a></li>
+<li><a class="font-body-md text-body-md text-[#FDFCFB]/60 hover:text-[#A68966] transition-colors duration-300 focus:ring-1 focus:ring-[#A68966] focus:ring-offset-2 focus:outline-none" href="#">Careers</a></li>
+<li><a class="font-body-md text-body-md text-[#FDFCFB]/60 hover:text-[#A68966] transition-colors duration-300 focus:ring-1 focus:ring-[#A68966] focus:ring-offset-2 focus:outline-none" href="#">Press Kit</a></li>
+<li><a class="font-body-md text-body-md text-[#FDFCFB]/60 hover:text-[#A68966] transition-colors duration-300 focus:ring-1 focus:ring-[#A68966] focus:ring-offset-2 focus:outline-none" href="#">Awards</a></li>
+</ul>
+</div>
+<!-- Links Column 2 -->
+<div>
+<h4 class="font-label-sm text-label-sm text-[#FDFCFB] uppercase tracking-[0.2em] mb-6">Legal &amp; Impact</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-[#FDFCFB]/60 hover:text-[#A68966] transition-colors duration-300 focus:ring-1 focus:ring-[#A68966] focus:ring-offset-2 focus:outline-none" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-[#FDFCFB]/60 hover:text-[#A68966] transition-colors duration-300 focus:ring-1 focus:ring-[#A68966] focus:ring-offset-2 focus:outline-none" href="#">Terms of Service</a></li>
+<li><a class="font-body-md text-body-md text-[#FDFCFB]/60 hover:text-[#A68966] transition-colors duration-300 focus:ring-1 focus:ring-[#A68966] focus:ring-offset-2 focus:outline-none" href="#">Sustainability</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<script>
+        // Minimal script for nav hiding on scroll down, showing on scroll up for cinematic feel
+        let lastScrollTop = 0;
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scroll Down
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                // Scroll Up
+                navbar.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        }, false);
+    </script>
+</body></html>

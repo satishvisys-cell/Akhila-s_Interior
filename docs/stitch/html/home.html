@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Akhila - Premium Architectural Design &amp; Construction</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        'ivory': '#FBF9F6',
+                        'charcoal': '#2C2A26',
+                        'bronze': '#9A7B5A',
+                        'stone': '#DCD7D2'
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "display": ["Newsreader", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Public Sans", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #FBF9F6; color: #2C2A26; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0; }
+        .img-zoom:hover img { transform: scale(1.05); }
+        .service-row:hover .service-bg { opacity: 1; }
+        .service-row:hover .service-text { transform: translateX(20px); color: #9A7B5A; }
+    </style>
+</head>
+<body class="font-body antialiased overflow-x-hidden">
+<!-- Header (Shared Component: TopNavBar) -->
+<nav class="fixed top-0 w-full z-50 transition-all duration-300" id="main-nav">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-[1920px] mx-auto transition-all duration-300" id="nav-inner">
+<a class="font-headline text-3xl tracking-tighter text-[#FDFCFB] transition-colors duration-300" href="#" id="brand-logo">AKHILA</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#FDFCFB] hover:text-[#A68966] transition-colors duration-300 font-body text-sm tracking-wide uppercase nav-link" href="#">Projects</a>
+<a class="text-[#FDFCFB] hover:text-[#A68966] transition-colors duration-300 font-body text-sm tracking-wide uppercase nav-link" href="#">Services</a>
+<a class="text-[#FDFCFB] hover:text-[#A68966] transition-colors duration-300 font-body text-sm tracking-wide uppercase nav-link" href="#">Process</a>
+<a class="text-[#FDFCFB] hover:text-[#A68966] transition-colors duration-300 font-body text-sm tracking-wide uppercase nav-link" href="#">Live Sites</a>
+<a class="text-[#FDFCFB] hover:text-[#A68966] transition-colors duration-300 font-body text-sm tracking-wide uppercase nav-link" href="#">Gallery</a>
+<a class="text-[#FDFCFB] hover:text-[#A68966] transition-colors duration-300 font-body text-sm tracking-wide uppercase nav-link" href="#">About</a>
+<a class="text-[#FDFCFB] hover:text-[#A68966] transition-colors duration-300 font-body text-sm tracking-wide uppercase nav-link" href="#">Contact</a>
+</div>
+<a class="hidden md:inline-block px-6 py-2 border border-[#FDFCFB] text-[#FDFCFB] hover:bg-[#FDFCFB] hover:text-charcoal transition-all duration-300 font-label text-xs tracking-[0.2em] uppercase rounded nav-btn" href="#">Start a Project</a>
+<button class="md:hidden text-[#FDFCFB] material-symbols-outlined nav-icon">menu</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative w-full h-screen min-h-[800px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0 bg-cover bg-center" data-alt="A cinematic, wide-angle 4K photograph of a luxury modern residence interior. Vast floor-to-ceiling windows look out over a serene landscape. The room is styled minimally with premium materials like brushed bronze, dark charcoal stone, and warm ivory fabrics. Soft, natural daylight pours in, creating long elegant shadows and highlighting the meticulous craftsmanship. The mood is sophisticated, architectural, and tranquil." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBdndMMvNJlIamba9aHQWY6tlqHm3fS9vjMMZYnoSD7X8Cv3P2tTZGx4ZJShjzKU4ia0HzjDp8r4dtN2dXdCbrCuoYgQGqqQhkyb6hYghbpQOoE0H2QaM4muK-kBpuQfEdOAOwVkq6oQwTQPVUxr4_SJVU0ak1qbSv67i5Y2vPTv5_v4OviTjjEXzh73eLeZGRWWbnEN9kc-TF64c3qbSPM5xVyKPs8oJ6oE_Mb1TSFkYSsaNShHTNa1HVAk_0NqSCTcC-3kYaOWWI')"></div>
+<div class="absolute inset-0 z-10 bg-black/40"></div>
+<div class="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 pt-32 text-center md:text-left flex flex-col md:items-start items-center">
+<span class="font-label text-xs uppercase tracking-[0.3em] text-white/80 mb-6 block">ARCHITECTURE • DESIGN • CONSTRUCTION</span>
+<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-8">
+                Spaces Designed to<br/>Become Experiences.
+            </h1>
+<p class="font-body text-lg md:text-xl text-white/90 max-w-2xl mb-12 font-light leading-relaxed">
+                From architectural vision to the final detail, we design and build spaces with precision, transparency and craftsmanship.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6 items-center">
+<a class="px-8 py-4 bg-bronze text-white font-label text-sm uppercase tracking-widest hover:bg-bronze/90 transition-colors duration-300 rounded" href="#">Explore Our Projects</a>
+<a class="text-white font-label text-sm uppercase tracking-widest hover:text-bronze transition-colors duration-300 border-b border-transparent hover:border-bronze pb-1" href="#">Start Your Project</a>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-4">
+<span class="font-label text-xs uppercase tracking-widest text-white/70">Scroll to Explore</span>
+<div class="w-px h-12 bg-white/30 relative overflow-hidden">
+<div class="w-full h-1/2 bg-white absolute top-0 animate-[bounce_2s_infinite]"></div>
+</div>
+</div>
+</section>
+<!-- Trust Metrics -->
+<section class="border-b border-stone py-20 px-6 md:px-12">
+<div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center">
+<div class="flex flex-col items-center justify-center relative md:after:content-[''] md:after:absolute md:after:right-0 md:after:top-1/4 md:after:h-1/2 md:after:w-px md:after:bg-stone">
+<span class="font-headline text-5xl text-charcoal mb-2">120+</span>
+<span class="font-label text-xs uppercase tracking-[0.2em] text-charcoal/60">Projects Delivered</span>
+</div>
+<div class="flex flex-col items-center justify-center relative md:after:content-[''] md:after:absolute md:after:right-0 md:after:top-1/4 md:after:h-1/2 md:after:w-px md:after:bg-stone">
+<span class="font-headline text-5xl text-charcoal mb-2">18+</span>
+<span class="font-label text-xs uppercase tracking-[0.2em] text-charcoal/60">Years Experience</span>
+</div>
+<div class="flex flex-col items-center justify-center relative md:after:content-[''] md:after:absolute md:after:right-0 md:after:top-1/4 md:after:h-1/2 md:after:w-px md:after:bg-stone">
+<span class="font-headline text-5xl text-charcoal mb-2">42</span>
+<span class="font-label text-xs uppercase tracking-[0.2em] text-charcoal/60">Cities</span>
+</div>
+<div class="flex flex-col items-center justify-center">
+<span class="font-headline text-5xl text-charcoal mb-2">98%</span>
+<span class="font-label text-xs uppercase tracking-[0.2em] text-charcoal/60">Client Satisfaction</span>
+</div>
+</div>
+</section>
+<!-- Featured Projects -->
+<section class="py-32 px-6 md:px-12 max-w-[1920px] mx-auto">
+<div class="flex justify-between items-end mb-20 max-w-7xl mx-auto">
+<div>
+<span class="font-label text-xs uppercase tracking-[0.3em] text-bronze mb-4 block">Portfolio</span>
+<h2 class="font-headline text-5xl text-charcoal">Featured Work</h2>
+</div>
+<a class="hidden md:inline-flex items-center gap-2 text-charcoal font-label text-sm uppercase tracking-widest hover:text-bronze transition-colors" href="#">
+                View All Projects <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-24 max-w-7xl mx-auto">
+<!-- Project 1 (Large) -->
+<div class="md:col-span-8 group cursor-pointer">
+<div class="relative overflow-hidden mb-6 rounded-sm img-zoom bg-stone/20 aspect-[16/10]">
+<img alt="Casa Horizon" class="w-full h-full object-cover transition-transform duration-700 ease-out" data-alt="A stunning exterior photograph of 'Casa Horizon', a coastal modern residence at twilight. The home features clean, sweeping horizontal lines, expansive glass walls reflecting the setting sun, and raw concrete finishes mixed with warm timber accents. The warm interior lighting glows against the darkening blue sky, creating a premium architectural magazine cover aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVP8Q5me-8ahsgbhSXMVt38P5XvXmPjuwEJk-yD7IE8KcabPNa-g91hwI0vVjl9a6AkGn67uGWUxi8OR6OTHQMpvFI8r1qgP63J8z54CymvtxSst382WWiNd1PprMWLZ4_WnfEWVqmQezxm7yhdaYRuA_PUr6GfAtQXmCJlUb2ayKDcfdAy4N1M0mPshl_2Faa0MuJ7uLm9Rnu9qrshQet1hawOY42WQpLEfsLIQFwfbXWGUzs0TziBJEly-aERsHpj78TaRjND-w"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-3xl text-charcoal mb-2 group-hover:text-bronze transition-colors">Casa Horizon</h3>
+<p class="font-label text-xs uppercase tracking-widest text-charcoal/60">Coastal Modern</p>
+</div>
+<div class="text-right">
+<span class="font-body text-sm text-charcoal block">2023</span>
+<span class="font-body text-sm text-charcoal/60">450 sqm</span>
+</div>
+</div>
+</div>
+<!-- Project 2 (Vertical) -->
+<div class="md:col-span-4 md:mt-32 group cursor-pointer">
+<div class="relative overflow-hidden mb-6 rounded-sm img-zoom bg-stone/20 aspect-[3/4]">
+<img alt="Meridian Residence" class="w-full h-full object-cover transition-transform duration-700 ease-out" data-alt="A striking minimal hillside residence named 'Meridian Residence'. Shot vertically, showing stark white geometric volumes cascading down a rugged, arid slope. The harsh midday sun casts sharp, dramatic shadows across the facade. Only premium materials like white render and dark steel framing are visible. The mood is isolated, highly conceptual, and strictly architectural." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvqkucDqJkqvxuSJ3Sv4pCPbV0Ey5inB0IMhJ4h4Te5gnNDz2AJh-XLye3pFK82jMCZF8dWF9enkStAlSU2UynQ166UNhZ1ezcPzcXvxr-eqGzcwDHzKnBttUIxbV5vEog4KqKNvcsOpYQzw4D4205DbXTB8uJ891tiJBYu7MDtgTsMqjYmd62o7ZegeTHARv654XGdnOoNGD81ngEtm_rwgMtsxTTNszPriAaKgFgrXX4iUEB1mRmI1OdTI50EjjuBb_AKlvOw4Y"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-2xl text-charcoal mb-2 group-hover:text-bronze transition-colors">Meridian Residence</h3>
+<p class="font-label text-xs uppercase tracking-widest text-charcoal/60">Minimalist Hillside</p>
+</div>
+<div class="text-right">
+<span class="font-body text-sm text-charcoal block">2024</span>
+<span class="font-body text-sm text-charcoal/60">620 sqm</span>
+</div>
+</div>
+</div>
+<!-- Project 3 (Wide) -->
+<div class="md:col-span-12 group cursor-pointer mt-12 md:mt-0">
+<div class="relative overflow-hidden mb-6 rounded-sm img-zoom bg-stone/20 aspect-[21/9]">
+<img alt="Atelier House" class="w-full h-full object-cover transition-transform duration-700 ease-out" data-alt="An interior shot of 'Atelier House', an urban sanctuary. A double-height living space showcasing an exposed concrete ceiling, pale oak floors, and a dramatic sculptural steel staircase. Light filters through slatted timber blinds, creating rhythmic shadows across a minimalist, ivory-colored curved sofa. The style is editorial, quiet luxury, and precise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnXKaz2BE8IuoueITSsRpwhXILPWWHwtlaUd4QtwlMrxGD8Hto4f3d4_ciTsVnpMQ78irRoFpErMYwmQrtOzgjUXrHR-tio9tp8zRKxoS4LOVFZhbVcTul8EAPO-umUzIwTjZiFUjn9PdFP61x8zoQL_2j8q6UvVGGwgVM6oJl8OdYBy38_gUI89V-JlUOJCWdGYhsM18MZjSfuUlf8Z8Pw_KMetM9thwyMbzObXSrK3GwLzuhwDUhXlovYKWnCiYSWKj4_TGdZjI"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-3xl text-charcoal mb-2 group-hover:text-bronze transition-colors">Atelier House</h3>
+<p class="font-label text-xs uppercase tracking-widest text-charcoal/60">Urban Sanctuary</p>
+</div>
+<div class="text-right">
+<span class="font-body text-sm text-charcoal block">2022</span>
+<span class="font-body text-sm text-charcoal/60">380 sqm</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Teaser (Hover List) -->
+<section class="py-32 bg-charcoal text-ivory relative overflow-hidden group/section">
+<div class="absolute inset-0 z-0 opacity-0 transition-opacity duration-700 bg-cover bg-center pointer-events-none" id="services-global-bg"></div>
+<div class="absolute inset-0 z-10 bg-charcoal/90"></div>
+<div class="relative z-20 max-w-7xl mx-auto px-6 md:px-12">
+<span class="font-label text-xs uppercase tracking-[0.3em] text-bronze mb-12 block">Our Expertise</span>
+<div class="flex flex-col border-t border-white/10">
+<a class="py-8 border-b border-white/10 flex justify-between items-center group/item hover:bg-white/5 px-4 -mx-4 transition-all duration-300" href="#">
+<h3 class="font-headline text-4xl md:text-5xl lg:text-6xl text-white group-hover/item:text-bronze group-hover/item:translate-x-4 transition-all duration-500">Architecture</h3>
+<span class="material-symbols-outlined text-white/20 group-hover/item:text-bronze group-hover/item:-rotate-45 transition-all duration-300 text-3xl">arrow_forward</span>
+</a>
+<a class="py-8 border-b border-white/10 flex justify-between items-center group/item hover:bg-white/5 px-4 -mx-4 transition-all duration-300" href="#">
+<h3 class="font-headline text-4xl md:text-5xl lg:text-6xl text-white group-hover/item:text-bronze group-hover/item:translate-x-4 transition-all duration-500">Interior Design</h3>
+<span class="material-symbols-outlined text-white/20 group-hover/item:text-bronze group-hover/item:-rotate-45 transition-all duration-300 text-3xl">arrow_forward</span>
+</a>
+<a class="py-8 border-b border-white/10 flex justify-between items-center group/item hover:bg-white/5 px-4 -mx-4 transition-all duration-300" href="#">
+<h3 class="font-headline text-4xl md:text-5xl lg:text-6xl text-white group-hover/item:text-bronze group-hover/item:translate-x-4 transition-all duration-500">Construction</h3>
+<span class="material-symbols-outlined text-white/20 group-hover/item:text-bronze group-hover/item:-rotate-45 transition-all duration-300 text-3xl">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Footer (Shared Component) -->
+<footer class="relative w-full rounded-none bg-[#1A1A1A] dark:bg-[#0D0D0D] border-t border-[#FDFCFB]/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-16 px-12 py-24 w-full max-w-[1920px] mx-auto">
+<div class="md:col-span-2">
+<a class="font-headline text-5xl text-[#FDFCFB] mb-8 block" href="#">AKHILA</a>
+<p class="font-body text-base leading-relaxed text-[#FDFCFB]/60 max-w-sm mb-8">
+                    Premium cinematic architectural design &amp; construction platform. Designing spaces that become experiences.
+                </p>
+</div>
+<div>
+<h4 class="font-label text-xs uppercase tracking-[0.2em] text-[#FDFCFB] mb-6">Company</h4>
+<ul class="space-y-4">
+<li><a class="font-body text-base text-[#FDFCFB]/60 hover:text-[#A68966] transition-colors duration-300" href="#">Privacy Policy</a></li>
+<li><a class="font-body text-base text-[#FDFCFB]/60 hover:text-[#A68966] transition-colors duration-300" href="#">Terms of Service</a></li>
+<li><a class="font-body text-base text-[#FDFCFB]/60 hover:text-[#A68966] transition-colors duration-300" href="#">Press Kit</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-xs uppercase tracking-[0.2em] text-[#FDFCFB] mb-6">More</h4>
+<ul class="space-y-4">
+<li><a class="font-body text-base text-[#FDFCFB]/60 hover:text-[#A68966] transition-colors duration-300" href="#">Careers</a></li>
+<li><a class="font-body text-base text-[#FDFCFB]/60 hover:text-[#A68966] transition-colors duration-300" href="#">Sustainability</a></li>
+<li><a class="font-body text-base text-[#FDFCFB]/60 hover:text-[#A68966] transition-colors duration-300" href="#">Awards</a></li>
+</ul>
+</div>
+</div>
+<div class="px-12 py-6 border-t border-white/5 max-w-[1920px] mx-auto flex justify-between items-center">
+<p class="font-body text-sm text-[#FDFCFB]/40">© 2024 AKHILA Architectural Excellence. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Simple script for Nav transition on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            const navInner = document.getElementById('nav-inner');
+            const logo = document.getElementById('brand-logo');
+            const links = document.querySelectorAll('.nav-link');
+            const btn = document.querySelector('.nav-btn');
+            const icon = document.querySelector('.nav-icon');
+
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-[#FDFCFB]/90', 'backdrop-blur-md', 'border-b', 'border-[#2D2D2D]/5');
+                logo.classList.replace('text-[#FDFCFB]', 'text-[#2D2D2D]');
+                links.forEach(link => {
+                    link.classList.replace('text-[#FDFCFB]', 'text-[#2D2D2D]');
+                });
+                btn.classList.replace('border-[#FDFCFB]', 'border-[#2D2D2D]');
+                btn.classList.replace('text-[#FDFCFB]', 'text-[#2D2D2D]');
+                btn.classList.replace('hover:bg-[#FDFCFB]', 'hover:bg-[#2D2D2D]');
+                btn.classList.replace('hover:text-charcoal', 'hover:text-[#FDFCFB]');
+                if(icon) icon.classList.replace('text-[#FDFCFB]', 'text-[#2D2D2D]');
+            } else {
+                nav.classList.remove('bg-[#FDFCFB]/90', 'backdrop-blur-md', 'border-b', 'border-[#2D2D2D]/5');
+                logo.classList.replace('text-[#2D2D2D]', 'text-[#FDFCFB]');
+                links.forEach(link => {
+                    link.classList.replace('text-[#2D2D2D]', 'text-[#FDFCFB]');
+                });
+                btn.classList.replace('border-[#2D2D2D]', 'border-[#FDFCFB]');
+                btn.classList.replace('text-[#2D2D2D]', 'text-[#FDFCFB]');
+                btn.classList.replace('hover:bg-[#2D2D2D]', 'hover:bg-[#FDFCFB]');
+                btn.classList.replace('hover:text-[#FDFCFB]', 'hover:text-charcoal');
+                if(icon) icon.classList.replace('text-[#2D2D2D]', 'text-[#FDFCFB]');
+            }
+        });
+    </script>
+</body></html>

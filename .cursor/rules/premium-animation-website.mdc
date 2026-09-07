@@ -1,0 +1,524 @@
+---
+description: Always-on engineering rules for premium cinematic animation-first websites.
+alwaysApply: true
+---
+
+# PREMIUM ANIMATION WEBSITE — ALWAYS-ON RULES
+
+You are building a premium, cinematic, animation-first website.
+
+These rules MUST be followed on every relevant task.
+
+## 1. DESIGN IS THE SOURCE OF TRUTH
+
+If Stitch, Figma, screenshots, reference designs, or approved visual specifications are provided:
+
+- Treat them as the visual source of truth.
+- Do not replace approved layouts with generic UI.
+- Preserve spacing, typography, proportions, hierarchy, imagery, interactions, and visual rhythm.
+- If implementation constraints exist, adapt technically without degrading the visual intent.
+
+Never create a generic SaaS/dashboard aesthetic unless explicitly requested.
+
+---
+
+## 2. PREMIUM VISUAL QUALITY
+
+The website must feel:
+
+- Cinematic
+- Architectural
+- Premium
+- Editorial
+- Modern
+- Minimal
+- Sophisticated
+- High-end
+- Trustworthy
+- Technically polished
+
+Avoid:
+
+- Generic templates
+- Excessive rounded cards
+- Random gradients
+- Cheap-looking shadows
+- Excessive glassmorphism
+- Unnecessary borders
+- Overuse of bright colors
+- Poor-quality imagery
+- Amateur animations
+- Default browser styling
+
+Every visual decision must have a reason.
+
+---
+
+## 3. ANIMATION IS PART OF THE PRODUCT
+
+Animation must communicate:
+
+- Hierarchy
+- Navigation
+- Spatial relationships
+- Progress
+- Storytelling
+- State changes
+- Interaction feedback
+
+Use animation intentionally.
+
+Prefer:
+
+- transform
+- opacity
+- clip-path
+- scale
+- translate
+- controlled blur
+- GPU-friendly properties
+
+Avoid expensive continuous animations unless necessary.
+
+Do not animate everything.
+
+Animation should feel:
+
+- Smooth
+- Cinematic
+- Intentional
+- Natural
+- Fast enough to remain responsive
+
+---
+
+## 4. RESPONSIVE DESIGN
+
+Every component MUST work across:
+
+- Mobile
+- Tablet
+- Laptop
+- Desktop
+- Large desktop
+- 4K displays
+
+Do not simply shrink desktop layouts.
+
+Design intentional responsive compositions.
+
+Consider:
+
+- Typography scaling
+- Image cropping
+- Navigation changes
+- Touch targets
+- Section height
+- Animation behavior
+- Horizontal scrolling
+- Content density
+
+---
+
+## 5. PERFORMANCE
+
+High visual quality must not mean poor performance.
+
+Use:
+
+- Responsive images
+- WebP/AVIF where appropriate
+- Lazy loading
+- Responsive image sizes
+- Video poster images
+- Code splitting
+- Dynamic imports
+- Virtualization for large galleries
+- GPU-friendly animations
+- Proper caching
+- Preloading only critical assets
+
+Do not load unnecessary 4K assets on mobile.
+
+4K source assets may exist, but delivery must be optimized.
+
+---
+
+## 6. ACCESSIBILITY
+
+Every interactive experience must support:
+
+- Keyboard navigation
+- Visible focus states
+- Semantic HTML
+- Screen readers
+- Sufficient contrast
+- Accessible labels
+- Proper buttons/links
+- Reduced motion
+
+Respect:
+
+`prefers-reduced-motion`
+
+When reduced motion is enabled:
+
+- Remove parallax
+- Reduce transition distances
+- Disable unnecessary camera movement
+- Keep state changes understandable
+
+---
+
+## 7. ARCHITECTURE
+
+Do not hardcode large website sections unnecessarily.
+
+Prefer:
+
+Page
+→ Sections
+→ Section Type
+→ Section Data
+→ Reusable Renderer
+
+Use reusable components.
+
+Examples:
+
+- Hero
+- ProjectGrid
+- ProjectCard
+- Gallery
+- VideoSection
+- TourViewer
+- RoomExplorer
+- ExplodedDiagram
+- ProgressTimeline
+- CCTVViewer
+- JournalGrid
+- ContactSection
+
+Avoid creating one-off components when an existing abstraction can be extended cleanly.
+
+---
+
+## 8. CMS-FIRST THINKING
+
+If the website contains an admin CMS, public content should be data-driven.
+
+Admins should be able to control:
+
+- Hero
+- Images
+- Videos
+- Projects
+- Galleries
+- Project progress
+- Posts
+- Pages
+- Sections
+- SEO
+- CTA
+- Navigation
+- Footer
+- Construction updates
+
+Prefer:
+
+Database/CMS
+→ API
+→ Typed data
+→ Section renderer
+→ UI
+
+Do not require source-code changes for normal content updates.
+
+---
+
+## 9. SECURITY
+
+NEVER expose:
+
+- API secrets
+- Database credentials
+- CCTV credentials
+- RTSP credentials
+- Private storage credentials
+- Admin tokens
+- Service account keys
+
+in client-side code.
+
+Private CCTV streams must be protected through authenticated server-side infrastructure.
+
+Use:
+
+- Authentication
+- Authorization
+- Role-based access control
+- Server-side validation
+- Input validation
+- Rate limiting
+- Secure cookies
+- CSRF protection where applicable
+- Content Security Policy
+- Secure headers
+- Signed URLs for private media
+- Audit logging for sensitive admin actions
+
+Never trust client-side authorization.
+
+---
+
+## 10. LOADING / ERROR / EMPTY STATES
+
+Every major experience must have:
+
+- Loading state
+- Error state
+- Empty state
+- Disabled state
+- Offline/failure behavior where applicable
+
+Never leave users with:
+
+- Blank screens
+- Broken images
+- Infinite spinners
+- Unhandled errors
+
+---
+
+## 11. IMAGE QUALITY
+
+Use high-quality architectural imagery.
+
+Images should support:
+
+- Full-screen hero
+- Project storytelling
+- Detail shots
+- Material textures
+- Construction progress
+- Interior photography
+- Technical diagrams
+- Before/after
+- Gallery
+
+Use appropriate cropping instead of stretching images.
+
+Never distort images.
+
+---
+
+## 12. CINEMATIC EXPERIENCES
+
+For cinematic tours:
+
+Use a deliberate sequence.
+
+Example:
+
+Entrance
+→ Living Room
+→ Kitchen
+→ Stairs
+→ Hall
+→ Master Bedroom
+→ Bathroom
+
+Never skip scenes.
+
+Transitions should feel spatially connected.
+
+---
+
+## 13. PROJECT EXPERIENCES
+
+A project detail page should support rich storytelling:
+
+- Hero
+- Overview
+- Location
+- Architecture
+- Concept
+- Floor plans
+- Technical drawings
+- Materials
+- Gallery
+- Video
+- Construction progress
+- Timeline
+- Room exploration
+- Interactive diagrams
+- Contact CTA
+
+Do not turn project pages into simple image grids.
+
+---
+
+## 14. INTERACTIVE ARCHITECTURAL EXPERIENCES
+
+Where appropriate support:
+
+- Exploded views
+- Layer toggles
+- Floor selection
+- Room selection
+- Material exploration
+- Before/after states
+- Construction stages
+- Scroll-driven storytelling
+- 3D/2.5D experiences
+- Cinematic camera movement
+
+Interactions must remain understandable and performant.
+
+---
+
+## 15. LIVE CONSTRUCTION / CCTV
+
+For live construction monitoring:
+
+Public users may see approved/public streams only.
+
+Private streams require authentication and authorization.
+
+Never expose raw:
+
+RTSP
+camera username
+camera password
+private camera URLs
+
+to the browser.
+
+Provide graceful states:
+
+- Live
+- Connecting
+- Offline
+- Maintenance
+- Restricted
+
+---
+
+## 16. TYPOGRAPHY
+
+Typography must establish hierarchy.
+
+Define:
+
+- Display
+- H1
+- H2
+- H3
+- Body
+- Small
+- Caption
+- Label
+- Navigation
+- Metadata
+
+Avoid excessive font weights.
+
+Typography should feel editorial and architectural.
+
+---
+
+## 17. DESIGN SYSTEM
+
+Use centralized tokens for:
+
+- Colors
+- Typography
+- Spacing
+- Radius
+- Shadows
+- Borders
+- Motion
+- Breakpoints
+- Container widths
+- Z-index
+- Durations
+- Easing
+
+Do not scatter arbitrary values throughout the application.
+
+---
+
+## 18. MOTION SYSTEM
+
+Define reusable motion presets.
+
+Examples:
+
+- Fade Up
+- Fade In
+- Reveal
+- Scale In
+- Image Zoom
+- Parallax
+- Slide
+- Stagger
+- Page Transition
+- Modal Transition
+- Navigation Transition
+
+Use consistent easing and duration.
+
+Avoid random animation values.
+
+---
+
+## 19. CODE QUALITY
+
+Before implementing:
+
+1. Inspect the existing project.
+2. Inspect architecture.
+3. Inspect installed dependencies.
+4. Inspect existing components.
+5. Inspect existing design tokens.
+6. Inspect existing skills/rules.
+7. Reuse what already exists.
+8. Avoid unnecessary rewrites.
+
+Do not destroy working architecture simply to implement a feature.
+
+---
+
+## 20. VALIDATION
+
+After implementation:
+
+- Run type checks.
+- Run lint.
+- Run tests where available.
+- Check responsive layouts.
+- Check console errors.
+- Check broken images.
+- Check animation performance.
+- Check keyboard navigation.
+- Check reduced motion.
+- Check loading/error states.
+- Check authentication boundaries.
+- Check mobile behavior.
+
+Do not consider a feature complete until it works visually and technically.
+
+---
+
+## FINAL PRINCIPLE
+
+Build the website as if it will be reviewed by:
+
+- A world-class architect
+- A premium design studio
+- A senior frontend engineer
+- A motion designer
+- A security engineer
+- A performance engineer
+
+The final result must feel intentional, cinematic, technically excellent, responsive, accessible, secure, and production-ready.

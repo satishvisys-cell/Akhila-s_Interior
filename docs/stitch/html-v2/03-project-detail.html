@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Casa Horizon - AKHILA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f5f3f0",
+                        "on-surface": "#30332f",
+                        "primary": "#75593b",
+                        "on-error-container": "#742410",
+                        "surface-variant": "#e2e3dd",
+                        "primary-container": "#ffddba",
+                        "inverse-surface": "#0e0e0d",
+                        "surface-dim": "#d8dbd4",
+                        "tertiary-container": "#f8f3ec",
+                        "error-dim": "#5c1202",
+                        "secondary-fixed-dim": "#e2d2be",
+                        "secondary-container": "#f1e0cb",
+                        "tertiary": "#625f5a",
+                        "on-error": "#fff7f6",
+                        "secondary": "#695d4d",
+                        "on-tertiary-container": "#5e5b56",
+                        "secondary-dim": "#5d5142",
+                        "on-secondary-fixed-variant": "#665a4a",
+                        "surface-bright": "#fbf9f6",
+                        "surface": "#fbf9f6",
+                        "background": "#fbf9f6",
+                        "error": "#9e422c",
+                        "on-secondary-fixed": "#483e2f",
+                        "primary-dim": "#684d30",
+                        "tertiary-fixed": "#f8f3ec",
+                        "outline": "#797b77",
+                        "tertiary-fixed-dim": "#eae4de",
+                        "on-tertiary-fixed-variant": "#696661",
+                        "secondary-fixed": "#f1e0cb",
+                        "surface-container-high": "#e8e9e3",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#9e9d9a",
+                        "on-primary": "#fff6f0",
+                        "on-primary-fixed-variant": "#725638",
+                        "surface-container": "#eeeeea",
+                        "primary-fixed": "#ffddba",
+                        "on-secondary-container": "#5b5040",
+                        "tertiary-dim": "#55534e",
+                        "on-tertiary": "#fef8f1",
+                        "on-surface-variant": "#5d605b",
+                        "on-primary-fixed": "#533b1f",
+                        "on-secondary": "#fff8f2",
+                        "surface-tint": "#75593b",
+                        "error-container": "#fe8b70",
+                        "on-background": "#30332f",
+                        "surface-container-highest": "#e2e3dd",
+                        "on-tertiary-fixed": "#4c4945",
+                        "on-primary-container": "#674d2f",
+                        "outline-variant": "#b1b3ad",
+                        "primary-fixed-dim": "#f3cea8",
+                        "inverse-primary": "#f6d1aa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "display": ["Newsreader", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #FBF9F6; color: #2C2A26; }
+        .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .img-hover { transition: transform 0.6s cubic-bezier(0.22,1,0.36,1); }
+        .img-hover:hover { transform: scale(1.03); }
+    </style>
+</head>
+<body class="font-body text-on-surface antialiased selection:bg-primary/20">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md dark:bg-inverse-surface/90 border-b border-outline-variant/30 shadow-sm transition-all duration-300" id="main-header">
+<div class="flex justify-between items-center px-8 py-4 max-w-[1920px] mx-auto">
+<a class="font-display text-2xl font-bold tracking-tighter text-on-surface dark:text-inverse-on-surface hover:opacity-80 transition-opacity" href="#">
+                AKHILA
+            </a>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label uppercase tracking-widest text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">PROJECTS</a>
+<a class="font-label uppercase tracking-widest text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">SERVICES</a>
+<a class="font-label uppercase tracking-widest text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">PROCESS</a>
+<a class="font-label uppercase tracking-widest text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">LIVE SITES</a>
+<a class="font-label uppercase tracking-widest text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">GALLERY</a>
+<a class="font-label uppercase tracking-widest text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">ABOUT</a>
+</nav>
+<button class="hidden md:block px-6 py-2 bg-primary text-on-primary font-label text-sm uppercase tracking-wider rounded hover:bg-primary-dim transition-colors duration-300 shadow-sm active:scale-95 ease-in-out">
+                Start a Project
+            </button>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-[72px]">
+<!-- Hero Section -->
+<section class="relative w-full h-[85vh] overflow-hidden bg-surface-container-low">
+<img alt="Casa Horizon Exterior Sunset" class="absolute inset-0 w-full h-full object-cover img-hover" src="https://lh3.googleusercontent.com/aida/AEtjO1WQ-JkkEqxN0bmM2zf0Ls1pqPxjhJtqI_94NTn0CWcl89q1txet4HG4PL2JWVfjfPJlKASZiYbvOhhg7EnMhmUvm_ud2ZRCE164Uz2FMJ-IMl3REA9A9hD_fw0xXnbEEoC3HZATOfQxkgSkbpyg2lZlAd_mtX3Q047sUvBjaIPJn6lvoI10RD4MTo11Skmry8FMBLbXSR6Bkono_YT5AX21UvLSH2epZ8pkbfeIbgLIXz4G7waXyA5WF5wU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+<div class="absolute bottom-16 left-8 md:left-16 max-w-2xl text-white">
+<h1 class="font-display text-5xl md:text-7xl font-light tracking-tight mb-4 fade-up">Casa Horizon</h1>
+<p class="font-body text-lg md:text-xl font-light opacity-90 fade-up" style="transition-delay: 100ms;">A masterclass in coastal minimalism, blending precision engineering with elemental beauty.</p>
+</div>
+</section>
+<!-- Overview & Stats -->
+<section class="py-24 px-8 md:px-16 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
+<div class="md:col-span-7 fade-up">
+<h2 class="font-headline text-3xl md:text-4xl mb-6 text-on-surface">Redefining Coastal Minimalism</h2>
+<div class="font-body text-on-surface-variant text-lg leading-relaxed font-light space-y-6">
+<p>Casa Horizon stands as a testament to restrained elegance. Situated on a dramatic coastal bluff, the architecture yields to the landscape, utilizing vast expanses of structural glass and monolithic stone to blur the boundary between interior sanctuary and the infinite horizon.</p>
+<p>Every detail, from the cantilevered terraces to the flush-mount hardware, was rigorously detailed to maintain absolute visual silence, allowing the changing light of the coast to become the primary ornamental feature.</p>
+</div>
+</div>
+<div class="md:col-span-5 grid grid-cols-2 gap-8 border-t md:border-t-0 md:border-l border-outline-variant/30 pt-12 md:pt-0 md:pl-12 fade-up" style="transition-delay: 100ms;">
+<div>
+<span class="block font-label text-xs uppercase tracking-widest text-outline mb-2">Location</span>
+<span class="font-body text-on-surface font-medium">Malibu, CA</span>
+</div>
+<div>
+<span class="block font-label text-xs uppercase tracking-widest text-outline mb-2">Completion</span>
+<span class="font-body text-on-surface font-medium">2024</span>
+</div>
+<div>
+<span class="block font-label text-xs uppercase tracking-widest text-outline mb-2">Interior Area</span>
+<span class="font-body text-on-surface font-medium">8,500 sq ft</span>
+</div>
+<div>
+<span class="block font-label text-xs uppercase tracking-widest text-outline mb-2">Sustainability</span>
+<span class="font-body text-on-surface font-medium">LEED Platinum</span>
+</div>
+</div>
+</section>
+<!-- Master Tour CTA -->
+<section class="py-24 bg-surface-container-low relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 md:px-16 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-xl fade-up">
+<span class="font-label text-primary text-sm uppercase tracking-widest font-semibold mb-4 block">Interactive Experience</span>
+<h2 class="font-headline text-4xl mb-6">Explore the Master Tour</h2>
+<p class="font-body text-on-surface-variant font-light mb-8">Navigate through Casa Horizon in stunning 4K detail. Experience the spatial flow, examine material finishes, and view the property at different times of day.</p>
+<button class="px-8 py-3 border border-primary text-primary font-label text-sm uppercase tracking-wider rounded hover:bg-primary hover:text-on-primary transition-colors duration-300 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">360</span>
+                        Launch Tour
+                    </button>
+</div>
+<div class="w-full md:w-1/2 aspect-video bg-surface-variant rounded overflow-hidden relative fade-up" style="transition-delay: 150ms;">
+<!-- Placeholder for 3D/Video Teaser -->
+<div class="absolute inset-0 flex items-center justify-center bg-inverse-surface/5 text-on-surface-variant">
+<span class="material-symbols-outlined text-4xl opacity-50">play_circle</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Spatial Progression Gallery -->
+<section class="py-24 px-8 md:px-16 max-w-7xl mx-auto">
+<div class="text-center mb-16 fade-up">
+<h2 class="font-headline text-4xl mb-4">Spatial Progression</h2>
+<p class="font-body text-on-surface-variant font-light max-w-2xl mx-auto">A curated journey through the defining spaces of Casa Horizon.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="group cursor-pointer fade-up">
+<div class="overflow-hidden rounded mb-4 aspect-[4/3] bg-surface-variant">
+<img alt="Casa Horizon Kitchen Culinary Core" class="w-full h-full object-cover img-hover" src="https://lh3.googleusercontent.com/aida/AEtjO1X-gkC-v7SJ36Ciss2pp3o4qOGCAy8MYl9FmX7yaeSG29vwkFF9BmV6E0Nuh6U8T0bhtPjkfSC53ZxlmMhtR6Csc3t0OipklYfv_P2fDGVeEoeknmmOHYpTZEm3X57_BAAX4BhEpIikO1Z6EkOKdZ3PTJ9YvWRK2ABdbDlhbNVBQ38rDt2gaXcZxc0tNNvMcXJamZ2eaSBP_GLRxvAGhz6AfOueWZHSUs7l6nGaZGoA53L1N1JuomhSzXI2"/>
+</div>
+<h3 class="font-headline text-2xl mb-2 group-hover:text-primary transition-colors">The Culinary Core</h3>
+<p class="font-body text-on-surface-variant text-sm font-light">Custom dark oak millwork contrasting with monolithic marble islands.</p>
+</div>
+<div class="group cursor-pointer fade-up" style="transition-delay: 100ms;">
+<div class="overflow-hidden rounded mb-4 aspect-[4/3] bg-surface-variant">
+<img class="w-full h-full object-cover img-hover" data-alt="A minimalist primary bathroom in a luxury coastal home, featuring a freestanding soaking tub, vast floor-to-ceiling windows overlooking the ocean, light stone flooring, and subtle bronze fixtures. The lighting is soft and natural, emphasizing tranquility and high-end materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLuE17xePW8r1LdVaMRGalD3PnZZ4osB8aScEQuL7dmZQDlLcMCfTVsZKq3Vqe6SJLP81Tuzir0a3bdi6UD1f93Y1ZO9hj-OPly4l4IXZikBBxNsT0xSh4hXKksJy-VFqNM4EKruPXQ7iE1EltlFmjYRvAZfwTX5Nj2dm3K4MPO_3Hc0snwwxGo15iBJkr26ZutcFqBQENRU4mF3r_G-KkBFm17L7f8aqjLELKwy1NxeZNB0oo7cfr23Bke4LTBDmvhpgBPbjAG3mk"/>
+</div>
+<h3 class="font-headline text-2xl mb-2 group-hover:text-primary transition-colors">Primary Sanctuary</h3>
+<p class="font-body text-on-surface-variant text-sm font-light">An uninterrupted connection to the horizon line from the bathing area.</p>
+</div>
+</div>
+</section>
+<!-- Progress & Materials -->
+<section class="py-24 bg-surface-bright border-y border-outline-variant/20">
+<div class="max-w-7xl mx-auto px-8 md:px-16">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="fade-up">
+<h2 class="font-headline text-3xl mb-6">From Foundation to Finish</h2>
+<p class="font-body text-on-surface-variant font-light mb-8">The execution of minimalist architecture demands absolute precision. Tolerances are measured in millimeters, and the structural engineering must remain entirely invisible to support the purity of the form.</p>
+<div class="aspect-[4/3] bg-surface-variant rounded overflow-hidden">
+<img alt="Casa Horizon Isometric Drawing" class="w-full h-full object-contain bg-[#F8F5F0] p-4" src="https://lh3.googleusercontent.com/aida/AEtjO1WyCYne7Ubbfj3Z8hVI-l0tqh6p6XLf2sHjjt2_DBssMQAAuqsxPK-EnTOSvKggwDISs3VOM5oeLd9Gn2_jUwazwm-ISpModlt7Qz4Vi-qB7nixdRaAh6t8yR1NJLhApkCtYB02HhLaWCZnret9VNROjIqx-vhvZaNlynOC3FluxO-SKQ31Q6g2kOjCgBisSK5g7e6nWGCjL97pNHs03yqMplo5Q3X0OCHRPpAf1i6Lfwm_dJZmHfIZQSo"/>
+</div>
+</div>
+<div class="fade-up" style="transition-delay: 150ms;">
+<h3 class="font-headline text-2xl mb-6">Material Palette</h3>
+<p class="font-body text-on-surface-variant font-light mb-8">A restrained selection of elemental materials—board-formed concrete, brushed bronze, and wide-plank white oak—were chosen for their ability to patina gracefully in the coastal environment.</p>
+<div class="aspect-square md:aspect-[4/3] bg-surface-variant rounded overflow-hidden">
+<img alt="Casa Horizon Material Board" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UnS3PBEqQbbmIDqvIVbgdZCpTejizMEqandKr8HaWG_YVg_AOTe5bwC0dSrSaHEEaLMUiMYnioe02FYdhKJfNwlrxvmnH6gpn5m2vOa0-Dvy0R0lj-CxbdHBJOl3Pt83aZ9ZTUgQjRwd8n7wyzrJL6Ade2bGlKzztldrV_sbCdaSyOKZT0lFavy8DsrozYAcSrAiVKjyYQp7Q13zjaIC9umBlgjFzJrG6iQ_chTSF0BSLNETomAmotPDEO"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Live Site Teaser -->
+<section class="py-24 px-8 md:px-16 max-w-4xl mx-auto text-center fade-up">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-[#C23B3B]/10 text-[#C23B3B] rounded-full text-xs font-label uppercase tracking-widest font-bold mb-6">
+<span class="w-2 h-2 rounded-full bg-[#C23B3B] animate-pulse"></span>
+                Client Access
+            </div>
+<h2 class="font-headline text-3xl mb-4">Live Site Monitoring</h2>
+<p class="font-body text-on-surface-variant font-light mb-8">Clients of AKHILA maintain absolute transparency throughout the build process with 24/7 access to high-definition site cameras and daily progress logs.</p>
+<div class="p-8 border border-outline-variant/30 rounded max-w-sm mx-auto bg-surface">
+<span class="material-symbols-outlined text-4xl text-outline mb-4">lock</span>
+<h3 class="font-body font-medium mb-4">Client Login Required</h3>
+<input class="w-full bg-surface-container-low border-none rounded p-3 mb-4 font-body text-sm focus:ring-1 focus:ring-primary" placeholder="Access Code" type="password"/>
+<button class="w-full py-3 bg-inverse-surface text-surface-bright font-label text-sm uppercase tracking-wider rounded hover:bg-on-surface transition-colors">Access Portal</button>
+</div>
+</section>
+<!-- Contact CTA -->
+<section class="py-32 bg-primary text-on-primary text-center px-8">
+<div class="max-w-2xl mx-auto fade-up">
+<h2 class="font-headline text-4xl md:text-5xl mb-6">Ready to realize your vision?</h2>
+<p class="font-body font-light text-on-primary/80 mb-10 text-lg">Schedule a private consultation to discuss your next architectural endeavor.</p>
+<button class="px-10 py-4 bg-surface text-primary font-label text-sm uppercase tracking-wider rounded font-bold hover:bg-surface-bright transition-colors duration-300">
+                    Contact Our Studio
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 bg-inverse-surface dark:bg-surface-container-lowest border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-2">
+<a class="font-display text-4xl uppercase tracking-tighter text-surface-bright block mb-6 hover:opacity-80 transition-opacity" href="#">
+                    AKHILA
+                </a>
+<p class="font-body font-light text-secondary-fixed-dim max-w-sm">
+                    Precision in Architecture.
+                </p>
+</div>
+<div>
+<h4 class="font-headline italic text-surface-bright mb-4">Studio</h4>
+<nav class="flex flex-col gap-3">
+<a class="font-body font-light text-on-surface-variant hover:text-surface-bright transition-colors hover:translate-x-1 duration-300" href="#">Projects</a>
+<a class="font-body font-light text-on-surface-variant hover:text-surface-bright transition-colors hover:translate-x-1 duration-300" href="#">Services</a>
+<a class="font-body font-light text-on-surface-variant hover:text-surface-bright transition-colors hover:translate-x-1 duration-300" href="#">Process</a>
+<a class="font-body font-light text-on-surface-variant hover:text-surface-bright transition-colors hover:translate-x-1 duration-300" href="#">About</a>
+</nav>
+</div>
+<div>
+<h4 class="font-headline italic text-surface-bright mb-4">Legal</h4>
+<nav class="flex flex-col gap-3">
+<a class="font-body font-light text-on-surface-variant hover:text-surface-bright transition-colors hover:translate-x-1 duration-300" href="#">Contact</a>
+<a class="font-body font-light text-on-surface-variant hover:text-surface-bright transition-colors hover:translate-x-1 duration-300" href="#">Privacy Policy</a>
+<a class="font-body font-light text-on-surface-variant hover:text-surface-bright transition-colors hover:translate-x-1 duration-300" href="#">Terms</a>
+</nav>
+</div>
+</div>
+<div class="px-12 max-w-7xl mx-auto mt-16 pt-8 border-t border-white/10 text-on-surface-variant font-body font-light text-sm">
+            © 2024 AKHILA. Precision in Architecture.
+        </div>
+</footer>
+<script>
+        // Simple fade-up intersection observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+            
+            // Header scroll effect
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-md');
+                    header.classList.replace('bg-surface/90', 'bg-surface/95');
+                } else {
+                    header.classList.remove('shadow-md');
+                    header.classList.replace('bg-surface/95', 'bg-surface/90');
+                }
+            });
+        });
+    </script>
+</body></html>

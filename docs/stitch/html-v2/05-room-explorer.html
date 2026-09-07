@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Room Explorer | Akhila</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "background": "#fbf9f6",
+                "surface-container-highest": "#e2e3dd",
+                "on-error-container": "#742410",
+                "tertiary": "#625f5a",
+                "on-tertiary-container": "#5e5b56",
+                "on-tertiary": "#fef8f1",
+                "tertiary-fixed-dim": "#eae4de",
+                "primary-container": "#ffddba",
+                "error-dim": "#5c1202",
+                "on-secondary-fixed-variant": "#665a4a",
+                "secondary-fixed-dim": "#e2d2be",
+                "error-container": "#fe8b70",
+                "surface-container": "#eeeeea",
+                "inverse-surface": "#0e0e0d",
+                "surface-tint": "#75593b",
+                "primary-fixed-dim": "#f3cea8",
+                "secondary-fixed": "#f1e0cb",
+                "on-error": "#fff7f6",
+                "primary-dim": "#684d30",
+                "primary-fixed": "#ffddba",
+                "surface-variant": "#e2e3dd",
+                "surface-container-high": "#e8e9e3",
+                "on-secondary": "#fff8f2",
+                "tertiary-dim": "#55534e",
+                "surface-bright": "#fbf9f6",
+                "on-primary-container": "#674d2f",
+                "on-background": "#30332f",
+                "primary": "#75593b",
+                "inverse-on-surface": "#9e9d9a",
+                "error": "#9e422c",
+                "on-secondary-container": "#5b5040",
+                "on-surface": "#30332f",
+                "secondary-dim": "#5d5142",
+                "on-surface-variant": "#5d605b",
+                "surface-container-low": "#f5f3f0",
+                "on-primary-fixed-variant": "#725638",
+                "on-primary-fixed": "#533b1f",
+                "on-primary": "#fff6f0",
+                "outline-variant": "#b1b3ad",
+                "on-secondary-fixed": "#483e2f",
+                "secondary": "#695d4d",
+                "outline": "#797b77",
+                "surface-dim": "#d8dbd4",
+                "surface-container-lowest": "#ffffff",
+                "inverse-primary": "#f6d1aa",
+                "secondary-container": "#f1e0cb",
+                "on-tertiary-fixed": "#4c4945",
+                "surface": "#fbf9f6",
+                "tertiary-container": "#f8f3ec",
+                "tertiary-fixed": "#f8f3ec",
+                "on-tertiary-fixed-variant": "#696661"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+              },
+              "fontFamily": {
+                "headline": ["Newsreader", "serif"],
+                "display": ["Newsreader", "serif"],
+                "body": ["Manrope", "sans-serif"],
+                "label": ["Manrope", "sans-serif"]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .fade-enter {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        .fade-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1);
+        }
+        
+        .img-zoom:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-surface-container-highest transition-all duration-300">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-full mx-auto">
+<a class="font-headline text-2xl font-medium tracking-tighter text-on-surface hover:text-primary transition-colors duration-300" href="#">
+                Akhila
+            </a>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-body text-sm tracking-wide text-primary border-b border-primary pb-1 opacity-80 transition-opacity duration-200" href="#">Architecture</a>
+<a class="font-body text-sm tracking-wide text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Interiors</a>
+<a class="font-body text-sm tracking-wide text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Master Tour</a>
+<a class="font-body text-sm tracking-wide text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">CCTV</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden md:inline-flex px-4 py-2 bg-primary text-on-primary rounded text-sm font-medium tracking-wide hover:bg-hover transition-colors duration-300">
+                    Live View
+                </button>
+<button class="text-on-surface hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-2xl">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-[1600px] mx-auto min-h-screen">
+<!-- Hero Section -->
+<section class="mb-20 fade-enter fade-enter-active">
+<span class="text-primary font-body text-xs uppercase tracking-widest block mb-4">Meridian Residence</span>
+<h1 class="font-headline text-6xl md:text-8xl italic tracking-tight text-on-surface mb-6">Room Explorer</h1>
+<p class="font-body text-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                Deconstruct the spatial composition. Explore the intersection of structural logic, material tactility, and atmospheric light.
+            </p>
+</section>
+<!-- Room Explorer Grid -->
+<div class="flex flex-col gap-32">
+<!-- Room Card 1: The Culinary Core -->
+<article class="flex flex-col gap-8 fade-enter fade-enter-active" style="transition-delay: 70ms;">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-surface-container-highest pb-6">
+<div>
+<h2 class="font-headline text-4xl text-on-surface">The Culinary Core</h2>
+<p class="font-body text-sm text-on-surface-variant mt-2">Monolithic marble meets dark ribbed oak.</p>
+</div>
+<!-- Segmented Control -->
+<div class="flex bg-surface-container-low p-1 rounded border border-surface-container-highest">
+<button class="px-6 py-2 text-sm font-medium rounded bg-surface text-on-surface shadow-sm border border-surface-container-highest transition-all duration-300" onclick="switchView('culinary', 'assembled', this)">Assembled</button>
+<button class="px-6 py-2 text-sm font-medium rounded text-on-surface-variant hover:text-on-surface transition-all duration-300" onclick="switchView('culinary', 'exploded', this)">Exploded</button>
+<button class="px-6 py-2 text-sm font-medium rounded text-on-surface-variant hover:text-on-surface transition-all duration-300" onclick="switchView('culinary', 'painted', this)">Painted</button>
+</div>
+</div>
+<!-- Media Container -->
+<div class="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-surface-container rounded">
+<!-- Assembled View (Default) -->
+<img class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 img-zoom" data-alt="A highly detailed architectural photograph of a modern, luxury kitchen. The space features a massive monolithic white marble island with subtle grey veining. Behind it, floor-to-ceiling cabinetry crafted from dark, ribbed oak adds warmth and texture. Subtle, warm LED strip lighting illuminates the open shelving. The flooring is polished concrete, reflecting the soft natural light pouring in from a large window overlooking a lush garden. The overall mood is premium, precise, and sophisticated." id="culinary-assembled" src="https://lh3.googleusercontent.com/aida/AEtjO1X-gkC-v7SJ36Ciss2pp3o4qOGCAy8MYl9FmX7yaeSG29vwkFF9BmV6E0Nuh6U8T0bhtPjkfSC53ZxlmMhtR6Csc3t0OipklYfv_P2fDGVeEoeknmmOHYpTZEm3X57_BAAX4BhEpIikO1Z6EkOKdZ3PTJ9YvWRK2ABdbDlhbNVBQ38rDt2gaXcZxc0tNNvMcXJamZ2eaSBP_GLRxvAGhz6AfOueWZHSUs7l6nGaZGoA53L1N1JuomhSzXI2"/>
+<!-- Exploded View -->
+<img class="absolute inset-0 w-full h-full object-contain p-8 bg-surface transition-opacity duration-700 opacity-0 pointer-events-none" data-alt="A precise, exploded isometric diagram of a modern architectural space. It details the structural components: a concrete foundation, steel framing, glass facades, and a cantilevered timber roof. The style is technical yet elegant, resembling a premium architectural blueprint with subtle shading on a soft ivory background. The mood is analytical and museum-like." id="culinary-exploded" src="https://lh3.googleusercontent.com/aida/AEtjO1WyCYne7Ubbfj3Z8hVI-l0tqh6p6XLf2sHjjt2_DBssMQAAuqsxPK-EnTOSvKggwDISs3VOM5oeLd9Gn2_jUwazwm-ISpModlt7Qz4Vi-qB7nixdRaAh6t8yR1NJLhApkCtYB02HhLaWCZnret9VNROjIqx-vhvZaNlynOC3FluxO-SKQ31Q6g2kOjCgBisSK5g7e6nWGCjL97pNHs03yqMplo5Q3X0OCHRPpAf1i6Lfwm_dJZmHfIZQSo"/>
+<!-- Painted View -->
+<img class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 pointer-events-none" data-alt="An elegant, editorial flat-lay photograph showcasing a material palette for a modern architectural project. The composition includes samples of raw concrete, brushed bronze metal, warm oak timber, and textured ivory plaster. The materials are arranged asymmetrically on a soft, off-white background with subtle, realistic drop shadows highlighting their depth and texture. The mood is tactile and premium." id="culinary-painted" src="https://lh3.googleusercontent.com/aida/AEtjO1UnS3PBEqQbbmIDqvIVbgdZCpTejizMEqandKr8HaWG_YVg_AOTe5bwC0dSrSaHEEaLMUiMYnioe02FYdhKJfNwlrxvmnH6gpn5m2vOa0-Dvy0R0lj-CxbdHBJOl3Pt83aZ9ZTUgQjRwd8n7wyzrJL6Ade2bGlKzztldrV_sbCdaSyOKZT0lFavy8DsrozYAcSrAiVKjyYQp7Q13zjaIC9umBlgjFzJrG6iQ_chTSF0BSLNETomAmotPDEO"/>
+</div>
+</article>
+<!-- Room Card 2: The Great Room -->
+<article class="flex flex-col gap-8 fade-enter fade-enter-active" style="transition-delay: 140ms;">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-surface-container-highest pb-6">
+<div>
+<h2 class="font-headline text-4xl text-on-surface">The Great Room</h2>
+<p class="font-body text-sm text-on-surface-variant mt-2">Framing the horizon through minimal profiles.</p>
+</div>
+<!-- Segmented Control -->
+<div class="flex bg-surface-container-low p-1 rounded border border-surface-container-highest">
+<button class="px-6 py-2 text-sm font-medium rounded bg-surface text-on-surface shadow-sm border border-surface-container-highest transition-all duration-300" onclick="switchView('greatroom', 'assembled', this)">Assembled</button>
+<button class="px-6 py-2 text-sm font-medium rounded text-on-surface-variant hover:text-on-surface transition-all duration-300" onclick="switchView('greatroom', 'exploded', this)">Exploded</button>
+<button class="px-6 py-2 text-sm font-medium rounded text-on-surface-variant hover:text-on-surface transition-all duration-300" onclick="switchView('greatroom', 'painted', this)">Painted</button>
+</div>
+</div>
+<!-- Media Container -->
+<div class="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-surface-container rounded">
+<!-- Assembled View (Default) -->
+<img class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 img-zoom" data-alt="A breathtaking architectural photograph of a luxurious, modern living room at sunset. The space is defined by massive floor-to-ceiling glass panels that offer an unobstructed view of a vibrant sunset over the ocean. Inside, the design is minimalist yet warm, featuring a large, low-profile beige modular sofa, a subtle travertine fireplace, and warm ambient cove lighting. The color palette is dominated by ivory, sand, and the warm hues of the sunset. The mood is serene and cinematic." id="greatroom-assembled" src="https://lh3.googleusercontent.com/aida/AEtjO1XiBDOgkH3kNLdFL6npu8GhWsgb6mbnDp8_YAgQyjuJ3vTi_jpmsMXhWHq5wiO3R43zb5Ix__xMhbi5lNis1XmxQndYEVW9dfFo1kl8-XY0KfmxqTF8L-gGeoHSmYhVKA4gylR3ZACBZtru_ZazMELjL5pBca3OaHQM_DIYbhU-SsZ4bh1iMOUA6MSp6Jbx0MmrPs-BrnBkc1ZSyIsm1IRq7orEKwgkmQa7BFeSDuq8nzvp28sxznP8Zk-A"/>
+<!-- Exploded View -->
+<img class="absolute inset-0 w-full h-full object-contain p-8 bg-surface transition-opacity duration-700 opacity-0 pointer-events-none" data-alt="A precise, exploded isometric diagram of a modern architectural space. It details the structural components: a concrete foundation, steel framing, glass facades, and a cantilevered timber roof. The style is technical yet elegant, resembling a premium architectural blueprint with subtle shading on a soft ivory background. The mood is analytical and museum-like." id="greatroom-exploded" src="https://lh3.googleusercontent.com/aida/AEtjO1WyCYne7Ubbfj3Z8hVI-l0tqh6p6XLf2sHjjt2_DBssMQAAuqsxPK-EnTOSvKggwDISs3VOM5oeLd9Gn2_jUwazwm-ISpModlt7Qz4Vi-qB7nixdRaAh6t8yR1NJLhApkCtYB02HhLaWCZnret9VNROjIqx-vhvZaNlynOC3FluxO-SKQ31Q6g2kOjCgBisSK5g7e6nWGCjL97pNHs03yqMplo5Q3X0OCHRPpAf1i6Lfwm_dJZmHfIZQSo"/>
+<!-- Painted View -->
+<img class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 pointer-events-none" data-alt="An elegant, editorial flat-lay photograph showcasing a material palette for a modern architectural project. The composition includes samples of raw concrete, brushed bronze metal, warm oak timber, and textured ivory plaster. The materials are arranged asymmetrically on a soft, off-white background with subtle, realistic drop shadows highlighting their depth and texture. The mood is tactile and premium." id="greatroom-painted" src="https://lh3.googleusercontent.com/aida/AEtjO1UnS3PBEqQbbmIDqvIVbgdZCpTejizMEqandKr8HaWG_YVg_AOTe5bwC0dSrSaHEEaLMUiMYnioe02FYdhKJfNwlrxvmnH6gpn5m2vOa0-Dvy0R0lj-CxbdHBJOl3Pt83aZ9ZTUgQjRwd8n7wyzrJL6Ade2bGlKzztldrV_sbCdaSyOKZT0lFavy8DsrozYAcSrAiVKjyYQp7Q13zjaIC9umBlgjFzJrG6iQ_chTSF0BSLNETomAmotPDEO"/>
+</div>
+</article>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-low border-t border-surface-container-highest">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 max-w-full mx-auto gap-8">
+<a class="font-headline text-lg text-on-surface" href="#">Akhila</a>
+<nav class="flex flex-wrap justify-center gap-6 md:gap-8">
+<a class="font-body text-xs uppercase tracking-widest text-on-tertiary-fixed-variant hover:text-primary transition-colors duration-300" href="#">Sustainability</a>
+<a class="font-body text-xs uppercase tracking-widest text-on-tertiary-fixed-variant hover:text-primary transition-colors duration-300" href="#">Process</a>
+<a class="font-body text-xs uppercase tracking-widest text-on-tertiary-fixed-variant hover:text-primary transition-colors duration-300" href="#">Materials</a>
+<a class="font-body text-xs uppercase tracking-widest text-on-tertiary-fixed-variant hover:text-primary transition-colors duration-300" href="#">Privacy</a>
+<a class="font-body text-xs uppercase tracking-widest text-on-tertiary-fixed-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</nav>
+<p class="font-body text-xs text-on-tertiary-fixed-variant">© 2024 Akhila Architectural Group. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Simple logic for segmented controls
+        function switchView(roomId, viewName, btnElement) {
+            // Update button styles in this control group
+            const controlGroup = btnElement.parentElement;
+            const buttons = controlGroup.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.className = "px-6 py-2 text-sm font-medium rounded text-on-surface-variant hover:text-on-surface transition-all duration-300";
+            });
+            
+            // Set active button style
+            btnElement.className = "px-6 py-2 text-sm font-medium rounded bg-surface text-on-surface shadow-sm border border-surface-container-highest transition-all duration-300";
+
+            // Hide all images for this room
+            const roomImages = ['assembled', 'exploded', 'painted'];
+            roomImages.forEach(view => {
+                const img = document.getElementById(`${roomId}-${view}`);
+                if (img) {
+                    img.classList.remove('opacity-100');
+                    img.classList.add('opacity-0', 'pointer-events-none');
+                }
+            });
+
+            // Show selected image
+            const activeImg = document.getElementById(`${roomId}-${viewName}`);
+            if (activeImg) {
+                activeImg.classList.remove('opacity-0', 'pointer-events-none');
+                activeImg.classList.add('opacity-100');
+            }
+        }
+    </script>
+</body></html>
