@@ -1,8 +1,10 @@
 import {
   access,
   mkdir,
+  open,
   readFile,
   rename,
+  unlink,
   writeFile,
 } from "node:fs/promises";
 import path from "node:path";
@@ -77,13 +79,23 @@ const COLLECTIONS: CollectionName[] = [
 const CAMERA_SECRETS_FILE = "camera-secrets.json";
 const PROGRESS_FILE = "construction-progress.json";
 const SEED_MARKER_FILE = ".seeded";
+const SEED_LOCK_FILE = ".seed.lock";
 
 // ---------------------------------------------------------------------------
 // Paths
 // ---------------------------------------------------------------------------
 
+/**
+ * Local: `data/cms` under the Next app (gitignored).
+ * Vercel / serverless: `/tmp/akhila-cms` — the only reliably writable path
+ * during build + lambda cold starts. Override with `CMS_DATA_DIR`.
+ */
 export function getCmsDataDir(): string {
-  return process.env.CMS_DATA_DIR ?? path.join(process.cwd(), "data", "cms");
+  if (process.env.CMS_DATA_DIR) return process.env.CMS_DATA_DIR;
+  if (process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME) {
+    return path.join("/tmp", "akhila-cms");
+  }
+  return path.join(process.cwd(), "data", "cms");
 }
 
 function collectionPath(name: CollectionName): string {
@@ -96,6 +108,10 @@ function cameraSecretsPath(): string {
 
 function seedMarkerPath(): string {
   return path.join(getCmsDataDir(), SEED_MARKER_FILE);
+}
+
+function seedLockPath(): string {
+  return path.join(getCmsDataDir(), SEED_LOCK_FILE);
 }
 
 function progressPath(): string {
@@ -115,6 +131,44 @@ async function fileExists(filePath: string): Promise<boolean> {
   }
 }
 
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * Exclusive create lock so parallel Next.js build workers don't race
+ * seeding the same JSON files (ENOENT on rename under contention).
+ */
+async function withSeedLock(fn: () => Promise<void>): Promise<void> {
+  await ensureDataDir();
+  const lockPath = seedLockPath();
+
+  for (let attempt = 0; attempt < 80; attempt++) {
+    try {
+      const handle = await open(lockPath, "wx");
+      try {
+        await fn();
+      } finally {
+        await handle.close().catch(() => undefined);
+        await unlink(lockPath).catch(() => undefined);
+      }
+      return;
+    } catch (err) {
+      const code = (err as NodeJS.ErrnoException).code;
+      if (code === "EEXIST") {
+        if (await fileExists(seedMarkerPath())) return;
+        await sleep(50 + Math.floor(Math.random() * 50));
+        continue;
+      }
+      throw err;
+    }
+  }
+
+  // Last resort: another worker may have finished while we waited.
+  if (await fileExists(seedMarkerPath())) return;
+  throw new Error("[cms/store] Timed out waiting for CMS seed lock");
+}
+
 // ---------------------------------------------------------------------------
 // Low-level I/O
 // ---------------------------------------------------------------------------
@@ -132,11 +186,35 @@ async function readJsonFile<T>(filePath: string, fallback: T): Promise<T> {
 }
 
 async function writeJsonFileAtomic<T>(filePath: string, data: T): Promise<void> {
-  await ensureDataDir();
-  const tmp = `${filePath}.${process.pid}.${Date.now()}.tmp`;
   const payload = JSON.stringify(data, null, 2);
-  await writeFile(tmp, payload, "utf8");
-  await rename(tmp, filePath);
+  const dir = path.dirname(filePath);
+  let lastError: unknown;
+
+  for (let attempt = 0; attempt < 5; attempt++) {
+    await ensureDataDir();
+    const tmp = path.join(
+      dir,
+      `.${path.basename(filePath)}.${process.pid}.${Date.now()}.${attempt}.${nanoid(6)}.tmp`,
+    );
+    try {
+      await writeFile(tmp, payload, "utf8");
+      await rename(tmp, filePath);
+      return;
+    } catch (err) {
+      lastError = err;
+      await unlink(tmp).catch(() => undefined);
+      const code = (err as NodeJS.ErrnoException).code;
+      if (code === "ENOENT" || code === "EEXIST" || code === "EBUSY") {
+        await sleep(20 * (attempt + 1));
+        continue;
+      }
+      throw err;
+    }
+  }
+
+  throw lastError instanceof Error
+    ? lastError
+    : new Error(`[cms/store] Failed to write ${filePath}`);
 }
 
 async function readCollection<T>(name: CollectionName): Promise<T[]> {
@@ -926,34 +1004,36 @@ async function buildSeedData(): Promise<{
 }
 
 export async function seedCmsData(force = false): Promise<void> {
-  await ensureDataDir();
+  await withSeedLock(async () => {
+    await ensureDataDir();
 
-  const markerExists = await fileExists(seedMarkerPath());
-  if (markerExists && !force) {
-    return;
-  }
+    const markerExists = await fileExists(seedMarkerPath());
+    if (markerExists && !force) {
+      return;
+    }
 
-  const seed = await buildSeedData();
+    const seed = await buildSeedData();
 
-  await writeCollection("media", seed.media);
-  await writeCollection("projects", seed.projects);
-  await writeCollection("heroes", seed.heroes);
-  await writeCollection("pages", seed.pages);
-  await writeCollection("tours", seed.tours);
-  await writeCollection("rooms", seed.rooms);
-  await writeCollection("liveSites", seed.liveSites);
-  await writeCollection("cameras", seed.cameras);
-  await writeCollection("posts", seed.posts);
-  await writeCollection("users", seed.users);
-  await writeCollection("settings", seed.settings);
-  await writeJsonFileAtomic(progressPath(), seed.progress);
-  await writeJsonFileAtomic(cameraSecretsPath(), seed.cameraSecrets);
+    await writeCollection("media", seed.media);
+    await writeCollection("projects", seed.projects);
+    await writeCollection("heroes", seed.heroes);
+    await writeCollection("pages", seed.pages);
+    await writeCollection("tours", seed.tours);
+    await writeCollection("rooms", seed.rooms);
+    await writeCollection("liveSites", seed.liveSites);
+    await writeCollection("cameras", seed.cameras);
+    await writeCollection("posts", seed.posts);
+    await writeCollection("users", seed.users);
+    await writeCollection("settings", seed.settings);
+    await writeJsonFileAtomic(progressPath(), seed.progress);
+    await writeJsonFileAtomic(cameraSecretsPath(), seed.cameraSecrets);
 
-  await writeFile(
-    seedMarkerPath(),
-    JSON.stringify({ seededAt: now(), version: 1 }, null, 2),
-    "utf8",
-  );
+    await writeFile(
+      seedMarkerPath(),
+      JSON.stringify({ seededAt: now(), version: 1 }, null, 2),
+      "utf8",
+    );
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -973,24 +1053,48 @@ export function initializeCmsStore(): Promise<void> {
 }
 
 async function doInitializeCmsStore(): Promise<void> {
-  await ensureDataDir();
+  await withSeedLock(async () => {
+    await ensureDataDir();
 
-  for (const name of COLLECTIONS) {
-    const filePath = collectionPath(name);
-    if (!(await fileExists(filePath))) {
-      await writeCollection(name, []);
+    for (const name of COLLECTIONS) {
+      const filePath = collectionPath(name);
+      if (!(await fileExists(filePath))) {
+        await writeCollection(name, []);
+      }
     }
-  }
 
-  if (!(await fileExists(cameraSecretsPath()))) {
-    await writeJsonFileAtomic(cameraSecretsPath(), {});
-  }
+    if (!(await fileExists(cameraSecretsPath()))) {
+      await writeJsonFileAtomic(cameraSecretsPath(), {});
+    }
 
-  if (!(await fileExists(progressPath()))) {
-    await writeJsonFileAtomic(progressPath(), []);
-  }
+    if (!(await fileExists(progressPath()))) {
+      await writeJsonFileAtomic(progressPath(), []);
+    }
 
-  await seedCmsData();
+    // Inline seed while holding the same lock (avoid nested lock deadlock).
+    const markerExists = await fileExists(seedMarkerPath());
+    if (!markerExists) {
+      const seed = await buildSeedData();
+      await writeCollection("media", seed.media);
+      await writeCollection("projects", seed.projects);
+      await writeCollection("heroes", seed.heroes);
+      await writeCollection("pages", seed.pages);
+      await writeCollection("tours", seed.tours);
+      await writeCollection("rooms", seed.rooms);
+      await writeCollection("liveSites", seed.liveSites);
+      await writeCollection("cameras", seed.cameras);
+      await writeCollection("posts", seed.posts);
+      await writeCollection("users", seed.users);
+      await writeCollection("settings", seed.settings);
+      await writeJsonFileAtomic(progressPath(), seed.progress);
+      await writeJsonFileAtomic(cameraSecretsPath(), seed.cameraSecrets);
+      await writeFile(
+        seedMarkerPath(),
+        JSON.stringify({ seededAt: now(), version: 1 }, null, 2),
+        "utf8",
+      );
+    }
+  });
 }
 
 export async function listConstructionProgress(): Promise<ConstructionProgress[]> {
