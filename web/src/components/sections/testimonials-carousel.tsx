@@ -73,7 +73,7 @@ export function TestimonialsCarousel({
 
   useGSAP(
     (_context, contextSafe) => {
-      if (count < 2 || paused || prefersReducedMotion()) return;
+      if (count < 2 || paused || prefersReducedMotion() || !contextSafe) return;
 
       const advance = contextSafe(() => go(index + 1, 1));
       const delayed = gsap.delayedCall(AUTOPLAY_SECONDS, advance);
