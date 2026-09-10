@@ -1,10 +1,8 @@
 export const PUBLIC_NAV = [
+  { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
   { href: "/services", label: "Services" },
+  { href: "/designs", label: "Designs" },
   { href: "/process", label: "Process" },
-  { href: "/live-sites", label: "Construction" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/journal", label: "Journal" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Contact Us" },
 ] as const;

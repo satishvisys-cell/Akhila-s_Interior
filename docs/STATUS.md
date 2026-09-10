@@ -1,6 +1,26 @@
 # STATUS
 
-## Current phase — Stitch v2 fidelity port (public)
+## Current phase — IA: Projects hub · Designs · About CMS · floating contact
+
+**Prompt:** `docs/IA_NAV_PROJECTS_DESIGNS_ABOUT_PROMPT.md`
+
+### Implemented (2026-09-10)
+
+| Area | Result |
+|---|---|
+| Primary nav | About → Projects → Services → Designs → Process → Contact Us |
+| `/projects` hub | Ongoing · Types we offer · Completed (CMS projects + services) |
+| Gallery → Designs | `/designs` + redirect `/gallery` → `/designs`; admin `/admin/designs` |
+| Floating contact | WhatsApp + Instagram FABs; Settings `socialContact` |
+| About CMS | Singleton `/admin/about` → public `/about` |
+| AI improve | `POST /api/admin/ai/improve-copy` (needs `GROQ_API_KEY`) |
+| `npx tsc --noEmit` | PASS |
+
+**Env:** optional `GROQ_API_KEY` (+ optional `GROQ_MODEL`, default `openai/gpt-oss-120b`) for About AI improve via Groq.
+
+---
+
+## Prior phase — Stitch v2 fidelity port (public)
 
 **Stitch SoT:** [Cinematic Platform v2](https://stitch.withgoogle.com/projects/15065125676195745336)  
 **Local previews:** `docs/stitch/previews-v2/` · catalog `docs/stitch/SCREEN-CATALOG-V2.md`  

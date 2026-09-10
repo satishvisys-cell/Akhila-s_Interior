@@ -210,13 +210,12 @@ export function LiveProjectsCarousel() {
   return (
     <EditorialCard className="overflow-hidden font-editorial" motion>
       <FadeUp className="mx-auto mb-8 max-w-2xl px-1 text-center sm:mb-10">
-        <p className="mb-2 text-sm text-text-muted">Construction</p>
+        <p className="mb-2 text-sm text-text-muted">Projects</p>
         <h2 className="text-3xl font-extrabold tracking-tight text-ink-button sm:text-4xl md:text-5xl">
-          Live Projects
+          Ongoing work
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-text-secondary md:text-base">
-          Active fit-out sites in progress — follow each room as it comes
-          together, from framing to final finish.
+          Active fit-out sites in progress — explore the full hub on Projects.
         </p>
       </FadeUp>
 
@@ -248,10 +247,10 @@ export function LiveProjectsCarousel() {
 
       <div className="mt-8 flex justify-center">
         <NextLink
-          href="/live-sites"
+          href="/projects#ongoing"
           className="btn-press group inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-ink-button hover:text-terracotta"
         >
-          View all live sites
+          View ongoing projects
           <span aria-hidden className="arrow-nudge">
             →
           </span>

@@ -2,17 +2,15 @@ import NextLink from "next/link";
 
 const QUICK = [
   ["Home", "/"],
+  ["About", "/about"],
   ["Projects", "/projects"],
   ["Services", "/services"],
-  ["Gallery", "/gallery"],
-  ["Journal", "/journal"],
-  ["Contact", "/contact"],
+  ["Designs", "/designs"],
+  ["Contact Us", "/contact"],
 ] as const;
 
 const SUPPORT = [
   ["Process", "/process"],
-  ["Live Sites", "/live-sites"],
-  ["About", "/about"],
   ["Start a Project", "/contact"],
 ] as const;
 

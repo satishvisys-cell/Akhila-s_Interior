@@ -16,7 +16,7 @@ const ITEMS = [
   { name: "Horizon Sofa", meta: "Casa Horizon · Living", href: "/projects/meridian-residence", image: EDITORIAL.collection[0] },
   { name: "Studio Stool", meta: "Atelier House · Details", href: "/projects/skyline-villa", image: EDITORIAL.collection[1] },
   { name: "Meridian Chair", meta: "Meridian Residence · Dining", href: "/projects/meridian-residence", image: EDITORIAL.collection[2] },
-  { name: "Gallery Lamp", meta: "Lighting Studies", href: "/gallery", image: EDITORIAL.collection[3] },
+  { name: "Gallery Lamp", meta: "Lighting Studies", href: "/designs", image: EDITORIAL.collection[3] },
 ] as const;
 
 export function FeaturedCollection() {

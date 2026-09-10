@@ -47,7 +47,7 @@ export const CLIENT_TESTIMONIALS: ClientTestimonial[] = [
     location: "Bengaluru",
     image: EDITORIAL.rooms.kitchen,
     imageAlt: "Kitchen interior from Atelier House",
-    href: "/gallery",
+    href: "/designs",
   },
   {
     id: "james-whitfield",
@@ -71,6 +71,6 @@ export const CLIENT_TESTIMONIALS: ClientTestimonial[] = [
     location: "Los Angeles",
     image: EDITORIAL.rooms.light,
     imageAlt: "Interior lighting study from the Akhila archive",
-    href: "/gallery",
+    href: "/designs",
   },
 ];

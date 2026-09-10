@@ -103,7 +103,7 @@ export default async function JournalPage() {
             Latest Entries
           </h2>
           <NextLink
-            href="/gallery"
+            href="/designs"
             className="text-sm font-semibold text-text-muted hover:text-ink-button"
           >
             View Archives

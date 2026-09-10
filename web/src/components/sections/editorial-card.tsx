@@ -6,6 +6,7 @@ export function EditorialCard({
   padded = true,
   motion = false,
   lift = false,
+  id,
 }: {
   children: React.ReactNode;
   className?: string;
@@ -14,9 +15,11 @@ export function EditorialCard({
   motion?: boolean;
   /** Subtle hover lift — use on compact cards, not full-bleed sections */
   lift?: boolean;
+  id?: string;
 }) {
   return (
     <section
+      id={id}
       data-motion-card={motion ? "" : undefined}
       className={cn(
         "editorial-card",

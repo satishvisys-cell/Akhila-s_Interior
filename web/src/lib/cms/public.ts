@@ -1,5 +1,14 @@
 import { initializeCmsStore, list, getById, getBySlug } from "@/lib/cms/store";
-import type { LiveSite, MediaAsset, Page, Post, Project } from "@/domain/types";
+import type {
+  AboutPageContent,
+  Design,
+  LiveSite,
+  MediaAsset,
+  Page,
+  Post,
+  Project,
+  SiteSettings,
+} from "@/domain/types";
 
 export async function getPublishedPageBySlug(slug: string): Promise<Page | null> {
   await initializeCmsStore();
@@ -37,7 +46,11 @@ export function mediaUrl(
 ): string | undefined {
   if (!id) return undefined;
   const asset = map.get(id);
-  return asset?.publicUrl ?? asset?.derivatives?.desktop?.url ?? asset?.derivatives?.original?.url;
+  return (
+    asset?.publicUrl ??
+    asset?.derivatives?.desktop?.url ??
+    asset?.derivatives?.original?.url
+  );
 }
 
 export async function getLiveSites(): Promise<LiveSite[]> {
@@ -72,7 +85,9 @@ export async function getPublishedPostBySlug(
   return post;
 }
 
-export async function getProjectCoverUrl(project: Project): Promise<string | undefined> {
+export async function getProjectCoverUrl(
+  project: Project,
+): Promise<string | undefined> {
   const map = await getMediaMap();
   return mediaUrl(map, project.coverMediaId);
 }
@@ -80,4 +95,24 @@ export async function getProjectCoverUrl(project: Project): Promise<string | und
 export async function getMediaById(id: string): Promise<MediaAsset | null> {
   await initializeCmsStore();
   return getById("media", id);
+}
+
+export async function getPublishedDesigns(): Promise<Design[]> {
+  await initializeCmsStore();
+  const designs = await list("designs");
+  return designs
+    .filter((d) => d.publishStatus === "published")
+    .sort((a, b) => a.sortOrder - b.sortOrder);
+}
+
+export async function getAboutContent(): Promise<AboutPageContent | null> {
+  await initializeCmsStore();
+  const about = await list("about");
+  return about[0] ?? null;
+}
+
+export async function getSiteSettings(): Promise<SiteSettings | null> {
+  await initializeCmsStore();
+  const settings = await list("settings");
+  return settings[0] ?? null;
 }

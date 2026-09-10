@@ -11,10 +11,12 @@ import path from "node:path";
 import { nanoid } from "nanoid";
 import { hashPassword } from "@/lib/auth/password";
 import type {
+  AboutPageContent,
   Camera,
   CameraSecretsMap,
   CameraStreamSecret,
   ConstructionProgress,
+  Design,
   HeroConfig,
   LiveSite,
   MasterTour,
@@ -27,6 +29,7 @@ import type {
   User,
   UserRecord,
 } from "@/domain/types";
+import { STITCH_V2 } from "@/lib/stitch/assets-v2";
 
 // ---------------------------------------------------------------------------
 // Collection registry
@@ -43,7 +46,9 @@ export type CollectionName =
   | "tours"
   | "rooms"
   | "users"
-  | "settings";
+  | "settings"
+  | "designs"
+  | "about";
 
 type CollectionMap = {
   projects: Project;
@@ -57,6 +62,8 @@ type CollectionMap = {
   rooms: Room;
   users: UserRecord;
   settings: SiteSettings;
+  designs: Design;
+  about: AboutPageContent;
 };
 
 type Sluggable = { slug: string };
@@ -74,6 +81,8 @@ const COLLECTIONS: CollectionName[] = [
   "rooms",
   "users",
   "settings",
+  "designs",
+  "about",
 ];
 
 const CAMERA_SECRETS_FILE = "camera-secrets.json";
@@ -528,6 +537,141 @@ function makeMedia(
   };
 }
 
+function defaultSocialContact(): SiteSettings["socialContact"] {
+  return {
+    whatsappE164: "13105550148",
+    whatsappMessage: "Hello Akhila — I’d like to discuss a project.",
+    instagramUrl: "https://instagram.com/akhilainteriors",
+    floatingEnabled: true,
+  };
+}
+
+function defaultPrimaryNav() {
+  return [
+    { id: "nav-1", label: "About", href: "/about", sortOrder: 0, visible: true },
+    { id: "nav-2", label: "Projects", href: "/projects", sortOrder: 1, visible: true },
+    { id: "nav-3", label: "Services", href: "/services", sortOrder: 2, visible: true },
+    { id: "nav-4", label: "Designs", href: "/designs", sortOrder: 3, visible: true },
+    { id: "nav-5", label: "Process", href: "/process", sortOrder: 4, visible: true },
+    { id: "nav-6", label: "Contact Us", href: "/contact", sortOrder: 5, visible: true },
+  ];
+}
+
+function buildAboutSeed(ts: string, portraitMediaId?: string): AboutPageContent {
+  return {
+    id: "about-001",
+    hero: {
+      eyebrow: "Studio",
+      title: "About Akhila",
+      intro:
+        "We complete interiors for residences and select commercial spaces — ceilings, lighting, colour, paper, glass, and shade, composed as one.",
+      mediaId: portraitMediaId,
+    },
+    owner: {
+      name: "Akhila",
+      title: "Principal Designer",
+      bio: "Akhila leads a practice devoted to calm, precise interiors — where every finish is specified for light, ritual, and longevity. The studio unites craft with transparent process so clients can follow decisions from concept through install.",
+      photoMediaId: portraitMediaId,
+      quote: "Spaces should feel inevitable — quiet, considered, and ready for everyday life.",
+    },
+    commitments: [
+      {
+        id: "cmt-1",
+        title: "Single-source finish",
+        body: "Ceilings, electrical, paint, paper, windows, and blinds planned as one coordinated interior — not six separate trades.",
+        sortOrder: 0,
+        visible: true,
+      },
+      {
+        id: "cmt-2",
+        title: "Documented milestones",
+        body: "Clear budgets, sample approvals, and site updates so you always know what is decided and what remains open.",
+        sortOrder: 1,
+        visible: true,
+      },
+      {
+        id: "cmt-3",
+        title: "Material honesty",
+        body: "Finishes that age with grace — honest edges, even films, and details that protect intent through construction.",
+        sortOrder: 2,
+        visible: true,
+      },
+    ],
+    achievements: [
+      {
+        id: "ach-1",
+        title: "120+ completed rooms",
+        year: 2024,
+        body: "Residential and select commercial interiors delivered with measured craft.",
+        sortOrder: 0,
+        visible: true,
+      },
+      {
+        id: "ach-2",
+        title: "Live construction transparency",
+        year: 2025,
+        body: "Optional site monitoring so clients can follow progress without guesswork.",
+        sortOrder: 1,
+        visible: true,
+      },
+    ],
+    trophies: [
+      {
+        id: "tr-1",
+        name: "Editorial Interior Citation",
+        year: 2023,
+        organization: "Regional Design Review",
+        body: "Recognised for material discipline and spatial calm in residential fit-outs.",
+        sortOrder: 0,
+        visible: true,
+      },
+    ],
+    values: [
+      {
+        id: "val-1",
+        title: "Precision",
+        body: "Drawings and details that protect intent through construction.",
+        sortOrder: 0,
+        visible: true,
+      },
+      {
+        id: "val-2",
+        title: "Transparency",
+        body: "Live progress, clear budgets, and decisions you can follow.",
+        sortOrder: 1,
+        visible: true,
+      },
+      {
+        id: "val-3",
+        title: "Craft",
+        body: "Material honesty and finish quality that age with grace.",
+        sortOrder: 2,
+        visible: true,
+      },
+      {
+        id: "val-4",
+        title: "Calm",
+        body: "Spaces composed for light, privacy, and everyday ritual.",
+        sortOrder: 3,
+        visible: true,
+      },
+    ],
+    cta: {
+      title: "Work with us",
+      body: "Share your site, program, and timeline — we will respond with next steps.",
+      buttonLabel: "Start a Project",
+      buttonHref: "/contact",
+    },
+    seo: {
+      title: "About",
+      description:
+        "Akhila is an interior design studio crafting spaces with precision, craft, and transparency.",
+    },
+    createdAt: ts,
+    updatedAt: ts,
+  };
+}
+
 async function buildSeedData(): Promise<{
   media: MediaAsset[];
   projects: Project[];
@@ -540,6 +684,8 @@ async function buildSeedData(): Promise<{
   posts: Post[];
   users: UserRecord[];
   settings: SiteSettings[];
+  designs: Design[];
+  about: AboutPageContent[];
   progress: ConstructionProgress[];
   cameraSecrets: CameraSecretsMap;
 }> {
@@ -616,6 +762,51 @@ async function buildSeedData(): Promise<{
     tags: ["meridian", "tour"],
   });
 
+  const mediaDesignMeridian = makeMedia({
+    id: "des-med-001",
+    alt: "Meridian Residence exterior study",
+    storageKey: "designs/meridian-exterior.jpg",
+    folder: "designs",
+    tags: ["designs", "residential"],
+    publicUrl: STITCH_V2.gallery.meridianExterior,
+  });
+
+  const mediaDesignCasa = makeMedia({
+    id: "des-casa-001",
+    alt: "Casa Horizon coastal living",
+    storageKey: "designs/casa-horizon.jpg",
+    folder: "designs",
+    tags: ["designs", "residential"],
+    publicUrl: STITCH_V2.gallery.casaHorizon,
+  });
+
+  const mediaDesignNorthline = makeMedia({
+    id: "des-north-001",
+    alt: "Northline Tower commercial lobby",
+    storageKey: "designs/northline.jpg",
+    folder: "designs",
+    tags: ["designs", "commercial"],
+    publicUrl: STITCH_V2.gallery.northline,
+  });
+
+  const mediaDesignWorkshop = makeMedia({
+    id: "des-work-001",
+    alt: "Studio workshop material studies",
+    storageKey: "designs/workshop.jpg",
+    folder: "designs",
+    tags: ["designs", "interior"],
+    publicUrl: STITCH_V2.gallery.workshop,
+  });
+
+  const mediaAboutPortrait = makeMedia({
+    id: "about-portrait-001",
+    alt: "Akhila studio craft",
+    storageKey: "site/about-portrait.jpg",
+    folder: "site",
+    tags: ["about", "studio"],
+    publicUrl: STITCH_V2.home.atelier,
+  });
+
   const media = [
     mediaMeridianHero,
     mediaSkylineHero,
@@ -627,6 +818,11 @@ async function buildSeedData(): Promise<{
     mediaMeridianHall,
     mediaMeridianBedroom,
     mediaMeridianBathroom,
+    mediaDesignMeridian,
+    mediaDesignCasa,
+    mediaDesignNorthline,
+    mediaDesignWorkshop,
+    mediaAboutPortrait,
   ];
 
   const meridianTourId = "tour-meridian-001";
@@ -935,13 +1131,7 @@ async function buildSeedData(): Promise<{
     id: "settings-001",
     siteName: "Akhila Interiors",
     tagline: "Interior design with cinematic precision",
-    primaryNav: [
-      { id: "nav-1", label: "Projects", href: "/projects", sortOrder: 0, visible: true },
-      { id: "nav-2", label: "Live Sites", href: "/live-sites", sortOrder: 1, visible: true },
-      { id: "nav-3", label: "Gallery", href: "/gallery", sortOrder: 2, visible: true },
-      { id: "nav-4", label: "About", href: "/about", sortOrder: 3, visible: true },
-      { id: "nav-5", label: "Contact", href: "/contact", sortOrder: 4, visible: true },
-    ],
+    primaryNav: defaultPrimaryNav(),
     footerNav: [
       { id: "fnav-1", label: "Privacy", href: "/privacy", sortOrder: 0, visible: true },
       { id: "fnav-2", label: "Terms", href: "/terms", sortOrder: 1, visible: true },
@@ -951,6 +1141,7 @@ async function buildSeedData(): Promise<{
       instagram: "https://instagram.com/akhilainteriors",
       linkedin: "https://linkedin.com/company/akhilainteriors",
     },
+    socialContact: defaultSocialContact(),
     defaultSeo: {
       title: "Akhila Interiors",
       description: "Premium interior design studio.",
@@ -958,6 +1149,67 @@ async function buildSeedData(): Promise<{
     createdAt: ts,
     updatedAt: ts,
   };
+
+  const designs: Design[] = [
+    {
+      id: "design-001",
+      slug: "meridian-exterior",
+      title: "Meridian Residence",
+      description: "Exterior composition study — light, mass, and coastal calm.",
+      coverMediaId: mediaDesignMeridian.id,
+      galleryMediaIds: [],
+      categories: ["Residential"],
+      publishStatus: "published",
+      sortOrder: 0,
+      publishedAt: ts,
+      createdAt: ts,
+      updatedAt: ts,
+    },
+    {
+      id: "design-002",
+      slug: "casa-horizon",
+      title: "Casa Horizon",
+      description: "Coastal living palette and material rhythm.",
+      coverMediaId: mediaDesignCasa.id,
+      galleryMediaIds: [],
+      categories: ["Residential"],
+      publishStatus: "published",
+      sortOrder: 1,
+      publishedAt: ts,
+      createdAt: ts,
+      updatedAt: ts,
+    },
+    {
+      id: "design-003",
+      slug: "northline-tower",
+      title: "Northline Tower",
+      description: "Commercial lobby proportion and finish language.",
+      coverMediaId: mediaDesignNorthline.id,
+      galleryMediaIds: [],
+      categories: ["Commercial"],
+      publishStatus: "published",
+      sortOrder: 2,
+      publishedAt: ts,
+      createdAt: ts,
+      updatedAt: ts,
+    },
+    {
+      id: "design-004",
+      slug: "studio-workshop",
+      title: "Studio Workshop",
+      description: "Material boards and finish studies from the atelier.",
+      coverMediaId: mediaDesignWorkshop.id,
+      galleryMediaIds: [],
+      categories: ["Interior"],
+      publishStatus: "published",
+      sortOrder: 3,
+      publishedAt: ts,
+      createdAt: ts,
+      updatedAt: ts,
+    },
+  ];
+
+  const about = buildAboutSeed(ts, mediaAboutPortrait.id);
 
   const cameraSecrets: CameraSecretsMap = {
     [skylineStreamSourceId]: {
@@ -998,6 +1250,8 @@ async function buildSeedData(): Promise<{
     posts: [],
     users: [adminUser],
     settings: [settings],
+    designs,
+    about: [about],
     progress: [meridianProgress, skylineProgress],
     cameraSecrets,
   };
@@ -1025,12 +1279,14 @@ export async function seedCmsData(force = false): Promise<void> {
     await writeCollection("posts", seed.posts);
     await writeCollection("users", seed.users);
     await writeCollection("settings", seed.settings);
+    await writeCollection("designs", seed.designs);
+    await writeCollection("about", seed.about);
     await writeJsonFileAtomic(progressPath(), seed.progress);
     await writeJsonFileAtomic(cameraSecretsPath(), seed.cameraSecrets);
 
     await writeFile(
       seedMarkerPath(),
-      JSON.stringify({ seededAt: now(), version: 1 }, null, 2),
+      JSON.stringify({ seededAt: now(), version: 2 }, null, 2),
       "utf8",
     );
   });
@@ -1086,15 +1342,153 @@ async function doInitializeCmsStore(): Promise<void> {
       await writeCollection("posts", seed.posts);
       await writeCollection("users", seed.users);
       await writeCollection("settings", seed.settings);
+      await writeCollection("designs", seed.designs);
+      await writeCollection("about", seed.about);
       await writeJsonFileAtomic(progressPath(), seed.progress);
       await writeJsonFileAtomic(cameraSecretsPath(), seed.cameraSecrets);
       await writeFile(
         seedMarkerPath(),
-        JSON.stringify({ seededAt: now(), version: 1 }, null, 2),
+        JSON.stringify({ seededAt: now(), version: 2 }, null, 2),
         "utf8",
       );
+    } else {
+      await ensureIaCollections();
     }
   });
+}
+
+/** Backfill designs/about/socialContact for already-seeded CMS dirs. */
+async function ensureIaCollections(): Promise<void> {
+  const ts = now();
+  const designs = await readCollection<Design>("designs");
+  const about = await readCollection<AboutPageContent>("about");
+  const settingsList = await readCollection<SiteSettings>("settings");
+  const media = await readCollection<MediaAsset>("media");
+
+  const needsDesignMedia = !media.some((m) => m.id.startsWith("des-"));
+  if (needsDesignMedia) {
+    const extras: MediaAsset[] = [
+      makeMedia({
+        id: "des-med-001",
+        alt: "Meridian Residence exterior study",
+        storageKey: "designs/meridian-exterior.jpg",
+        folder: "designs",
+        tags: ["designs", "residential"],
+        publicUrl: STITCH_V2.gallery.meridianExterior,
+      }),
+      makeMedia({
+        id: "des-casa-001",
+        alt: "Casa Horizon coastal living",
+        storageKey: "designs/casa-horizon.jpg",
+        folder: "designs",
+        tags: ["designs", "residential"],
+        publicUrl: STITCH_V2.gallery.casaHorizon,
+      }),
+      makeMedia({
+        id: "des-north-001",
+        alt: "Northline Tower commercial lobby",
+        storageKey: "designs/northline.jpg",
+        folder: "designs",
+        tags: ["designs", "commercial"],
+        publicUrl: STITCH_V2.gallery.northline,
+      }),
+      makeMedia({
+        id: "des-work-001",
+        alt: "Studio workshop material studies",
+        storageKey: "designs/workshop.jpg",
+        folder: "designs",
+        tags: ["designs", "interior"],
+        publicUrl: STITCH_V2.gallery.workshop,
+      }),
+      makeMedia({
+        id: "about-portrait-001",
+        alt: "Akhila studio craft",
+        storageKey: "site/about-portrait.jpg",
+        folder: "site",
+        tags: ["about", "studio"],
+        publicUrl: STITCH_V2.home.atelier,
+      }),
+    ];
+    await writeCollection("media", [...media, ...extras]);
+  }
+
+  if (designs.length === 0) {
+    await writeCollection("designs", [
+      {
+        id: "design-001",
+        slug: "meridian-exterior",
+        title: "Meridian Residence",
+        description: "Exterior composition study — light, mass, and coastal calm.",
+        coverMediaId: "des-med-001",
+        galleryMediaIds: [],
+        categories: ["Residential"],
+        publishStatus: "published",
+        sortOrder: 0,
+        publishedAt: ts,
+        createdAt: ts,
+        updatedAt: ts,
+      },
+      {
+        id: "design-002",
+        slug: "casa-horizon",
+        title: "Casa Horizon",
+        description: "Coastal living palette and material rhythm.",
+        coverMediaId: "des-casa-001",
+        galleryMediaIds: [],
+        categories: ["Residential"],
+        publishStatus: "published",
+        sortOrder: 1,
+        publishedAt: ts,
+        createdAt: ts,
+        updatedAt: ts,
+      },
+      {
+        id: "design-003",
+        slug: "northline-tower",
+        title: "Northline Tower",
+        description: "Commercial lobby proportion and finish language.",
+        coverMediaId: "des-north-001",
+        galleryMediaIds: [],
+        categories: ["Commercial"],
+        publishStatus: "published",
+        sortOrder: 2,
+        publishedAt: ts,
+        createdAt: ts,
+        updatedAt: ts,
+      },
+      {
+        id: "design-004",
+        slug: "studio-workshop",
+        title: "Studio Workshop",
+        description: "Material boards and finish studies from the atelier.",
+        coverMediaId: "des-work-001",
+        galleryMediaIds: [],
+        categories: ["Interior"],
+        publishStatus: "published",
+        sortOrder: 3,
+        publishedAt: ts,
+        createdAt: ts,
+        updatedAt: ts,
+      },
+    ]);
+  }
+
+  if (about.length === 0) {
+    await writeCollection("about", [buildAboutSeed(ts, "about-portrait-001")]);
+  }
+
+  const current = settingsList[0];
+  if (current) {
+    const patch: Partial<SiteSettings> = {};
+    if (!current.socialContact) patch.socialContact = defaultSocialContact();
+    const navLabels = current.primaryNav.map((n) => n.label).join(",");
+    if (!navLabels.includes("Designs") || !navLabels.includes("Contact Us")) {
+      patch.primaryNav = defaultPrimaryNav();
+    }
+    if (Object.keys(patch).length > 0) {
+      await update("settings", current.id, patch);
+    }
+  }
 }
 
 export async function listConstructionProgress(): Promise<ConstructionProgress[]> {

@@ -511,6 +511,81 @@ export interface GalleryItem extends Timestamps {
   publishedAt?: ISODateString;
 }
 
+/** Studio designs shown on /designs (admin-managed). */
+export interface Design extends Timestamps {
+  id: string;
+  slug: string;
+  title: string;
+  description?: string;
+  coverMediaId: string;
+  galleryMediaIds: string[];
+  categories: string[];
+  projectId?: string;
+  publishStatus: PublishStatus;
+  sortOrder: number;
+  publishedAt?: ISODateString;
+}
+
+export interface AboutListItem {
+  id: string;
+  title: string;
+  body: string;
+  sortOrder: number;
+  visible: boolean;
+}
+
+export interface AboutAchievementItem extends AboutListItem {
+  year?: number;
+  url?: string;
+}
+
+export interface AboutTrophyItem {
+  id: string;
+  name: string;
+  year?: number;
+  organization?: string;
+  body?: string;
+  mediaId?: string;
+  sortOrder: number;
+  visible: boolean;
+}
+
+/** Singleton about page content (admin-editable). */
+export interface AboutPageContent extends Timestamps {
+  id: string;
+  hero: {
+    eyebrow?: string;
+    title: string;
+    intro: string;
+    mediaId?: string;
+  };
+  owner: {
+    name: string;
+    title: string;
+    bio: string;
+    photoMediaId?: string;
+    quote?: string;
+  };
+  commitments: AboutListItem[];
+  achievements: AboutAchievementItem[];
+  trophies: AboutTrophyItem[];
+  values: AboutListItem[];
+  cta?: {
+    title: string;
+    body?: string;
+    buttonLabel: string;
+    buttonHref: string;
+  };
+  seo: SeoConfig;
+}
+
+export interface SocialContactSettings {
+  whatsappE164: string;
+  whatsappMessage?: string;
+  instagramUrl: string;
+  floatingEnabled: boolean;
+}
+
 export interface TeamMember extends Timestamps {
   id: string;
   name: string;
@@ -550,6 +625,7 @@ export interface SiteSettings extends Timestamps {
   footerNav: NavItem[];
   contactEmail?: string;
   socialLinks: Record<string, string>;
+  socialContact?: SocialContactSettings;
   defaultSeo: SeoConfig;
 }
 
@@ -596,7 +672,8 @@ export type AuditAction =
   | "camera_access"
   | "stream_session"
   | "settings_change"
-  | "role_change";
+  | "role_change"
+  | "ai_improve";
 
 export interface AuditLog {
   id: string;

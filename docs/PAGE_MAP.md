@@ -13,22 +13,24 @@ Routes, Stitch references, sections, and data dependencies.
 | Route | Page | Stitch | Sections / features |
 |---|---|---|---|
 | `/` | Home | Homepage | Header(transparent), Hero, TrustMetrics, FeaturedProjects, Services teaser, Process strip*, Live Sites teaser*, Journal teaser*, CTA, Footer |
-| `/projects` | Projects | Selected Works | Filters, search, asymmetric grid |
+| `/projects` | Projects hub | Selected Works | Ongoing · Types we offer · Completed (+ in-page anchors) |
 | `/projects/[slug]` | Project Detail | Meridian Detail | Hero, Overview, Stats, Concept/Story, Master Tour entry, Room breakdown, Exploded diagrams, Materials, Progress, Live CCTV teaser, Gallery, Videos, Updates, Location, CTA |
 | `/projects/[slug]/tour` | Master Tour | Master Tour | Full immersive tour |
 | `/projects/[slug]/rooms` | Room Explorer | Room Explorer | Room rail + states |
 | `/projects/[slug]/rooms/[room]` | Room deep link | Room Explorer | Same component |
-| `/live-sites` | Live Sites | Live Sites | Listing, filters, security messaging |
+| `/live-sites` | Live Sites | Live Sites | Listing, filters, security messaging (kept; off primary nav) |
 | `/live-sites/[slug]` | Live Site Detail | Skyline Live | CameraViewer, strip, progress, activity |
-| `/gallery` | Gallery | Gallery | Categories, masonry, lightbox |
-| `/gallery/[id]` | Gallery Detail | *pending Stitch* | Lightbox-first detail |
-| `/journal` | Journal | Journal | Featured + grid + categories |
+| `/designs` | Designs | Gallery | Admin-published studio designs, filters, masonry |
+| `/gallery` | → redirects to `/designs` | — | Permanent redirect |
+| `/journal` | Journal | Journal | Featured + grid + categories (off primary nav) |
 | `/journal/[slug]` | Article | *pending Stitch* | Body, related, SEO |
 | `/services` | Services | Services | 8 editorial sections |
 | `/services/[slug]` | Service Detail | *pending Stitch* | Deep service |
 | `/process` | Process | How We Build | 01–08 timeline |
-| `/about` | About | About | Mission, values, team |
+| `/about` | About | About | CMS: owner, commitments, achievements, trophies, values |
 | `/contact` | Contact | Contact | Split form + channels |
+
+**Primary nav order:** About → Projects → Services → Designs → Process → Contact Us
 
 \*Include if present in final Stitch homepage HTML; home preview emphasizes Hero → Metrics → Featured → Services → Footer. Full section list from product brief remains the target; implement only sections present in approved Stitch HTML/screenshots for homepage v1, then extend when Stitch adds them.
 
@@ -63,7 +65,9 @@ Architectural storytelling / Master Tour preview / Room breakdown on **home** on
 | `/admin/heroes` | Hero Builder | *queued* |
 | `/admin/tours` | Master Tour Builder | *queued* |
 | `/admin/rooms` | Room Builder | *queued* |
-| `/admin/gallery` | Gallery CMS | *queued* |
+| `/admin/designs` | Designs CMS | *queued* |
+| `/admin/gallery` | → `/admin/designs` | redirect |
+| `/admin/about` | About CMS (+ AI improve) | *queued* |
 | `/admin/media` | Media Library | Media Library |
 | `/admin/videos` | Videos | *queued* |
 | `/admin/posts` | Posts | *queued* |
@@ -92,7 +96,7 @@ Architectural storytelling / Master Tour preview / Room breakdown on **home** on
 
 ## Navigation (public)
 
-Logo · Projects · Services · Process · Live Sites · Gallery · About · Contact  
+Logo · About · Projects · Services · Designs · Process · Contact Us  
 Primary CTA: Start a Project · Secondary: View Projects
 
 ---

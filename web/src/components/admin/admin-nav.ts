@@ -7,11 +7,12 @@ export type AdminNavItem = {
 export const ADMIN_NAV: AdminNavItem[] = [
   { label: "Dashboard", href: "/admin", group: "system" },
   { label: "Projects", href: "/admin/projects", group: "content" },
+  { label: "About", href: "/admin/about", group: "content" },
   { label: "Pages", href: "/admin/pages", group: "content" },
   { label: "Hero Sections", href: "/admin/hero-sections", group: "content" },
 
   { label: "Diagrams", href: "/admin/diagrams", group: "content" },
-  { label: "Gallery", href: "/admin/gallery", group: "media" },
+  { label: "Designs", href: "/admin/designs", group: "media" },
   { label: "Videos", href: "/admin/videos", group: "media" },
   { label: "Posts", href: "/admin/posts", group: "content" },
   { label: "Live Sites", href: "/admin/live-sites", group: "live" },
