@@ -247,7 +247,7 @@ export function LiveProjectsCarousel() {
 
       <div className="mt-8 flex justify-center">
         <NextLink
-          href="/projects#ongoing"
+          href="/projects"
           className="btn-press group inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-ink-button hover:text-terracotta"
         >
           View ongoing projects

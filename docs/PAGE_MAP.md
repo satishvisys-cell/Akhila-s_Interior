@@ -13,7 +13,7 @@ Routes, Stitch references, sections, and data dependencies.
 | Route | Page | Stitch | Sections / features |
 |---|---|---|---|
 | `/` | Home | Homepage | Header(transparent), Hero, TrustMetrics, FeaturedProjects, Services teaser, Process strip*, Live Sites teaser*, Journal teaser*, CTA, Footer |
-| `/projects` | Projects hub | Selected Works | Ongoing · Types we offer · Completed (+ in-page anchors) |
+| `/projects` | Projects hub | Selected Works | Tabbed views: Ongoing · Types · Completed (`?view=`) |
 | `/projects/[slug]` | Project Detail | Meridian Detail | Hero, Overview, Stats, Concept/Story, Master Tour entry, Room breakdown, Exploded diagrams, Materials, Progress, Live CCTV teaser, Gallery, Videos, Updates, Location, CTA |
 | `/projects/[slug]/tour` | Master Tour | Master Tour | Full immersive tour |
 | `/projects/[slug]/rooms` | Room Explorer | Room Explorer | Room rail + states |
